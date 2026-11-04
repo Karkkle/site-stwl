@@ -1,0 +1,28 @@
+/* Site heading font — Syne (variable, self-hosted, SIL OFL).
+   Used at weight 500 for headlines. Syne has no italic, so the highlighted word in each
+   headline is a sage colour accent. The logo SVGs are outlined paths, so the wordmark is unchanged. */
+@font-face {
+  font-family: 'Syne';
+  src: url('./fonts/Syne-Variable.woff2') format('woff2');
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-heading: 'Syne', 'Helvetica Neue', sans-serif;
+}
+
+/* Accent font — Fragment Mono (self-hosted, SIL OFL). Used only for small details: numbered pills,
+   tags, captions, step numbers, team names, nav links and the footer line. Never for sentences. */
+@font-face {
+  font-family: 'Fragment Mono';
+  src: url('./fonts/FragmentMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-accent: 'Fragment Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}

@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Shotwell — brand design tokens
+   Drop this file into your project (e.g. /styles/tokens.css) and import it
+   once, globally, before your other stylesheets.
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Instrument Sans';
+  src: url('./fonts/InstrumentSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Instrument Sans';
+  src: url('./fonts/InstrumentSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Color palette */
+  --color-taupe-ink: #3A342C;   /* primary text / dark surface */
+  --color-oat:       #DCD3C2;   /* primary light surface */
+  --color-bone:      #F1ECE3;   /* off-white, text-on-dark, lightest surface */
+  --color-sage:      #8B9280;   /* accent, labels, secondary text */
+  --color-whisper-sage: #A9AE9D; /* muted accent, borders, dividers */
+
+  /* Semantic aliases — reference these in components, not the raw colors */
+  --color-bg:            var(--color-oat);
+  --color-bg-inverted:   var(--color-taupe-ink);
+  --color-surface:       var(--color-bone);
+  --color-text:          var(--color-taupe-ink);
+  --color-text-inverted: var(--color-bone);
+  --color-text-muted:    var(--color-sage);
+  --color-border:        var(--color-whisper-sage);
+  --color-accent:        var(--color-sage);
+
+  /* Typography */
+  /* Headings use Syne (see heading-font.css → --font-heading). The wordmark is supplied only as
+     SVG artwork in /logos — never retype it, so no wordmark font is bundled. */
+  --font-body: 'Instrument Sans', -apple-system, sans-serif;
+
+
+  /* Small tracked-out uppercase caption style, used for the tagline and
+     eyebrow/label text ("EMAIL", "STUDIO", etc. on the business card) */
+  --label-weight: 500;
+  --label-letter-spacing: 0.17em;
+  --label-transform: uppercase;
+}
+
+/* Example usage:
+
+.eyebrow-label {
+  font-family: var(--font-body);
+  font-weight: var(--label-weight);
+  letter-spacing: var(--label-letter-spacing);
+  text-transform: var(--label-transform);
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+*/
