@@ -138,14 +138,14 @@ const FontsAndStyles = () => (
       width:100vw; height:56.25vw;
       min-height:100vh;
       min-width:177.78vh;
-      filter:saturate(.5) contrast(1.05) brightness(.68);
+      filter:saturate(.5) contrast(1.05);
       border:none;
       opacity:0; transition:opacity 1.2s ease;
     }
     .yt-wrap iframe.live { opacity:1; }
     .hero-video {
       position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
-      filter:saturate(.5) contrast(1.05) brightness(.68);
+      filter:saturate(.5) contrast(1.05);
       opacity:0; transition:opacity 1s ease;
     }
     .hero-video.live { opacity:1; }
@@ -153,15 +153,9 @@ const FontsAndStyles = () => (
     .hero-poster {
       position:absolute; inset:0; width:100%; height:100%;
       object-fit:cover;
-      filter:saturate(.5) contrast(1.05) brightness(.68);
+      filter:saturate(.5) contrast(1.05);
     }
 
-    .hero-overlay {
-      position:absolute; inset:0; z-index:1;
-      background:
-        linear-gradient(to top, rgba(10,8,4,.9) 0%, rgba(10,8,4,.42) 38%, rgba(10,8,4,.12) 68%, transparent 100%),
-        linear-gradient(to right, rgba(10,8,4,.22) 0%, transparent 55%);
-    }
     .hero-grain {
       position:absolute; inset:0; z-index:2; opacity:.05; pointer-events:none;
       background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -181,6 +175,7 @@ const FontsAndStyles = () => (
       font-family:var(--H); font-size:clamp(2rem,4.8vw,4.6rem); font-weight: 500;
       line-height:1.1; letter-spacing:-.035em;
       color:rgba(241,236,227,.97); margin-bottom:48px;
+      text-shadow:0 2px 26px rgba(16,12,6,.55), 0 1px 4px rgba(16,12,6,.45);
       opacity:0; animation:fadeUp 1s .65s forwards;
     }
     .hero-title em { font-style:normal; color:rgba(169,174,157,.95); }
@@ -755,7 +750,6 @@ function Hero() {
         )}
       </div>
 
-      <div className="hero-overlay" />
       <div className="hero-grain" />
 
       <svg className="hero-corner" width="70" height="70" viewBox="0 0 70 70" fill="none">
