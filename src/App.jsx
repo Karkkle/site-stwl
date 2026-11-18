@@ -1552,11 +1552,11 @@ function About() {
           <p>Our team of directors, filmmakers, editors and photographers are united to create the most impactful visuals to convey your identity and make your brand stand out.</p>
           <div className="abt-bio">
             <p className="abt-bio-name">Mark Weeks <span className="abt-team-role">— Co-founder</span></p>
-            <p>Mark co-founded Shotwell after more than twenty years as a commercial photographer. He started in the corporate world before going independent in 2003, and his first paying client was Microsoft. Working inside global organisations taught him the pressures, the stakeholders and the standards expected at that level, and he brings that understanding to every Shotwell brief. His aim has not changed: to create imagery that does real work for the businesses that commission it. Mark is based in London and leads photography at Shotwell.</p>
+            <p>Mark co-founded Shotwell after more than twenty years as a commercial photographer. He began in the corporate world and went independent in 2003, with Microsoft as his first paying client. Years spent inside global organisations taught him the pressures, stakeholders and standards that come with them, and that understanding shapes every Shotwell brief. He leads photography at Shotwell from London, with one aim: imagery that does real work for the businesses that commission it.</p>
           </div>
           <div className="abt-bio">
             <p className="abt-bio-name">Louis Mas <span className="abt-team-role">— Co-founder</span></p>
-            <p>Louis is a filmmaker with over ten years of experience and holds a BA in Cinematography. He built his career as a camera assistant on feature films, TV series and commercials in Paris and London, and that grounding in high-end production shows in everything he delivers at Shotwell, from single-location brand films to complex multi-site projects. His instinct for technology and his ability to solve problems under pressure make him the person the team turns to when a brief gets complicated. Louis leads video at Shotwell.</p>
+            <p>Louis is a filmmaker with a BA in Cinematography and over ten years of experience. He began as a camera assistant on feature films, TV series and commercials in Paris and London, and that high-end grounding shapes his work at Shotwell, from single-location brand films to complex multi-site projects. He leads video at Shotwell, and with his instinct for technology and his ability to solve problems under pressure, he is the person the team turns to when a brief gets complicated.</p>
           </div>
         </div>
       </div>
