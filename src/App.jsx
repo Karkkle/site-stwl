@@ -242,9 +242,10 @@ const FontsAndStyles = () => (
     .wc-in {
       height: 100%;
       position:relative; overflow:hidden;
-      transition:transform .85s cubic-bezier(.25,.46,.45,.94);
     }
-    .wc:hover .wc-in { transform:scale(1.05); }
+    /* Hover: the video inside its frame zooms very slightly (same feel as nilofilms.com — 1.02, 0.6s, ease-out) */
+    .wc .lv, .vert-phone .lv { transition:transform .6s cubic-bezier(0,0,.2,1); }
+    .wc:hover .lv, .vert-phone:hover .lv { transform:scale(1.02); }
 
     @media (max-width:760px) { .work-grid { grid-template-columns:1fr; } }
 
@@ -334,8 +335,6 @@ const FontsAndStyles = () => (
     .lv img, .lv video, .lv iframe { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border:none; display:block; }
     .lv video, .lv iframe { opacity:0; transition:opacity .9s ease; }
     .lv video.live, .lv iframe.live { opacity:1; }
-    .vert-phone .lv { transition:transform .85s cubic-bezier(.25,.46,.45,.94); }
-    .vert-phone:hover .lv { transform:scale(1.05); }
     .vert-tag {
       position:absolute; top:14px; left:14px; z-index:2;
       font-family:var(--A); font-weight:400; font-size:0.72rem; letter-spacing:.08em; text-transform:uppercase;
