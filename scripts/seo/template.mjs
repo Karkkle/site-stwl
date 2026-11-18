@@ -18,7 +18,7 @@ export function businessNode() {
     image: SITE.ogImage,
     description: 'Shotwell is an independent production company in London making video, social content and photography for beauty, skincare and wellness brands, clinics, spas and practitioners.',
     slogan: SITE.tagline,
-    address: { '@type': 'PostalAddress', addressLocality: 'London', addressRegion: 'Bloomsbury', addressCountry: 'GB' },
+    address: { '@type': 'PostalAddress', streetAddress: SITE.address.street, addressLocality: SITE.address.city, postalCode: SITE.address.postcode, addressCountry: SITE.address.country },
     areaServed: [{ '@type': 'City', name: 'London' }, { '@type': 'Country', name: 'United Kingdom' }],
     founder: SITE.founders.map((name) => ({ '@type': 'Person', name })),
     sameAs: [SITE.instagram, SITE.linkedin],
@@ -237,7 +237,7 @@ ${robots}
       <div><p class="label">Services</p>${ctx.pages.filter((p) => p.group === 'service').map((p) => `<a href="${href(p.slug)}">${p.footerLabel}</a>`).join('')}<a href="${href('skincare-video-production-cost')}">Pricing</a></div>
       <div><p class="label">Shotwell</p><a href="/#work">Videos</a><a href="/#social">Social content</a><a href="/#photography">Photography</a><a href="/#about">About</a><a href="/#contact">Contact</a><a href="${SITE.instagram}" rel="noopener noreferrer">Instagram</a><a href="${SITE.linkedin}" rel="noopener noreferrer">LinkedIn</a></div>
     </div>
-    <p class="legal">© ${new Date().getFullYear()} ${SITE.legalName} trading as ${SITE.name}. Bloomsbury, London. All rights reserved.</p>
+    <p class="legal">© ${new Date().getFullYear()} ${SITE.legalName} trading as ${SITE.name}. ${SITE.address.street}, ${SITE.address.area}, ${SITE.address.city} ${SITE.address.postcode}. All rights reserved.</p>
   </div>
 </footer>
 <script>

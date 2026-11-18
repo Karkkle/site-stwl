@@ -65,7 +65,7 @@ writeFileSync(join(dist, 'robots.txt'), launched
 const llm = [
   `# ${SITE.name}`,
   '',
-  `> ${SITE.name} (${SITE.legalName}) is an independent production company in Bloomsbury, London making video, social content and photography for beauty, skincare and wellness brands, clinics, spas and practitioners across London and the UK.`,
+  `> ${SITE.name} (${SITE.legalName}) is an independent production company at ${SITE.address.street}, ${SITE.address.area}, ${SITE.address.city} ${SITE.address.postcode} making video, social content and photography for beauty, skincare and wellness brands, clinics, spas and practitioners across London and the UK.`,
   '',
   '## Pages',
   ...PAGES.map((p) => `- [${plain(p.title)}](${SITE.url}/${p.slug}/): ${p.description}`),

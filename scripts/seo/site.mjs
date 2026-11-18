@@ -8,6 +8,7 @@ export const SITE = {
   instagram: 'https://www.instagram.com/weareshotwell/',
   linkedin: 'https://www.linkedin.com/company/shotwell-london',
   founders: ['Mark Weeks', 'Louis Mas'],
+  address: { street: '11-13 Bayley Street', area: 'Bloomsbury', city: 'London', postcode: 'WC1B 3HD', country: 'GB' },
   // The address is assembled in the browser (never printed in the HTML) so scrapers don't harvest it — same as the main site.
   emailUser: 'contact',
   emailHost: 'shotwell.co.uk',

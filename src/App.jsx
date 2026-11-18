@@ -393,6 +393,7 @@ const FontsAndStyles = () => (
     .footer-links .footer-h { margin-bottom:12px; }
     .footer-links a { display:block; padding:5px 0; font-family:var(--A); font-size:.8rem; letter-spacing:.04em; color:var(--color-bone); text-decoration:none; opacity:.85; }
     .footer-links a:hover { opacity:1; color:var(--color-whisper-sage); }
+    .footer-address { font-style:normal; font-family:var(--A); font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; color:var(--color-bone); margin-top:-20px; }
     .footer-rule { border:0; border-top:1px solid rgba(169,174,157,.28); }
     footer p { font-family:var(--A); font-weight:400; font-size:0.75rem; letter-spacing:.08em; text-transform:uppercase; color:var(--color-sage); }
     footer p span { color:var(--color-bone); }
@@ -1569,6 +1570,7 @@ function Footer() {
         </div>
       </div>
       <hr className="footer-rule" />
+      <address className="footer-address">11-13 Bayley Street, Bloomsbury, London WC1B 3HD</address>
       <p>© {new Date().getFullYear()} <span>Shotwell Studios Ltd trading as Shotwell</span>. All rights reserved.</p>
     </footer>
   );
