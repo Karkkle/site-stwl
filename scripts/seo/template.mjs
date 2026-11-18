@@ -61,6 +61,16 @@ export function pageGraph(page) {
 }
 
 // ───────────────────────────────────────────────────────────── page parts
+// Mixed shapes (portrait + landscape) get a packed layout so no column is left with a gap beneath it.
+function clipLayout(clips) {
+  const v = clips.filter((c) => c.vertical).length
+  const h = clips.length - v
+  if (h === 0) return 'verticals'
+  if (v === 1 && h === 2) return 'mix1v'
+  if (v === 2 && h === 1) return 'mix2v'
+  return ''
+}
+
 function clipHtml(c) {
   const ratio = c.vertical ? 'v' : 'h'
   return `<figure class="clip ${ratio}">
@@ -117,7 +127,7 @@ export function renderPage(page, ctx) {
   const clips = page.clips && page.clips.length ? `<section class="band tight">
       <div class="wrap">
         <p class="label">${esc(page.clipsLabel || 'Selected work')}</p>
-        <div class="clips ${page.clips.every((c) => c.vertical) ? 'verticals' : ''}">
+        <div class="clips ${clipLayout(page.clips)}">
           ${page.clips.map(clipHtml).join('\n          ')}
         </div>
       </div>
@@ -301,6 +311,11 @@ h1 em{font-style:normal;color:var(--color-sage)}
 .ticks.big li{font-size:1.06rem}
 .clips{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .clips.verticals{grid-template-columns:repeat(3,minmax(0,1fr))}
+.clips.mix1v{grid-template-columns:minmax(0,1.58fr) minmax(0,1fr)}
+.clips.mix1v .clip.v{grid-column:2;grid-row:1/span 2}
+.clips.mix2v{grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr)}
+.clips.mix1v .clip.v,.clips.mix2v .clip.h{display:flex;flex-direction:column}
+.clips.mix1v .clip.v .clip-frame,.clips.mix2v .clip.h .clip-frame{flex:1;aspect-ratio:auto;min-height:0}
 .clip-frame,.photo-frame{position:relative;overflow:hidden;background:var(--color-surface)}
 .clip.h .clip-frame{aspect-ratio:16/9}.clip.v .clip-frame{aspect-ratio:9/16}
 .clip img,.clip video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -342,11 +357,11 @@ figcaption{margin-top:12px;font-size:.92rem;color:var(--color-text);opacity:.85}
 .fcols .label{color:var(--color-whisper-sage)}
 .fcols a{display:block;text-decoration:none;font-size:.95rem;padding:5px 0;opacity:.85}.fcols a:hover{opacity:1;color:var(--color-whisper-sage)}
 .legal{font-family:var(--font-accent);font-size:.72rem;letter-spacing:.04em;opacity:.65;border-top:1px solid rgba(241,236,227,.14);padding-top:22px}
-@media (max-width:1000px){.steps{grid-template-columns:repeat(2,1fr)}.packs,.related,.photos{grid-template-columns:1fr}.clips,.clips.verticals{grid-template-columns:1fr 1fr}}
+@media (max-width:1000px){.steps{grid-template-columns:repeat(2,1fr)}.packs,.related,.photos{grid-template-columns:1fr}.clips,.clips.verticals{grid-template-columns:1fr 1fr}.clips.mix1v{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}.clips.mix2v{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.clips.mix2v .clip.h{grid-column:1/-1}.clips.mix2v .clip.h .clip-frame{flex:none;aspect-ratio:16/9}}
 @media (max-width:760px){
  .wrap{padding:0 24px}.hdr{padding:22px 24px}.hdr nav a:not(.pill){display:none}.hdr nav .pill{padding:9px 18px}.hdr .logo img{height:38px}
  .hero{padding:140px 0 48px}.band{padding:60px 0}.two{grid-template-columns:1fr;gap:22px}
- .clips,.clips.verticals{grid-template-columns:1fr}.clip.v .clip-frame{aspect-ratio:9/14}.steps,.fcols{grid-template-columns:1fr}
+ .clips,.clips.verticals,.clips.mix1v,.clips.mix2v{grid-template-columns:1fr}.clips.mix1v .clip.v{grid-column:auto;grid-row:auto}.clips.mix1v .clip.v .clip-frame{flex:none;aspect-ratio:9/14}.clip.v .clip-frame{aspect-ratio:9/14}.steps,.fcols{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 `
