@@ -263,10 +263,10 @@ const FontsAndStyles = () => (
     .spec-more { margin-top:clamp(28px,3.5vw,44px); }
     @media (max-width:760px) { .spec-cols { grid-template-columns:1fr; } .spec-link { flex-direction:column; gap:6px; } .spec-desc { text-align:left; max-width:none; } }
     .spread {
-      display:grid; grid-template-columns:repeat(12,1fr); column-gap:24px; row-gap:clamp(36px,4.5vw,64px);
-      max-width:1240px; margin:0 auto; align-items:start;
+      display:grid; grid-template-columns:repeat(12,1fr); column-gap:24px; row-gap:24px;
+      align-items:start;
     }
-    .spread-hdr { max-width:1240px; margin:0 auto clamp(36px,4.5vw,64px); }
+    .spread-hdr { margin:0 0 48px; }
     .spread figure { margin:0; }
     .spread figure.sp-a { grid-column:span 3; }
     .spread figure.sp-b { grid-column:span 4; }
@@ -357,6 +357,8 @@ const FontsAndStyles = () => (
       font-family:var(--A); font-size:.85rem; letter-spacing:.01em; color:rgba(241,236,227,.96); font-weight:400;
       text-shadow:0 1px 3px rgba(16,12,6,.55), 0 0 14px rgba(16,12,6,.35);
     }
+    /* Desktop: size each phone so a whole clip fits on screen at once (height about 68% of the window), centred as a group */
+    @media (min-width:901px) { .vert-row { grid-template-columns:repeat(var(--cols,3), minmax(0, min(calc(68vh * 9 / 16), calc((100% - (var(--cols,3) - 1) * 24px) / var(--cols,3))))); justify-content:center; } }
     @media (max-width:900px) { .vert-row { grid-template-columns:repeat(2,1fr); } }
     @media (max-width:480px) { .vert-row { grid-template-columns:1fr; } }
 
