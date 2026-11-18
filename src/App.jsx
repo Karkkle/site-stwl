@@ -153,10 +153,10 @@ const FontsAndStyles = () => (
       object-fit:cover;
     }
 
-    /* Light darkening in front of the video, for readability — change the last number (0.28) to adjust */
+    /* Light darkening in front of the video, for readability — change the last number (0.34) to adjust */
     .hero-tint {
       position:absolute; inset:0; z-index:1; pointer-events:none;
-      background:rgba(16,12,6,.28);
+      background:rgba(16,12,6,.34);
     }
     .hero-grain {
       position:absolute; inset:0; z-index:2; opacity:.05; pointer-events:none;
