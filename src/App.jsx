@@ -301,6 +301,7 @@ const FontsAndStyles = () => (
       width:max(100cqw,177.78cqh); height:max(100cqh,56.25cqw);
       filter:saturate(.6) contrast(1.05) brightness(.62);
     }
+    .srv-video .lv { filter:saturate(.6) contrast(1.05) brightness(.62); }
     .srv-overlay {
       position:absolute; inset:0; z-index:1;
       background:linear-gradient(to bottom, rgba(58,52,44,.82) 0%, rgba(58,52,44,.3) 42%, rgba(58,52,44,.86) 100%);
@@ -341,6 +342,11 @@ const FontsAndStyles = () => (
     .vert-phone img, .vert-phone iframe {
       position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border:none; pointer-events:none;
     }
+    /* ── short looping clips (LoopVideo): still frame first, video fades in over it */
+    .lv { position:absolute; inset:0; overflow:hidden; pointer-events:none; }
+    .lv img, .lv video, .lv iframe { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border:none; display:block; }
+    .lv video, .lv iframe { opacity:0; transition:opacity .9s ease; }
+    .lv video.live, .lv iframe.live { opacity:1; }
     .vert-phone::after {
       content:''; position:absolute; inset:0; z-index:1;
       background:linear-gradient(to top, rgba(16,12,6,.65) 0%, transparent 75%);
@@ -545,10 +551,10 @@ const SELECTOR_TILES = [
 
 /* ─────────────────────────────────────────── DATA */
 const WORKS = [
-  { id:1, title:"Ads",               tag:"Ads",        caption:"Campaign ads for beauty and skincare brands", vimeoId: "1228515977", vimeoHash: "126823ccdd", g:"linear-gradient(145deg,#c8b98a,#a8956a)" },
-  { id:2, title:"Interviews",        tag:"Interviews", caption:"Founder-led brand story",         vimeoId: "1168509806", vimeoHash: "95ecf084c6", g:"linear-gradient(165deg,#b2c2b4,#8aa292)" },
-  { id:3, title:"Store Highlights",  tag:"Store Highlights", caption:"In-store tours and product highlights",  vimeoId: "1228547469", vimeoHash: "444326e488", g:"linear-gradient(145deg,#c8a898,#a07868)" },
-  { id:5, title:"Treatments",        tag:"Treatments", caption:"Clinic and spa treatments", vimeoId: "1228552596", vimeoHash: "ec2aecbc0d", g:"linear-gradient(145deg,#a2bac2,#809098)" },
+  { id:1, title:"Ads",               tag:"Ads",        caption:"Campaign ads for beauty and skincare brands", clip:"ads", vimeoId: "1228515977", vimeoHash: "126823ccdd", g:"linear-gradient(145deg,#c8b98a,#a8956a)" },
+  { id:2, title:"Interviews",        tag:"Interviews", caption:"Founder-led brand story",         clip:"interviews", vimeoId: "1168509806", vimeoHash: "95ecf084c6", g:"linear-gradient(165deg,#b2c2b4,#8aa292)" },
+  { id:3, title:"Store Highlights",  tag:"Store Highlights", caption:"In-store tours and product highlights",  clip:"store", vimeoId: "1228547469", vimeoHash: "444326e488", g:"linear-gradient(145deg,#c8a898,#a07868)" },
+  { id:5, title:"Treatments",        tag:"Treatments", caption:"Clinic and spa treatments", clip:"treatments", vimeoId: "1228552596", vimeoHash: "ec2aecbc0d", g:"linear-gradient(145deg,#a2bac2,#809098)" },
 ];
 
 // Editorial spread: row 1 = four 4:5 portraits (3 cols each), row 2 = three 3:2 landscapes (4 cols each).
@@ -572,9 +578,9 @@ const SERVICES = [
 ];
 
 const VERTICAL_ITEMS = [
-  { id:1, type:'video', vimeoId:"1169905394", vimeoHash:"4436d542ff", tag:"Paid", caption:"Skincare routine, cut for paid social" },
-  { id:2, type:'video', vimeoId:"1229947985", vimeoHash:"65e3d16178", tag:"Experts", caption:"Expert-led content, cut for social" },
-  { id:3, type:'video', vimeoId:"1232970645", vimeoHash:"261306da29", tag:"Events", caption:"Event coverage, cut for social" },
+  { id:1, type:'video', clip:"paid", vimeoId:"1169905394", vimeoHash:"4436d542ff", tag:"Paid", caption:"Skincare routine, cut for paid social" },
+  { id:2, type:'video', clip:"experts", vimeoId:"1229947985", vimeoHash:"65e3d16178", tag:"Experts", caption:"Expert-led content, cut for social" },
+  { id:3, type:'video', clip:"events", vimeoId:"1232970645", vimeoHash:"261306da29", tag:"Events", caption:"Event coverage, cut for social" },
 ];
 
 const NAV_ITEMS = [
@@ -838,39 +844,73 @@ function Ticker() {
   );
 }
 
-function WorkTile({ w }) {
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
+// A short silent looping clip served from our own site (public/video/<name>.mp4 + <name>.jpg).
+// Loads only when near the viewport, plays only while visible, shows a still frame first,
+// and falls back to the Vimeo player if the file can't load.
+function LoopVideo({ name, vimeoId, vimeoHash, title }) {
+  const wrapRef = useRef(null);
+  const videoRef = useRef(null);
+  const [near, setNear] = useState(false);
+  const [live, setLive] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const [vimeoLive, setVimeoLive] = useState(false);
 
   useEffect(() => {
-    if (!w.vimeoId) return;
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          setVisible(true);
-          obs.disconnect();
-        }
-      });
-    }, { rootMargin: '200px' });
-    if (ref.current) obs.observe(ref.current);
+    const el = wrapRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") { setNear(true); return; }
+    const obs = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) {
+        setNear(true);
+        const v = videoRef.current;
+        if (v && v.paused) { const r = v.play(); if (r && r.catch) r.catch(() => {}); }
+      } else {
+        const v = videoRef.current;
+        if (v && !v.paused) v.pause();
+      }
+    }, { rootMargin: "300px" });
+    obs.observe(el);
     return () => obs.disconnect();
-  }, [w.vimeoId]);
+  }, []);
+
+  useEffect(() => {
+    if (!failed) return;
+    const t = setTimeout(() => setVimeoLive(true), 2500);
+    return () => clearTimeout(t);
+  }, [failed]);
 
   return (
-    <div className="wc" data-h ref={ref}>
+    <div className="lv" ref={wrapRef} aria-hidden="true">
+      <img src={`./video/${name}.jpg`} alt="" loading="lazy" decoding="async" />
+      {near && !failed && (
+        <video
+          ref={videoRef}
+          className={live ? "live" : ""}
+          src={`./video/${name}.mp4`}
+          poster={`./video/${name}.jpg`}
+          autoPlay muted loop playsInline preload="auto" disablePictureInPicture
+          onPlaying={() => setLive(true)}
+          onError={() => setFailed(true)}
+        />
+      )}
+      {failed && vimeoId && (
+        <iframe
+          className={vimeoLive ? "live" : ""}
+          src={`https://player.vimeo.com/video/${vimeoId}?h=${vimeoHash}&autoplay=1&muted=1&loop=1&background=1&quality=auto`}
+          allow="autoplay; fullscreen; picture-in-picture"
+          title={title}
+          tabIndex={-1}
+        />
+      )}
+    </div>
+  );
+}
+
+function WorkTile({ w }) {
+  return (
+    <div className="wc" data-h>
       <span className="vert-tag">{w.tag}</span>
       <div className="wc-in" style={{background:w.g}}>
-        {w.vimeoId && visible && (
-          <iframe
-            src={`https://player.vimeo.com/video/${w.vimeoId}?h=${w.vimeoHash}&autoplay=1&muted=1&loop=1&background=1&quality=auto`}
-            style={{
-              position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
-              border: 'none', pointerEvents: 'none', transform: 'scale(1.05)'
-            }}
-            allow="autoplay; fullscreen; picture-in-picture"
-            title={w.title}
-          />
-        )}
+        <LoopVideo name={w.clip} vimeoId={w.vimeoId} vimeoHash={w.vimeoHash} title={w.title} />
       </div>
       <span className="vert-cap">{w.caption}</span>
     </div>
@@ -935,11 +975,7 @@ function VerticalContent() {
           <div className="vert-phone" key={v.id} data-h>
             <span className="vert-tag">{v.tag}</span>
             {v.type === 'video' ? (
-              <iframe
-                src={`https://player.vimeo.com/video/${v.vimeoId}?h=${v.vimeoHash}&autoplay=1&muted=1&loop=1&background=1&quality=auto`}
-                allow="autoplay; fullscreen; picture-in-picture"
-                title={v.caption}
-              />
+              <LoopVideo name={v.clip} vimeoId={v.vimeoId} vimeoHash={v.vimeoHash} title={v.caption} />
             ) : (
               <img src={v.src} alt={v.caption} />
             )}
@@ -951,28 +987,10 @@ function VerticalContent() {
 }
 
 function Services() {
-  const videoRef = useRef(null);
-  const [visible, setVisible] = useState(false);   // load the Vimeo player only when near the viewport
-
-  useEffect(() => {
-    const el = videoRef.current;
-    if (!el || typeof IntersectionObserver === "undefined") { setVisible(true); return; }
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } }, { rootMargin: "400px" });
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-
   return (
     <section id="services">
-      <div className="srv-video" ref={videoRef} aria-hidden="true">
-        {visible && (
-          <iframe
-            src="https://player.vimeo.com/video/1228811947?h=b6ec1b691e&autoplay=1&muted=1&loop=1&background=1&quality=auto"
-            allow="autoplay; fullscreen; picture-in-picture"
-            title="Shotwell behind the scenes"
-            tabIndex={-1}
-          />
-        )}
+      <div className="srv-video" aria-hidden="true">
+        <LoopVideo name="process" vimeoId="1228811947" vimeoHash="b6ec1b691e" title="Shotwell behind the scenes" />
       </div>
       <div className="srv-overlay" />
       <div className="srv-inner">
