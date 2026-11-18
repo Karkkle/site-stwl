@@ -405,6 +405,9 @@ const FontsAndStyles = () => (
     .footer-grid { display:grid; grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr)); gap:clamp(32px,4vw,64px); align-items:start; max-width:1400px; width:100%; margin:0 auto; }
     .footer-logo { display:block; height:56px; width:auto; }
     .footer-address { font-style:normal; font-family:var(--T); font-size:.92rem; line-height:1.65; color:var(--color-bone); opacity:.72; margin-top:26px; }
+    .footer-social { display:flex; gap:24px; margin-top:22px; }
+    .footer-social a { font-family:var(--T); font-size:.95rem; color:var(--color-bone); text-decoration:none; opacity:.88; transition:opacity .3s, color .3s; }
+    .footer-social a:hover { opacity:1; color:var(--color-whisper-sage); }
     .footer-col .footer-h { margin-bottom:14px; color:var(--color-sage); }
     .footer-col a { display:block; padding:6px 0; font-family:var(--T); font-size:.95rem; letter-spacing:.005em; color:var(--color-bone); text-decoration:none; opacity:.88; transition:opacity .3s, color .3s; }
     .footer-col a:hover { opacity:1; color:var(--color-whisper-sage); }
@@ -1620,8 +1623,10 @@ const FOOTER_STUDIO = [
   { href: "#photography", label: "Photography" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
-  { href: "https://www.instagram.com/weareshotwell/", label: "Instagram", ext: true },
-  { href: "https://www.linkedin.com/company/shotwell-london", label: "LinkedIn", ext: true },
+];
+const FOOTER_SOCIAL = [
+  { href: "https://www.instagram.com/weareshotwell/", label: "Instagram" },
+  { href: "https://www.linkedin.com/company/shotwell-london", label: "LinkedIn" },
 ];
 
 function Footer() {
@@ -1637,6 +1642,9 @@ function Footer() {
         <div className="footer-brand">
           <img className="footer-logo" src={logoBone} alt="Shotwell — visual content for beauty, skincare and wellness" />
           <address className="footer-address">11-13 Bayley Street<br />Bloomsbury, London<br />WC1B 3HD</address>
+          <div className="footer-social">
+            {FOOTER_SOCIAL.map(l => <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a>)}
+          </div>
         </div>
         {col("Video & content", FOOTER_LINKS.audience)}
         {col("Services", FOOTER_LINKS.service)}

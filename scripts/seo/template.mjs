@@ -247,10 +247,11 @@ ${robots}
       <div class="ftr-brand">
         <img src="${ctx.logoBone}" alt="Shotwell" width="190" height="52">
         <address>${SITE.address.street}<br>${SITE.address.area}, ${SITE.address.city}<br>${SITE.address.postcode}</address>
+        <div class="ftr-social"><a href="${SITE.instagram}" rel="noopener noreferrer">Instagram</a><a href="${SITE.linkedin}" rel="noopener noreferrer">LinkedIn</a></div>
       </div>
       <div class="ftr-col"><p class="label">Video &amp; content</p>${ctx.pages.filter((p) => p.group === 'audience').map((p) => `<a href="${href(p.slug)}">${p.footerLabel}</a>`).join('')}</div>
       <div class="ftr-col"><p class="label">Services</p>${ctx.pages.filter((p) => p.group === 'service').map((p) => `<a href="${href(p.slug)}">${p.footerLabel}</a>`).join('')}<a href="${href('skincare-video-production-cost')}">Packages</a></div>
-      <div class="ftr-col"><p class="label">Studio</p><a href="/#work">Videos</a><a href="/#social">Social content</a><a href="/#photography">Photography</a><a href="/#about">About</a><a href="/#contact">Contact</a><a href="${SITE.instagram}" rel="noopener noreferrer">Instagram</a><a href="${SITE.linkedin}" rel="noopener noreferrer">LinkedIn</a></div>
+      <div class="ftr-col"><p class="label">Studio</p><a href="/#work">Videos</a><a href="/#social">Social content</a><a href="/#photography">Photography</a><a href="/#about">About</a><a href="/#contact">Contact</a></div>
     </div>
     <div class="ftr-bar"><p>© ${new Date().getFullYear()} <span>${SITE.legalName} trading as ${SITE.name}</span></p><p>All rights reserved</p></div>
   </div>
@@ -363,6 +364,7 @@ figcaption{margin-top:12px;font-size:.92rem;color:var(--color-text);opacity:.85}
 .ftr-grid{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:clamp(32px,4vw,64px);align-items:start;margin-bottom:clamp(44px,5.5vw,76px)}
 .ftr-brand img{display:block;height:56px;width:auto}
 .ftr-brand address{font-style:normal;font-size:.92rem;line-height:1.65;opacity:.72;margin-top:26px}
+.ftr-social{display:flex;gap:24px;margin-top:22px}.ftr-social a{text-decoration:none;font-size:.95rem;opacity:.88;transition:opacity .3s,color .3s}.ftr-social a:hover{opacity:1;color:var(--color-whisper-sage)}
 .ftr-col .label{color:var(--color-sage);margin-bottom:14px}
 .ftr-col a{display:block;text-decoration:none;font-size:.95rem;padding:6px 0;opacity:.88;transition:opacity .3s,color .3s}.ftr-col a:hover{opacity:1;color:var(--color-whisper-sage)}
 .ftr-bar{display:flex;justify-content:space-between;align-items:center;gap:12px 32px;flex-wrap:wrap;border-top:1px solid rgba(169,174,157,.28);padding-top:24px}
