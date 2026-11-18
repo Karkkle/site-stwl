@@ -138,14 +138,12 @@ const FontsAndStyles = () => (
       width:100vw; height:56.25vw;
       min-height:100vh;
       min-width:177.78vh;
-      filter:saturate(.5) contrast(1.05);
       border:none;
       opacity:0; transition:opacity 1.2s ease;
     }
     .yt-wrap iframe.live { opacity:1; }
     .hero-video {
       position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
-      filter:saturate(.5) contrast(1.05);
       opacity:0; transition:opacity 1s ease;
     }
     .hero-video.live { opacity:1; }
@@ -153,7 +151,6 @@ const FontsAndStyles = () => (
     .hero-poster {
       position:absolute; inset:0; width:100%; height:100%;
       object-fit:cover;
-      filter:saturate(.5) contrast(1.05);
     }
 
     .hero-grain {
