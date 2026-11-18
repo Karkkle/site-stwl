@@ -211,17 +211,18 @@ const FontsAndStyles = () => (
     }
     .ticker-field {
       display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
-      width:100%; max-width:1080px; margin:0 auto;
+      width:100%; max-width:1160px; margin:0 auto;
     }
     .ticker-field-item {
       display:flex; align-items:center; justify-content:center;
-      flex:0 0 25%; box-sizing:border-box; height:112px; padding:0 20px;
+      flex:0 0 20%; box-sizing:border-box; height:112px; padding:0 20px;
       opacity:0; will-change:opacity;
     }
     .ticker-logo {
       height:auto; max-height:52px; width:auto; max-width:170px; display:block;
     }
     .ticker-logo[alt="Dorchester Collection"] { max-height:84px; max-width:150px; }
+    .ticker-logo[alt="Maison Francis Kurkdjian"] { max-height:62px; max-width:170px; }
 
     /* ── section shared */
     section { padding:clamp(52px,5.8vw,88px) 52px; }
@@ -451,6 +452,7 @@ const FontsAndStyles = () => (
       .ticker-field-item { flex-basis:50%; height:88px; padding:0 12px; }
       .ticker-logo { max-width:100px; height:auto; max-height:34px; }
       .ticker-logo[alt="Dorchester Collection"] { max-width:84px; max-height:56px; }
+      .ticker-logo[alt="Maison Francis Kurkdjian"] { max-width:104px; max-height:38px; }
     }
   ` }} />
 );
@@ -610,6 +612,7 @@ const NAV_ITEMS = [
 const CLIENTS = [
   { id: 'az',  Logo: () => <ClientLogo src="./aroma-zone.svg" alt="Aroma-Zone" invert={false} /> },
   { id: 'lor', Logo: () => <ClientLogo src="./l'oreal.png" alt="L'Oreal" invert={false} /> },
+  { id: 'mfk', Logo: () => <ClientLogo src="./francis-kurkdjian.png" alt="Maison Francis Kurkdjian" invert={false} customFilter="brightness(0)" /> },
   { id: 'top', Logo: () => <ClientLogo src="./the-organic-pharmacy.png" alt="Organic Pharmacy" invert={false} customFilter="brightness(0)" /> },
   { id: 'dor', Logo: () => <ClientLogo src="./dorchester-collection.svg" alt="Dorchester Collection" invert={false} /> },
 ];
