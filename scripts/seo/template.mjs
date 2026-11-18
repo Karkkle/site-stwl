@@ -243,13 +243,16 @@ ${robots}
 </main>
 <footer class="ftr">
   <div class="wrap">
-    <img src="${ctx.logoBone}" alt="Shotwell" width="190" height="52">
-    <div class="fcols">
-      <div><p class="label">Video &amp; content</p>${ctx.pages.filter((p) => p.group === 'audience').map((p) => `<a href="${href(p.slug)}">${p.footerLabel}</a>`).join('')}</div>
-      <div><p class="label">Services</p>${ctx.pages.filter((p) => p.group === 'service').map((p) => `<a href="${href(p.slug)}">${p.footerLabel}</a>`).join('')}<a href="${href('skincare-video-production-cost')}">Packages</a></div>
-      <div><p class="label">Shotwell</p><a href="/#work">Videos</a><a href="/#social">Social content</a><a href="/#photography">Photography</a><a href="/#about">About</a><a href="/#contact">Contact</a><a href="${SITE.instagram}" rel="noopener noreferrer">Instagram</a><a href="${SITE.linkedin}" rel="noopener noreferrer">LinkedIn</a></div>
+    <div class="ftr-grid">
+      <div class="ftr-brand">
+        <img src="${ctx.logoBone}" alt="Shotwell" width="190" height="52">
+        <address>${SITE.address.street}<br>${SITE.address.area}, ${SITE.address.city}<br>${SITE.address.postcode}</address>
+      </div>
+      <div class="ftr-col"><p class="label">Video &amp; content</p>${ctx.pages.filter((p) => p.group === 'audience').map((p) => `<a href="${href(p.slug)}">${p.footerLabel}</a>`).join('')}</div>
+      <div class="ftr-col"><p class="label">Services</p>${ctx.pages.filter((p) => p.group === 'service').map((p) => `<a href="${href(p.slug)}">${p.footerLabel}</a>`).join('')}<a href="${href('skincare-video-production-cost')}">Packages</a></div>
+      <div class="ftr-col"><p class="label">Studio</p><a href="/#work">Videos</a><a href="/#social">Social content</a><a href="/#photography">Photography</a><a href="/#about">About</a><a href="/#contact">Contact</a><a href="${SITE.instagram}" rel="noopener noreferrer">Instagram</a><a href="${SITE.linkedin}" rel="noopener noreferrer">LinkedIn</a></div>
     </div>
-    <p class="legal">© ${new Date().getFullYear()} ${SITE.legalName} trading as ${SITE.name}. ${SITE.address.street}, ${SITE.address.area}, ${SITE.address.city} ${SITE.address.postcode}. All rights reserved.</p>
+    <div class="ftr-bar"><p>© ${new Date().getFullYear()} <span>${SITE.legalName} trading as ${SITE.name}</span></p><p>All rights reserved</p></div>
   </div>
 </footer>
 <script>
@@ -355,17 +358,20 @@ figcaption{margin-top:12px;font-size:.92rem;color:var(--color-text);opacity:.85}
 .cta-band{background:var(--color-taupe-ink);color:var(--color-bone);padding:96px 0}
 .cta-band h2{font-size:clamp(2rem,4.4vw,3.6rem);margin-bottom:18px}.cta-band p{max-width:52ch;margin:0 auto 34px;opacity:.85}
 .center{text-align:center}
-.ftr{background:var(--color-taupe-ink);color:var(--color-bone);padding:0 0 44px;border-top:1px solid rgba(241,236,227,.14)}
-.ftr .wrap{padding-top:56px}.ftr img{height:46px;width:auto;margin-bottom:40px}
-.fcols{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-bottom:44px}
-.fcols .label{color:var(--color-whisper-sage)}
-.fcols a{display:block;text-decoration:none;font-size:.95rem;padding:5px 0;opacity:.85}.fcols a:hover{opacity:1;color:var(--color-whisper-sage)}
-.legal{font-family:var(--font-accent);font-size:.72rem;letter-spacing:.04em;opacity:.65;border-top:1px solid rgba(241,236,227,.14);padding-top:22px}
+.ftr{background:var(--color-taupe-ink);color:var(--color-bone);padding:0 0 32px;border-top:1px solid rgba(241,236,227,.14)}
+.ftr .wrap{padding-top:clamp(56px,6vw,88px)}
+.ftr-grid{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:clamp(32px,4vw,64px);align-items:start;margin-bottom:clamp(44px,5.5vw,76px)}
+.ftr-brand img{display:block;height:56px;width:auto}
+.ftr-brand address{font-style:normal;font-size:.92rem;line-height:1.65;opacity:.72;margin-top:26px}
+.ftr-col .label{color:var(--color-sage);margin-bottom:14px}
+.ftr-col a{display:block;text-decoration:none;font-size:.95rem;padding:6px 0;opacity:.88;transition:opacity .3s,color .3s}.ftr-col a:hover{opacity:1;color:var(--color-whisper-sage)}
+.ftr-bar{display:flex;justify-content:space-between;align-items:center;gap:12px 32px;flex-wrap:wrap;border-top:1px solid rgba(169,174,157,.28);padding-top:24px}
+.ftr-bar p{margin:0;font-family:var(--font-accent);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--color-sage)}.ftr-bar p span{color:var(--color-bone)}
 @media (max-width:1000px){.steps{grid-template-columns:repeat(2,1fr)}.packs,.related,.photos{grid-template-columns:1fr}.clips,.clips.verticals{grid-template-columns:1fr 1fr}.clips.mix1v{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}.clips.mix2v{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.clips.mix2v .clip.h{grid-column:1/-1}.clips.mix2v .clip.h .clip-frame{flex:none;aspect-ratio:16/9}}
 @media (max-width:760px){
  .wrap{padding:0 24px}.hdr{padding:22px 24px}.hdr nav a:not(.pill){display:none}.hdr nav .pill{padding:9px 18px}.hdr .logo img{height:38px}
  .hero{padding:140px 0 48px}.band{padding:60px 0}.two{grid-template-columns:1fr;gap:22px}
- .clips,.clips.verticals,.clips.mix1v,.clips.mix2v{grid-template-columns:1fr}.clips.mix1v .clip.v{grid-column:auto;grid-row:auto}.clips.mix1v .clip.v .clip-frame{flex:none;aspect-ratio:9/14}.clip.v .clip-frame{aspect-ratio:9/14}.steps,.fcols{grid-template-columns:1fr}
+ .clips,.clips.verticals,.clips.mix1v,.clips.mix2v{grid-template-columns:1fr}.clips.mix1v .clip.v{grid-column:auto;grid-row:auto}.clips.mix1v .clip.v .clip-frame{flex:none;aspect-ratio:9/14}.clip.v .clip-frame{aspect-ratio:9/14}.steps{grid-template-columns:1fr}.ftr-grid{grid-template-columns:1fr 1fr;row-gap:36px}.ftr-brand{grid-column:1/-1}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 `

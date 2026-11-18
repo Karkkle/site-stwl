@@ -401,16 +401,15 @@ const FontsAndStyles = () => (
     .cnt-links a:hover { color:var(--gold); }
 
     /* ── footer */
-    footer { background:var(--color-bg-inverted); color:var(--color-text-inverted); padding:64px 52px 36px; display:flex; flex-direction:column; gap:44px; }
-    .footer-top { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; }
-    .footer-logo { display:block; height:64px; width:auto; }
-    .footer-links { display:grid; grid-template-columns:repeat(2,minmax(0,260px)); gap:36px; }
-    .footer-links .footer-h { margin-bottom:12px; }
-    .footer-links a { display:block; padding:5px 0; font-family:var(--A); font-size:.8rem; letter-spacing:.04em; color:var(--color-bone); text-decoration:none; opacity:.85; }
-    .footer-links a:hover { opacity:1; color:var(--color-whisper-sage); }
-    .footer-address { font-style:normal; font-family:var(--A); font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; color:var(--color-bone); margin-top:-20px; }
-    .footer-rule { border:0; border-top:1px solid rgba(169,174,157,.28); }
-    footer p { font-family:var(--A); font-weight:400; font-size:0.75rem; letter-spacing:.08em; text-transform:uppercase; color:var(--color-sage); }
+    footer { background:var(--color-bg-inverted); color:var(--color-text-inverted); padding:clamp(56px,6vw,88px) 52px 30px; display:flex; flex-direction:column; gap:clamp(44px,5.5vw,76px); }
+    .footer-grid { display:grid; grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr)); gap:clamp(32px,4vw,64px); align-items:start; max-width:1400px; width:100%; margin:0 auto; }
+    .footer-logo { display:block; height:56px; width:auto; }
+    .footer-address { font-style:normal; font-family:var(--T); font-size:.92rem; line-height:1.65; color:var(--color-bone); opacity:.72; margin-top:26px; }
+    .footer-col .footer-h { margin-bottom:14px; color:var(--color-sage); }
+    .footer-col a { display:block; padding:6px 0; font-family:var(--T); font-size:.95rem; letter-spacing:.005em; color:var(--color-bone); text-decoration:none; opacity:.88; transition:opacity .3s, color .3s; }
+    .footer-col a:hover { opacity:1; color:var(--color-whisper-sage); }
+    .footer-bar { display:flex; justify-content:space-between; align-items:center; gap:12px 32px; flex-wrap:wrap; border-top:1px solid rgba(169,174,157,.28); padding-top:24px; max-width:1400px; width:100%; margin:0 auto; }
+    footer p { font-family:var(--A); font-weight:400; font-size:0.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--color-sage); margin:0; }
     footer p span { color:var(--color-bone); }
 
     /* ── animations */
@@ -431,8 +430,9 @@ const FontsAndStyles = () => (
       .abt-layout { grid-template-columns:1fr; }
       .abt-left, .abt-body { max-width:720px; }
       .abt-img { aspect-ratio:4/3; max-width:480px; }
-      footer { padding:48px 24px 28px; }
-      .footer-top { flex-direction:column; align-items:flex-start; }
+      footer { padding:52px 24px 26px; }
+      .footer-grid { grid-template-columns:1fr 1fr; row-gap:36px; }
+      .footer-brand { grid-column:1 / -1; }
     }
     @media (max-width:600px) {
       .work-grid { gap:8px; }
@@ -1614,25 +1614,38 @@ const FOOTER_LINKS = {
   ],
 };
 
+const FOOTER_STUDIO = [
+  { href: "#work", label: "Videos" },
+  { href: "#social", label: "Social content" },
+  { href: "#photography", label: "Photography" },
+  { href: "#about", label: "About" },
+  { href: "#contact", label: "Contact" },
+  { href: "https://www.instagram.com/weareshotwell/", label: "Instagram", ext: true },
+  { href: "https://www.linkedin.com/company/shotwell-london", label: "LinkedIn", ext: true },
+];
+
 function Footer() {
+  const col = (title, items) => (
+    <div className="footer-col">
+      <p className="footer-h">{title}</p>
+      {items.map(l => <a key={l.href} href={l.href} {...(l.ext ? { target: "_blank", rel: "noopener noreferrer" } : {})}>{l.label}</a>)}
+    </div>
+  );
   return (
     <footer>
-      <div className="footer-top">
-        <img className="footer-logo" src={logoBone} alt="Shotwell — visual content for beauty, skincare and wellness" />
-      </div>
-      <div className="footer-links" role="navigation" aria-label="Services and pages">
-        <div>
-          <p className="footer-h">Video &amp; content</p>
-          {FOOTER_LINKS.audience.map(l => <a key={l.href} href={l.href}>{l.label}</a>)}
+      <div className="footer-grid">
+        <div className="footer-brand">
+          <img className="footer-logo" src={logoBone} alt="Shotwell — visual content for beauty, skincare and wellness" />
+          <address className="footer-address">11-13 Bayley Street<br />Bloomsbury, London<br />WC1B 3HD</address>
         </div>
-        <div>
-          <p className="footer-h">Services</p>
-          {FOOTER_LINKS.service.map(l => <a key={l.href} href={l.href}>{l.label}</a>)}
-        </div>
+        {col("Video & content", FOOTER_LINKS.audience)}
+        {col("Services", FOOTER_LINKS.service)}
+        {col("Studio", FOOTER_STUDIO)}
       </div>
-      <hr className="footer-rule" />
-      <address className="footer-address">11-13 Bayley Street, Bloomsbury, London WC1B 3HD</address>
-      <p>© {new Date().getFullYear()} <span>Shotwell Studios Ltd trading as Shotwell</span>. All rights reserved.</p>
+      <div className="footer-bar">
+        <p>© {new Date().getFullYear()} <span>Shotwell Studios Ltd trading as Shotwell</span></p>
+        <p>All rights reserved</p>
+      </div>
     </footer>
   );
 }
