@@ -153,6 +153,12 @@ const FontsAndStyles = () => (
       object-fit:cover;
     }
 
+    /* Gaussian blur in front of the video — change --hero-blur to make it more or less abstract */
+    .hero-blur {
+      position:absolute; inset:0; z-index:1; pointer-events:none;
+      --hero-blur:28px;
+      backdrop-filter:blur(var(--hero-blur)); -webkit-backdrop-filter:blur(var(--hero-blur));
+    }
     .hero-grain {
       position:absolute; inset:0; z-index:2; opacity:.05; pointer-events:none;
       background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -747,6 +753,7 @@ function Hero() {
         )}
       </div>
 
+      <div className="hero-blur" />
       <div className="hero-grain" />
 
       <svg className="hero-corner" width="70" height="70" viewBox="0 0 70 70" fill="none">
