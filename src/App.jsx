@@ -1087,11 +1087,10 @@ function Packages() {
 
         /* Selector Grid */
         .sel-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin: 40px 0 0; }
-        .sel-tile { position: relative; overflow: hidden; isolation: isolate; padding: 24px; min-height: 380px; background: var(--color-taupe-ink); display: flex; flex-direction: column; justify-content: space-between; gap: 16px; transition: transform 0.4s ease; border-radius: 0; cursor: pointer; color: var(--color-bone); }
-        .sel-tile:hover { transform: translateY(-4px); }
-        .sel-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform 0.9s cubic-bezier(.25,.46,.45,.94); }
+        .sel-tile { position: relative; overflow: hidden; isolation: isolate; padding: 24px; min-height: 380px; background: var(--color-taupe-ink); display: flex; flex-direction: column; justify-content: space-between; gap: 16px; border-radius: 0; cursor: pointer; color: var(--color-bone); }
+        .sel-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform 0.6s cubic-bezier(0,0,.2,1); }
         .sel-tile::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(26,22,16,.82) 0%, rgba(26,22,16,.38) 38%, rgba(26,22,16,0) 62%), linear-gradient(to bottom, rgba(26,22,16,.32) 0%, rgba(26,22,16,0) 22%); }
-        .sel-tile:hover .sel-img { transform: scale(1.05); }
+        .sel-tile:hover .sel-img { transform: scale(1.02); }
         .sel-top { display: flex; justify-content: space-between; align-items: center; }
         .sel-num { font-family:var(--A); font-weight:400; font-size:0.75rem; letter-spacing: var(--label-letter-spacing); color: var(--color-bone); }
         .sel-arrow { width: 36px; height: 36px; border: 1px solid rgba(241,236,227,.55); border-radius: 100px; display: inline-flex; align-items: center; justify-content: center; font-size: .9rem; color: var(--color-bone); background: rgba(26,22,16,.18); backdrop-filter: blur(6px); transition: background .3s, color .3s, border-color .3s; }
