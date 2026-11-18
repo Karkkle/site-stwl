@@ -379,7 +379,7 @@ const FontsAndStyles = () => (
     .abt-body p { font-family:var(--T); font-size:clamp(1.05rem,1.4vw,1.4rem); color:var(--muted); line-height:1.65; margin-bottom:1.1em; font-weight:400; }
     .abt-body p strong { color:var(--ink); font-weight:500; }
     .abt-bio { margin-top:clamp(28px,3vw,40px); padding-top:clamp(24px,2.6vw,34px); border-top:1px solid var(--border); }
-    .abt-body .abt-bio p { font-size:clamp(1rem,1.15vw,1.15rem); }
+    .abt-body .abt-bio p { font-size:clamp(.85rem,.95vw,.95rem); line-height:1.6; }
     .abt-body .abt-bio .abt-bio-name { font-family:var(--A); font-weight:400; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink); margin-bottom:12px; }
 
     /* ── contact */
