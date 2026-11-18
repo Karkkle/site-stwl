@@ -9,6 +9,7 @@ import { fileURLToPath } from 'node:url'
 import { SITE } from './seo/site.mjs'
 import { renderPage, businessNode, websiteNode } from './seo/template.mjs'
 import { PAGES } from './seo/pages.mjs'
+import { videoNode, sitemapVideos, HERO } from './seo/videos.mjs'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const dist = join(root, 'dist')
@@ -33,6 +34,9 @@ const ctx = {
 }
 if (css.endsWith('undefined')) throw new Error('Could not find the built stylesheet in dist/index.html')
 
+// ── videos shown on the home page: the hero plus every distinct clip used across the landing pages
+const homeClips = [HERO, ...new Map(PAGES.flatMap((p) => p.clips || []).map((c) => [c.name, c])).values()]
+
 // ── landing pages
 const today = new Date().toISOString().slice(0, 10)
 for (const page of PAGES) {
@@ -44,7 +48,7 @@ console.log(`→ ${PAGES.length} landing pages written`)
 
 // ── home page: launch switch for the robots meta (the rest of its head is maintained in index.html)
 let home = html
-home = home.replace('</head>', `    <script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': [businessNode(), websiteNode()] })}</script>\n  </head>`)
+home = home.replace('</head>', `    <script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': [businessNode(), websiteNode(), ...homeClips.map((c) => videoNode(c, `${SITE.url}/`))] })}</script>\n  </head>`)
 if (launched) home = home.replace(/\s*<!--[^>]*remove this line at launch[^>]*-->\s*<meta name="robots"[^>]*>/i, '\n    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />')
 // Launched builds: pre-render the React home page to real HTML (private preview stays client-rendered behind the password).
 if (launched) {
@@ -57,8 +61,8 @@ if (launched) {
 writeFileSync(join(dist, 'index.html'), home)
 
 // ── sitemap, robots, llms.txt, 404
-const urls = [{ loc: `${SITE.url}/`, priority: '1.0' }, ...PAGES.map((p) => ({ loc: `${SITE.url}/${p.slug}/`, priority: p.slug === 'skincare-video-production-london' ? '0.9' : '0.8' }))]
-writeFileSync(join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u.loc}</loc><lastmod>${today}</lastmod><priority>${u.priority}</priority></url>`).join('\n')}\n</urlset>\n`)
+const urls = [{ loc: `${SITE.url}/`, priority: '1.0', clips: homeClips }, ...PAGES.map((p) => ({ loc: `${SITE.url}/${p.slug}/`, priority: p.slug === 'skincare-video-production-london' ? '0.9' : '0.8', clips: p.clips || [] }))]
+writeFileSync(join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n${urls.map((u) => `  <url><loc>${u.loc}</loc><lastmod>${today}</lastmod><priority>${u.priority}</priority>${sitemapVideos(u.clips)}</url>`).join('\n')}\n</urlset>\n`)
 writeFileSync(join(dist, 'robots.txt'), launched
   ? `# Shotwell — every page is open to search engines and AI search.\nUser-agent: *\nAllow: /\n\nSitemap: ${SITE.url}/sitemap.xml\n`
   : `# Private preview — not open to search engines yet.\nUser-agent: *\nDisallow: /\n`)

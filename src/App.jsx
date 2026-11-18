@@ -170,7 +170,7 @@ const FontsAndStyles = () => (
     }
     .hero-eyebrow {
       font-family:var(--T); font-weight:500; font-size:.78rem; letter-spacing:var(--label-letter-spacing); text-transform:uppercase;
-      color:rgba(185,196,180,.9); margin-bottom:22px;
+      color:rgba(241,236,227,.92); margin-bottom:22px;
       opacity:0; animation:fadeUp .9s .4s forwards;
     }
     .hero-title {
@@ -251,6 +251,17 @@ const FontsAndStyles = () => (
 
     /* ── photography: editorial spread (strict 12-col grid, two aligned rows) */
     #photography { background:var(--bg); }
+    #specialisms { background:var(--bg); }
+    .spec-inner { max-width:1240px; margin:0 auto; }
+    .spec-cols { display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,5vw,80px); margin-top:clamp(36px,4.5vw,64px); }
+    .spec-h { font-family:var(--A); font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
+    .spec-link { display:flex; justify-content:space-between; align-items:baseline; gap:24px; padding:20px 0; border-top:1px solid var(--border); text-decoration:none; color:var(--ink); transition:padding .4s cubic-bezier(0,0,.2,1); }
+    .spec-link:last-child { border-bottom:1px solid var(--border); }
+    .spec-link:hover { padding-left:10px; }
+    .spec-name { font-family:var(--H); font-size:clamp(1.25rem,2vw,1.7rem); font-weight:500; letter-spacing:-.02em; }
+    .spec-desc { font-family:var(--A); font-size:.92rem; color:var(--muted); line-height:1.5; max-width:30ch; text-align:right; }
+    .spec-more { margin-top:clamp(28px,3.5vw,44px); }
+    @media (max-width:760px) { .spec-cols { grid-template-columns:1fr; } .spec-link { flex-direction:column; gap:6px; } .spec-desc { text-align:left; max-width:none; } }
     .spread {
       display:grid; grid-template-columns:repeat(12,1fr); column-gap:24px; row-gap:clamp(36px,4.5vw,64px);
       max-width:1240px; margin:0 auto; align-items:start;
@@ -763,6 +774,7 @@ function Hero() {
       </svg>
 
       <div className="hero-content">
+        <p className="hero-eyebrow">Video production studio · London</p>
         <h1 className="hero-title">
           We create <em><span className="nw">results-driven,</span> <span className="nw">high-end</span> content</em> for brands and experts in beauty, skincare and wellness.
         </h1>
@@ -991,6 +1003,51 @@ function VerticalContent() {
             )}
           </div>
         ))}
+      </div>
+    </section>
+  );
+}
+
+const SPECIALISMS = {
+  who: [
+    { href: "/skincare-video-production-london/", name: "Skincare brands", desc: "Product films, ingredient stories and ads." },
+    { href: "/beauty-video-production-london/", name: "Beauty brands", desc: "Brand films, ads and launch content." },
+    { href: "/aesthetic-clinic-video-production-london/", name: "Aesthetic clinics", desc: "Treatment films, practitioner stories and testimonials." },
+    { href: "/spa-wellness-video-production-london/", name: "Spas & wellness", desc: "Atmosphere, treatments and spaces filmed to make people book." },
+  ],
+  what: [
+    { href: "/beauty-social-media-video-production/", name: "Social media video", desc: "Vertical video for Reels, TikTok and paid social." },
+    { href: "/skincare-product-video-production/", name: "Product & ingredient video", desc: "Texture close-ups, ingredient stories and 3D visualisation." },
+    { href: "/interview-testimonial-filming-london/", name: "Interviews & testimonials", desc: "Founder stories, expert-led content and testimonials." },
+    { href: "/skincare-photography-london/", name: "Skincare photography", desc: "Product, lifestyle and editorial stills." },
+  ],
+};
+
+function Specialisms() {
+  const col = (title, items) => (
+    <div>
+      <p className="spec-h">{title}</p>
+      {items.map(i => (
+        <a key={i.href} href={i.href} className="spec-link" data-h>
+          <span className="spec-name">{i.name}</span>
+          <span className="spec-desc">{i.desc}</span>
+        </a>
+      ))}
+    </div>
+  );
+  return (
+    <section id="specialisms">
+      <div className="spec-inner">
+        <div className="fade-in">
+          <p className="s-label">Specialisms</p>
+          <h2 className="s-title">Made for <em>beauty</em> and skincare</h2>
+          <p className="vert-sub">One London studio for video and photography, for brands, clinics, spas and practitioners across beauty, skincare and wellness.</p>
+        </div>
+        <div className="spec-cols fade-in">
+          {col("Who we work with", SPECIALISMS.who)}
+          {col("What we make", SPECIALISMS.what)}
+        </div>
+        <div className="spec-more fade-in"><a href="/skincare-video-production-cost/" className="btn-primary">See our packages</a></div>
       </div>
     </section>
   );
@@ -1582,6 +1639,7 @@ export default function App() {
         <Work/>
         <VerticalContent/>
         <Photography/>
+        <Specialisms/>
         <Services/>
         <Packages/>
         <About/>

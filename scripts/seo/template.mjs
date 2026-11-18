@@ -1,4 +1,5 @@
 import { SITE, PROCESS } from './site.mjs'
+import { videoNode } from './videos.mjs'
 
 export const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 // Strip tags for plain-text uses (meta, schema).
@@ -51,6 +52,7 @@ export function pageGraph(page) {
       ...(page.offers ? { hasOfferCatalog: { '@type': 'OfferCatalog', name: 'Shotwell monthly content packages', itemListElement: page.offers } } : {}),
     },
   ]
+  for (const c of page.clips || []) graph.push(videoNode(c, url))
   if (page.faqs && page.faqs.length) {
     graph.push({
       '@type': 'FAQPage', '@id': `${url}#faq`,
