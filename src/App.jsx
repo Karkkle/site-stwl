@@ -140,6 +140,14 @@ const FontsAndStyles = () => (
       min-width:177.78vh;
       filter:saturate(.5) contrast(1.05) brightness(.68);
       border:none;
+      opacity:0; transition:opacity 1.2s ease;
+    }
+    .yt-wrap iframe.live { opacity:1; }
+    /* Still frame shown straight away, so the hero is never an empty box while the player starts */
+    .hero-poster {
+      position:absolute; inset:0; width:100%; height:100%;
+      object-fit:cover;
+      filter:saturate(.5) contrast(1.05) brightness(.68);
     }
 
     .hero-overlay {
@@ -680,11 +688,41 @@ function Nav({ open, setOpen }) {
 }
 
 function Hero() {
+  const [live, setLive] = useState(false);
+  const frameRef = useRef(null);
   const src = `https://player.vimeo.com/video/${VIMEO_ID}?h=${VIMEO_HASH}&autoplay=1&muted=1&loop=1&background=1&quality=auto`;
+
+  // Fade the video in over the still frame as soon as the player is ready (or reports playing).
+  // Vimeo only accepts our subscription after it has announced it is ready.
+  useEffect(() => {
+    const subscribe = () => {
+      const w = frameRef.current && frameRef.current.contentWindow;
+      if (!w) return;
+      ["play", "playProgress"].forEach((value) =>
+        w.postMessage(JSON.stringify({ method: "addEventListener", value }), "https://player.vimeo.com"));
+    };
+    const onMessage = (e) => {
+      if (e.origin !== "https://player.vimeo.com") return;
+      try {
+        const d = typeof e.data === "string" ? JSON.parse(e.data) : e.data;
+        if (!d) return;
+        if (d.event === "ready") { subscribe(); readyTimer = setTimeout(() => setLive(true), 1200); }
+        else if (d.event === "play" || d.event === "playProgress") setLive(true);
+      } catch { /* not a player message */ }
+    };
+    let readyTimer;
+    window.addEventListener("message", onMessage);
+    const fallback = setTimeout(() => setLive(true), 5000); // never leave it hidden
+    return () => { window.removeEventListener("message", onMessage); clearTimeout(fallback); clearTimeout(readyTimer); };
+  }, []);
+
   return (
     <section className="hero" id="home">
       <div className="yt-wrap">
+        <img className="hero-poster" src="./hero-poster.jpg" alt="" fetchpriority="high" decoding="async" />
         <iframe
+          ref={frameRef}
+          className={live ? "live" : ""}
           src={src}
           title="Shotwell Reel"
           allow="autoplay; fullscreen; picture-in-picture"

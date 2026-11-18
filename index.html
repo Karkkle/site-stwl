@@ -21,6 +21,11 @@
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://shotwell.co.uk/og-image.png" />
+    <!-- Open the connection to the hero video early, and fetch its still frame first -->
+    <link rel="preconnect" href="https://player.vimeo.com" />
+    <link rel="preconnect" href="https://f.vimeocdn.com" crossorigin />
+    <link rel="preconnect" href="https://i.vimeocdn.com" crossorigin />
+    <link rel="preload" as="image" href="/hero-poster.jpg" fetchpriority="high" />
   </head>
   <body>
     <div id="root"></div>
