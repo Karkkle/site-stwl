@@ -97,7 +97,7 @@ function priceCards(cards) {
             ${c.popular ? '<span class="badge">Most popular</span>' : ''}
             <p class="label">${esc(c.num)}</p>
             <h3>${esc(c.name)}</h3>
-            <p class="from"><strong>${esc(c.price)}</strong><span> ${esc(c.per)}</span></p>
+            ${c.price ? `<p class="from"><strong>${esc(c.price)}</strong><span> ${esc(c.per)}</span></p>` : ''}
             <p class="meta">${esc(c.meta)}</p>
             <ul class="ticks">${c.items.map((i) => `<li>${i}</li>`).join('')}</ul>
           </article>`).join('\n          ')}
@@ -197,7 +197,7 @@ ${robots}
   <nav aria-label="Main">
     <a href="/#work">Videos</a>
     <a href="/#social">Social</a>
-    <a href="${href('skincare-video-production-cost')}">Pricing</a>
+    <a href="${href('skincare-video-production-cost')}">Packages</a>
     <a href="/#about">About</a>
     <a class="pill" href="/#contact">Get in touch</a>
   </nav>
@@ -234,7 +234,7 @@ ${robots}
     <img src="${ctx.logoBone}" alt="Shotwell" width="190" height="52">
     <div class="fcols">
       <div><p class="label">Video &amp; content</p>${ctx.pages.filter((p) => p.group === 'audience').map((p) => `<a href="${href(p.slug)}">${p.footerLabel}</a>`).join('')}</div>
-      <div><p class="label">Services</p>${ctx.pages.filter((p) => p.group === 'service').map((p) => `<a href="${href(p.slug)}">${p.footerLabel}</a>`).join('')}<a href="${href('skincare-video-production-cost')}">Pricing</a></div>
+      <div><p class="label">Services</p>${ctx.pages.filter((p) => p.group === 'service').map((p) => `<a href="${href(p.slug)}">${p.footerLabel}</a>`).join('')}<a href="${href('skincare-video-production-cost')}">Packages</a></div>
       <div><p class="label">Shotwell</p><a href="/#work">Videos</a><a href="/#social">Social content</a><a href="/#photography">Photography</a><a href="/#about">About</a><a href="/#contact">Contact</a><a href="${SITE.instagram}" rel="noopener noreferrer">Instagram</a><a href="${SITE.linkedin}" rel="noopener noreferrer">LinkedIn</a></div>
     </div>
     <p class="legal">© ${new Date().getFullYear()} ${SITE.legalName} trading as ${SITE.name}. ${SITE.address.street}, ${SITE.address.area}, ${SITE.address.city} ${SITE.address.postcode}. All rights reserved.</p>

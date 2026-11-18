@@ -1056,9 +1056,9 @@ function Packages() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
-          subject: `Pricing request — ${CLIENT_DATA[clientType].label} — ${activePkgId}`,
+          subject: `Quote request — ${CLIENT_DATA[clientType].label} — ${activePkgId}`,
           email,
-          message: `New pricing guide request from the site.\n\nClient type: ${CLIENT_DATA[clientType].label}\nPackage viewed: ${activePkgId}\nRequester email: ${email}`,
+          message: `New quote request from the site.\n\nClient type: ${CLIENT_DATA[clientType].label}\nPackage viewed: ${activePkgId}\nRequester email: ${email}`,
         }),
       });
       const data = await res.json();
@@ -1421,23 +1421,23 @@ function Packages() {
                </div>
              </div>
 
-             {/* Get Pricing Guide Block */}
+             {/* Request a quote block */}
              <div className="email-gate-wrap auto-fade">
                <div className="email-gate-inner">
                  {!sentEmail ? (
                    <>
-                     <h3 className="email-gate-title">Request Pricing Guide</h3>
+                     <h3 className="email-gate-title">Request a quote</h3>
                      <p className="email-gate-desc">
-                       Enter your email to download our detailed pricing deck for {CLIENT_DATA[clientType].label}s, including custom add-ons and commitment savings. Someone from Shotwell will also follow up personally.
+                       Leave your email and someone from Shotwell will get back to you personally with a quote for {CLIENT_DATA[clientType].label}s, built around what you need.
                      </p>
                      <form className="email-form" onSubmit={handleEmailSubmit}>
                        <input type="email" name="email" placeholder="Your work email address" required className="email-input" disabled={submitting} />
                        <button type="submit" className="btn-primary" data-h disabled={submitting} style={{ opacity: submitting ? 0.6 : 1, pointerEvents: submitting ? 'none' : 'auto' }}>
-                         {submitting ? 'Sending...' : 'Get Pricing Guide'}
+                         {submitting ? 'Sending...' : 'Request a quote'}
                        </button>
                      </form>
                      <p className="email-gate-desc" style={{ marginTop: 16, marginBottom: 0, fontSize: '0.9rem', color: 'var(--muted)' }}>
-                       We'll only use your email to send you this guide and follow up on your enquiry.
+                       We'll only use your email to follow up on your enquiry.
                      </p>
                      {submitError && (
                        <p className="email-gate-desc" style={{ color: 'var(--gold)', marginTop: 16, marginBottom: 0, fontSize: '0.9rem' }}>
@@ -1450,20 +1450,12 @@ function Packages() {
                      <div style={{ color: 'var(--gold)', marginBottom: 20 }}><CheckIconLarge /></div>
                      <h4 className="email-gate-title" style={{ color: 'var(--gold)', fontSize: '2.2rem', marginBottom: 16 }}>Request received!</h4>
                      <p className="email-gate-desc" style={{ color: 'var(--ink)', marginBottom: 20 }}>
-                       Thanks — we've received your request for the <strong>{CLIENT_DATA[clientType].label}</strong> pricing guide from:<br/>
+                       Thanks — we've received your quote request for the <strong>{CLIENT_DATA[clientType].label}</strong> package from:<br/>
                        <span style={{ fontWeight: 500, display: 'inline-block', marginTop: 8 }}>{sentEmail}</span>
                      </p>
-                     <p className="email-gate-desc" style={{ marginBottom: 24, fontSize: '0.95rem' }}>
-                       Our pricing guide is ready to download below. Someone from Shotwell will also follow up personally within one business day.
+                     <p className="email-gate-desc" style={{ marginBottom: 0, fontSize: '0.95rem' }}>
+                       Someone from Shotwell will follow up personally within one business day.
                      </p>
-                     <a
-                       href="./pricing/shotwell-pricing-guide.pdf"
-                       download
-                       className="btn-primary"
-                       data-h
-                     >
-                       Download Pricing Guide (PDF)
-                     </a>
                    </div>
                  )}
                </div>
@@ -1549,7 +1541,7 @@ const FOOTER_LINKS = {
     { href: "/skincare-product-video-production/", label: "Product & ingredient video" },
     { href: "/interview-testimonial-filming-london/", label: "Interviews & testimonials" },
     { href: "/skincare-photography-london/", label: "Skincare photography" },
-    { href: "/skincare-video-production-cost/", label: "Pricing" },
+    { href: "/skincare-video-production-cost/", label: "Packages" },
   ],
 };
 

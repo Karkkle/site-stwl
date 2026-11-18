@@ -54,7 +54,7 @@ export const PAGES = [
         h2: 'Shot for skin',
         paragraphs: [
           'Skin is the hardest thing to light and the easiest thing to over-edit. We light to show real texture, and when we use creators we match them to your customer’s skin type and tone, so the content reflects the people who will use the product.',
-          'Our work is based in Bloomsbury, central London, and we film across London and the UK. See our <a href="/skincare-video-production-cost/">skincare video production pricing</a> for what a monthly package costs.',
+          'Our work is based in Bloomsbury, central London, and we film across London and the UK. See <a href="/skincare-video-production-cost/">our packages</a> for what each month includes.',
         ],
       },
     ],
@@ -68,7 +68,7 @@ export const PAGES = [
       'Versions for each platform: 16:9, 9:16 and short paid cuts',
     ],
     faqs: [
-      { q: 'How much does skincare video production cost in London?', a: 'Our monthly packages start from £2,900 a month excluding VAT, and rise to £9,500 for campaign work with a model and 3D visualisation. The full breakdown is on our <a href="/skincare-video-production-cost/">pricing page</a>.' },
+      { q: 'How much does skincare video production cost in London?', a: 'It depends on the number of shoot days, the people on screen and the deliverables you need. We quote each project to the brief, and our <a href="/skincare-video-production-cost/">packages page</a> sets out what each monthly package includes. Get in touch for a quote.' },
       { q: 'How long does it take?', a: 'Our monthly packages are delivered within 10 working days, with a structured revision round that comes back within 48 hours.' },
       { q: 'Do you film outside London?', a: 'Yes. We are based in Bloomsbury, London, and we film across London and the UK. Tell us where you need to shoot and we will plan around it.' },
       { q: 'Can we use the videos in paid ads?', a: 'Yes. We deliver cuts made for paid social as well as organic. Usage rights are agreed in the quote, so you know where and for how long the content can run.' },
@@ -124,7 +124,7 @@ export const PAGES = [
     faqs: [
       { q: 'Do you work with beauty retailers as well as brands?', a: 'Yes. We film in-store tours and product highlights for retail, as well as brand campaigns, launches and events.' },
       { q: 'Can you shoot a product launch and cut content for social afterwards?', a: 'Yes. We plan the launch coverage and the social cuts together, so you leave the event with content for every channel you need.' },
-      { q: 'What does beauty video production cost?', a: 'Our monthly packages start from £2,900 a month excluding VAT. Larger campaigns are priced to the brief. See our <a href="/skincare-video-production-cost/">pricing page</a> for the details.' },
+      { q: 'What does beauty video production cost?', a: 'It depends on the number of shoot days, the people on screen and the deliverables you need. We quote each project to the brief. See our <a href="/skincare-video-production-cost/">packages page</a> for what each monthly package includes, then get in touch for a quote.' },
     ],
     related: ['skincare-video-production-london', 'beauty-social-media-video-production', 'skincare-photography-london'],
   },
@@ -177,7 +177,7 @@ export const PAGES = [
       { q: 'Can you film while the clinic is open?', a: 'We plan the shoot around your appointments, so treatments and consultations can carry on. We agree the schedule and shot list with you beforehand.' },
       { q: 'How do you handle patient consent?', a: 'Anyone who appears on camera signs a release before filming. Footage of patients is only used where consent is in place, and we recommend reviewing the current guidance on consent and before-and-after content.' },
       { q: 'Can you make content for social as well as the website?', a: 'Yes. From one shoot we deliver a main film for your website and vertical edits for social. See our <a href="/beauty-social-media-video-production/">social video</a> page.' },
-      { q: 'How much does clinic video production cost?', a: 'It depends on the number of shoot days, the people on screen and the versions you need. Our monthly packages start from £2,900 a month excluding VAT; see the <a href="/skincare-video-production-cost/">pricing page</a>.' },
+      { q: 'How much does clinic video production cost?', a: 'It depends on the number of shoot days, the people on screen and the versions you need. We quote to the brief; see the <a href="/skincare-video-production-cost/">packages page</a> for what each monthly package includes, then get in touch for a quote.' },
     ],
     related: ['interview-testimonial-filming-london', 'spa-wellness-video-production-london', 'skincare-video-production-cost'],
   },
@@ -259,7 +259,7 @@ export const PAGES = [
         h2: 'Organic and paid, planned together',
         paragraphs: [
           'Paid social rewards variety. Our packages include a mix of organic and paid-optimised formats, product close-ups made for ads, and creator videos, so you have fresh creative to test rather than one hero asset that tires quickly.',
-          'Where it helps, we build recurring series, such as Skin Ritual, Ingredient Deep-Dive and Founder Perspective, so your feed has a recognisable shape. See <a href="/skincare-video-production-cost/">our packages and prices</a> for what each month includes.',
+          'Where it helps, we build recurring series, such as Skin Ritual, Ingredient Deep-Dive and Founder Perspective, so your feed has a recognisable shape. See <a href="/skincare-video-production-cost/">our packages</a> for what each month includes.',
         ],
       },
       {
@@ -280,7 +280,7 @@ export const PAGES = [
     faqs: [
       { q: 'Do you make content for paid ads as well as organic posts?', a: 'Yes. Our packages include a mix of organic and paid-optimised formats, and product close-ups made specifically for ads.' },
       { q: 'Can you work with our own creators or influencers?', a: 'Our monthly packages include vetted UGC creators matched to your customer. If you already work with creators or influencers, tell us and we will plan how they fit into a shoot.' },
-      { q: 'How much does social video for a beauty brand cost?', a: 'Our monthly packages start from £2,900 a month excluding VAT. See the <a href="/skincare-video-production-cost/">pricing page</a>.' },
+      { q: 'How much does social video for a beauty brand cost?', a: 'It depends on how many clips, platforms and shoot days you need. We quote to the brief; see the <a href="/skincare-video-production-cost/">packages page</a> for what each monthly package includes, then get in touch for a quote.' },
     ],
     related: ['skincare-product-video-production', 'skincare-video-production-london', 'skincare-video-production-cost'],
   },
@@ -331,7 +331,7 @@ export const PAGES = [
     faqs: [
       { q: 'Do we need a model for a product video?', a: 'No. Our Foundation package is product-only with no model. Model and talent-led content is available in our Series and Campaign packages.' },
       { q: 'What is a molecular or ingredient visualisation?', a: 'A 3D animated asset that shows your key active at a scientific level. It is included each month in our Campaign package, and it works well in ads, on product pages and with retail buyers.' },
-      { q: 'How much does skincare product video cost?', a: 'Our Foundation package, built around product films and stills, starts from £2,900 a month excluding VAT. See the <a href="/skincare-video-production-cost/">pricing page</a>.' },
+      { q: 'How much does skincare product video cost?', a: 'It depends on the number of films, stills and shoot days. Our Foundation package is built around product films and stills; see the <a href="/skincare-video-production-cost/">packages page</a> for what it includes, then get in touch for a quote.' },
     ],
     related: ['skincare-video-production-london', 'skincare-photography-london', 'beauty-social-media-video-production'],
   },
@@ -382,7 +382,7 @@ export const PAGES = [
     faqs: [
       { q: 'Can you make a founder feel comfortable on camera?', a: 'That is part of the job. We agree the questions in advance, film in a relaxed setting and give direction as we go, so you do not need any experience on camera.' },
       { q: 'Can we get short clips as well as the full interview?', a: 'Yes. We plan the interview so it can be cut into a full film and several shorter vertical pieces for social.' },
-      { q: 'How much does interview filming cost?', a: 'It depends on the number of people, the locations and the versions you need. See our <a href="/skincare-video-production-cost/">pricing page</a> for our monthly packages, and contact us for a quote.' },
+      { q: 'How much does interview filming cost?', a: 'It depends on the number of people, the locations and the versions you need. See our <a href="/skincare-video-production-cost/">packages page</a> for our monthly packages, and contact us for a quote.' },
     ],
     related: ['aesthetic-clinic-video-production-london', 'beauty-social-media-video-production', 'skincare-video-production-cost'],
   },
@@ -412,7 +412,7 @@ export const PAGES = [
         h2: 'Shot with your video, same day',
         paragraphs: [
           'Stills and film share a set, a look and a crew, so shooting them together saves time and keeps your brand consistent. Our monthly packages include retouched stills alongside the video, from 12 images a month in Foundation to 35 in Campaign, including format variants.',
-          'See <a href="/skincare-video-production-cost/">our packages and prices</a>, or read about <a href="/skincare-product-video-production/">skincare product video</a>.',
+          'See <a href="/skincare-video-production-cost/">our packages</a>, or read about <a href="/skincare-product-video-production/">skincare product video</a>.',
         ],
       },
       {
@@ -432,7 +432,7 @@ export const PAGES = [
     ],
     faqs: [
       { q: 'Can you shoot photography and video on the same day?', a: 'Yes, and we recommend it. It keeps the look consistent and usually costs less than booking two separate shoots.' },
-      { q: 'How many photos are included in your packages?', a: 'Our monthly packages include 12 retouched stills in Foundation, 20 in Series and 35 in Campaign. See the <a href="/skincare-video-production-cost/">pricing page</a>.' },
+      { q: 'How many photos are included in your packages?', a: 'Our monthly packages include 12 retouched stills in Foundation, 20 in Series and 35 in Campaign. See the <a href="/skincare-video-production-cost/">packages page</a>.' },
       { q: 'Do you photograph clinics and spas as well as products?', a: 'Yes. We photograph treatment rooms, interiors, devices and portraits of the people who work there.' },
     ],
     related: ['skincare-product-video-production', 'skincare-video-production-london', 'skincare-video-production-cost'],
@@ -441,45 +441,40 @@ export const PAGES = [
   // ─────────────────────────────────────────────────────────────────── 9
   {
     slug: 'skincare-video-production-cost',
-    group: 'cost', footerLabel: 'Pricing',
-    relLabel: 'Pricing', relTitle: 'Skincare video production cost', relText: 'Our monthly packages, what they include and what they cost.',
+    group: 'cost', footerLabel: 'Packages',
+    relLabel: 'Packages', relTitle: 'Skincare video production cost', relText: 'Our monthly packages and what each one includes.',
     crumb: 'Skincare video production cost',
     title: 'How Much Does Skincare Video Production Cost? | Shotwell',
-    description: 'Skincare video production costs in the UK: Shotwell’s monthly packages from £2,900 a month excl. VAT, what each includes, and what affects the price.',
+    description: 'What affects the cost of skincare video production in the UK, and what Shotwell’s three monthly packages include: shoot days, edit time, videos and stills.',
     h1: 'How much does skincare video production <em>cost?</em>',
     h1Plain: 'How much does skincare video production cost?',
-    eyebrow: 'Pricing',
-    lead: 'Our monthly packages start from £2,900 a month, excluding VAT. Each one sets out the shoot days, edit time and deliverables you get, so you know what you are paying for before we start.',
+    eyebrow: 'Packages',
+    lead: 'Every Shotwell package sets out the shoot days, edit time and deliverables you get, so you know what you are paying for before we start. We quote to your brief: tell us what you need and we will recommend a package.',
     serviceName: 'Monthly skincare content packages', serviceType: 'Skincare video production',
     ctaTitle: 'Get a quote',
     ctaText: 'Tell us about your brand and what you need. We will recommend a package and come back with a clear, itemised quote.',
     packages: Object.assign([
       {
-        num: 'Package 01', name: 'Foundation', price: '£2,900', per: 'per month, excl. VAT',
+        num: 'Package 01', name: 'Foundation',
         meta: '1 shoot day · 1.5 editing days · product-only, no model',
         items: ['4 short-form videos', '1 product close-up video for paid ads', '12 retouched stills', '3 UGC creator videos', '1 structured revision cycle, 48-hour turnaround', '10 working day delivery'],
       },
       {
-        num: 'Package 02', name: 'Series', price: '£5,500', per: 'per month, excl. VAT', popular: true,
+        num: 'Package 02', name: 'Series', popular: true,
         meta: '2 shoot days · 2.5 editing days · model included',
         items: ['5 short-form videos', '1 series episode (45–75 sec, model or talent-led)', '2 product close-up videos', '1 behind-the-scenes cut', '20 retouched stills', '4 UGC creator videos', '2 structured revision cycles', '10 working day delivery'],
       },
       {
-        num: 'Package 03', name: 'Campaign', price: '£9,500', per: 'per month, excl. VAT',
+        num: 'Package 03', name: 'Campaign',
         meta: '3 shoot days · 4 editing days · model + 3D',
         items: ['8 short-form videos', '1 series episode (45–75 sec, model-led)', '3 product close-up videos', '2 behind-the-scenes cuts', '1 molecular / ingredient 3D visualisation', '35 retouched stills', '6 UGC creator videos', '3 structured revision cycles', 'Quarterly: 1 cinematic hero brand film (60–90 sec)', '10 working day delivery'],
       },
-    ], { note: 'All prices are per month and exclude VAT, from the Shotwell 2026 pricing guide. If your project does not fit a package, tell us what you need and we will quote it to the brief.' }),
-    offers: [
-      { '@type': 'Offer', name: 'Foundation', priceSpecification: { '@type': 'UnitPriceSpecification', price: 2900, priceCurrency: 'GBP', unitText: 'MONTH', valueAddedTaxIncluded: false }, itemOffered: { '@type': 'Service', name: 'Foundation package' } },
-      { '@type': 'Offer', name: 'Series', priceSpecification: { '@type': 'UnitPriceSpecification', price: 5500, priceCurrency: 'GBP', unitText: 'MONTH', valueAddedTaxIncluded: false }, itemOffered: { '@type': 'Service', name: 'Series package' } },
-      { '@type': 'Offer', name: 'Campaign', priceSpecification: { '@type': 'UnitPriceSpecification', price: 9500, priceCurrency: 'GBP', unitText: 'MONTH', valueAddedTaxIncluded: false }, itemOffered: { '@type': 'Service', name: 'Campaign package' } },
-    ],
+    ], { note: 'If your project does not fit a package, tell us what you need and we will quote it to the brief.' }),
     sections: [
       {
         h2: 'What affects the cost',
         paragraphs: [
-          'Video costs are driven by a few things: how many days we shoot, how many people are on screen and whether you need models or creators, how much editing and how many versions you need, and any specialist work such as 3D visualisation. Our packages bundle these into a fixed monthly price so you can plan.',
+          'Video costs are driven by a few things: how many days we shoot, how many people are on screen and whether you need models or creators, how much editing and how many versions you need, and any specialist work such as 3D visualisation. Our packages bundle these into a fixed monthly fee so you can plan.',
           'Usage matters too. We agree where and for how long the content can be used when we quote, including paid advertising.',
         ],
       },
@@ -492,13 +487,12 @@ export const PAGES = [
       },
     ],
     faqs: [
-      { q: 'How much does skincare video production cost in the UK?', a: 'It varies widely, from small creator-style content to large campaigns. Shotwell’s monthly packages run from £2,900 to £9,500 a month, excluding VAT, depending on the number of shoot days, talent and deliverables.' },
-      { q: 'Do your prices include VAT?', a: 'No. All prices on this page are per month and exclude VAT.' },
+      { q: 'How much does skincare video production cost in the UK?', a: 'It varies widely, from small creator-style content to large campaigns. The cost depends on the number of shoot days, talent and deliverables. Tell us what you need and we will quote it to the brief.' },
       { q: 'What is included in each package?', a: 'Every package sets out the shoot days, editing days, the number of videos and stills, creator videos, revision rounds and the delivery time. The full lists are above.' },
       { q: 'How long does delivery take?', a: 'Our packages are delivered within 10 working days, with each revision round turned around in 48 hours.' },
       { q: 'Can I commission a one-off project instead?', a: 'Tell us what you need and we will quote it to the brief.' },
     ],
-    faqTitle: 'Pricing questions',
+    faqTitle: 'Cost questions',
     related: ['skincare-video-production-london', 'beauty-social-media-video-production', 'skincare-product-video-production'],
   },
 ]
