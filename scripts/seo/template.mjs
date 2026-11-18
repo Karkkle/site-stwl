@@ -256,8 +256,10 @@ ${robots}
   document.querySelectorAll("[data-mail]").forEach(function(l){l.href="mailto:"+a+"?subject="+encodeURIComponent("Enquiry from the Shotwell website")});
   var vs=[].slice.call(document.querySelectorAll("video[data-src]"));
   if(!("IntersectionObserver" in window)){return}
-  var load=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var v=e.target;if(!v.src){v.src=v.dataset.src;v.addEventListener("loadeddata",function(){v.classList.add("on")},{once:true})}load.unobserve(v)}})},{rootMargin:"1500px 0px"});
-  var play=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){var p=v.play&&v.play();if(p&&p.catch)p.catch(function(){})}else if(!v.paused){v.pause()}})},{rootMargin:"60px 0px"});
+  function go(v){var p=v.play&&v.play();if(p&&p.catch)p.catch(function(){})}
+  function ensure(v){if(v.src)return;v.preload="auto";v.addEventListener("loadeddata",function(){v.classList.add("on");if(v._in&&v.paused)go(v)},{once:true});v.src=v.dataset.src}
+  var load=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){ensure(e.target);load.unobserve(e.target)}})},{rootMargin:"1500px 0px"});
+  var play=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;v._in=e.isIntersecting;if(e.isIntersecting){ensure(v);go(v)}else if(!v.paused){v.pause()}})},{rootMargin:"60px 0px"});
   vs.forEach(function(v){load.observe(v);play.observe(v)});
 })();
 </script>
