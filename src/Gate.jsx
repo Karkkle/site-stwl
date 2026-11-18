@@ -42,7 +42,7 @@ export default function Gate({ children }) {
 
   return (
     <main className="gate">
-      <style>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         .gate { min-height:100vh; min-height:100dvh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:44px; padding:32px 24px; background:var(--color-bg); color:var(--color-text); font-family:var(--font-body); }
         .gate img { width:min(300px, 72vw); height:auto; display:block; }
         .gate form { width:min(360px, 100%); display:flex; flex-direction:column; align-items:center; gap:14px; }
@@ -53,7 +53,7 @@ export default function Gate({ children }) {
         .gate button:hover { opacity:.85; }
         .gate button:disabled { opacity:.5; cursor:default; }
         .gate-error { min-height:1.2em; font-family:var(--font-accent); font-size:.75rem; letter-spacing:.04em; color:var(--color-text); }
-      `}</style>
+      ` }} />
       <img src={logoInk} alt="Shotwell — visual content for beauty, skincare and wellness" />
       <form onSubmit={submit}>
         <label className="gate-label" htmlFor="gate-pw">Private preview</label>
