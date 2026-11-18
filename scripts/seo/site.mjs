@@ -11,6 +11,7 @@ export const SITE = {
   // Short bios used in the schema (the full text is on the home page, About section).
   bios: {
     'Mark Weeks': 'Co-founder of Shotwell. Commercial photographer with more than twenty years of experience, working independently since 2003, who leads photography at Shotwell from London.',
+    'Louis Mas': 'Co-founder of Shotwell. Filmmaker with over ten years of experience and a BA in Cinematography, previously a camera assistant on feature films, TV series and commercials in Paris and London, who leads video at Shotwell.',
   },
   // Date the site videos were exported/published (folder 20260920_Shotwell_Reel). Used as the video schema uploadDate.
   videoDate: '2026-09-20',
