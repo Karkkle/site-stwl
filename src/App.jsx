@@ -378,6 +378,9 @@ const FontsAndStyles = () => (
     .abt-team-name { margin-top:14px; font-family:var(--A); font-weight:400; font-size:0.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink); text-align:center; }
     .abt-body p { font-family:var(--T); font-size:clamp(1.05rem,1.4vw,1.4rem); color:var(--muted); line-height:1.65; margin-bottom:1.1em; font-weight:400; }
     .abt-body p strong { color:var(--ink); font-weight:500; }
+    .abt-bio { margin-top:clamp(28px,3vw,40px); padding-top:clamp(24px,2.6vw,34px); border-top:1px solid var(--border); }
+    .abt-body .abt-bio p { font-size:clamp(1rem,1.15vw,1.15rem); }
+    .abt-body .abt-bio .abt-bio-name { font-family:var(--A); font-weight:400; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink); margin-bottom:12px; }
 
     /* ── contact */
     #contact { background:var(--bg-alt); text-align:center; }
@@ -1546,6 +1549,10 @@ function About() {
           <p><strong>Shotwell</strong> is an independent production company rooted in the belief that every story deserves to be told with precision, intention, and beauty.</p>
           <p>From our Bloomsbury office in the heart of London, we work with <strong>brands, health and beauty experts, clinics and spas</strong> across the globe — bringing a cinematic sensibility to everything from short form videos to large-scale commercial campaigns.</p>
           <p>Our team of directors, filmmakers, editors and photographers are united to create the most impactful visuals to convey your identity and make your brand stand out.</p>
+          <div className="abt-bio">
+            <p className="abt-bio-name">Mark Weeks <span className="abt-team-role">— Co-founder</span></p>
+            <p>Mark co-founded Shotwell after more than twenty years as a commercial photographer. He started in the corporate world before going independent in 2003, and his first paying client was Microsoft. Working inside global organisations taught him the pressures, the stakeholders and the standards expected at that level, and he brings that understanding to every Shotwell brief. His aim has not changed: to create imagery that does real work for the businesses that commission it. Mark is based in London and leads photography at Shotwell.</p>
+          </div>
         </div>
       </div>
     </section>

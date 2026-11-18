@@ -21,7 +21,7 @@ export function businessNode() {
     slogan: SITE.tagline,
     address: { '@type': 'PostalAddress', streetAddress: SITE.address.street, addressLocality: SITE.address.city, postalCode: SITE.address.postcode, addressCountry: SITE.address.country },
     areaServed: [{ '@type': 'City', name: 'London' }, { '@type': 'Country', name: 'United Kingdom' }],
-    founder: SITE.founders.map((name) => ({ '@type': 'Person', name })),
+    founder: SITE.founders.map((name) => ({ '@type': 'Person', name, jobTitle: 'Co-founder', worksFor: { '@id': `${SITE.url}/#business` }, ...(SITE.bios[name] ? { description: SITE.bios[name] } : {}) })),
     sameAs: [SITE.instagram, SITE.linkedin],
     knowsAbout: ['Skincare video production', 'Beauty video production', 'Aesthetic clinic video', 'Spa and wellness video', 'Social media video', 'Product videography', 'Skincare photography'],
   }

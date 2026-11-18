@@ -8,6 +8,10 @@ export const SITE = {
   instagram: 'https://www.instagram.com/weareshotwell/',
   linkedin: 'https://www.linkedin.com/company/shotwell-london',
   founders: ['Mark Weeks', 'Louis Mas'],
+  // Short bios used in the schema (the full text is on the home page, About section).
+  bios: {
+    'Mark Weeks': 'Co-founder of Shotwell. Commercial photographer with more than twenty years of experience, working independently since 2003, who leads photography at Shotwell from London.',
+  },
   // Date the site videos were exported/published (folder 20260920_Shotwell_Reel). Used as the video schema uploadDate.
   videoDate: '2026-09-20',
   address: { street: '11-13 Bayley Street', area: 'Bloomsbury', city: 'London', postcode: 'WC1B 3HD', country: 'GB' },
