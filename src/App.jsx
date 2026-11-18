@@ -413,7 +413,8 @@ const FontsAndStyles = () => (
     /* ── footer */
     footer { background:var(--color-bg-inverted); color:var(--color-text-inverted); padding:clamp(56px,6vw,88px) 52px 30px; display:flex; flex-direction:column; gap:clamp(44px,5.5vw,76px); }
     .footer-grid { display:grid; grid-template-columns:minmax(0,1.25fr) repeat(4,minmax(0,1fr)); gap:clamp(24px,3vw,48px); align-items:start; max-width:1400px; width:100%; margin:0 auto; }
-    .footer-logo { display:block; height:56px; width:auto; }
+    /* The logo is a share of its column (capped), so it shrinks with the page and never runs into the link columns */
+    .footer-logo { display:block; width:min(100%,220px); height:auto; }
     .footer-address { font-style:normal; font-family:var(--T); font-size:.92rem; line-height:1.65; color:var(--color-bone); opacity:.72; margin-top:26px; }
     .footer-col .footer-h { margin-bottom:14px; color:var(--color-sage); }
     .footer-col a { display:block; padding:6px 0; font-family:var(--T); font-size:.92rem; letter-spacing:.005em; color:var(--color-bone); text-decoration:none; opacity:.88; transition:opacity .3s, color .3s; }
