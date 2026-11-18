@@ -143,6 +143,12 @@ const FontsAndStyles = () => (
       opacity:0; transition:opacity 1.2s ease;
     }
     .yt-wrap iframe.live { opacity:1; }
+    .hero-video {
+      position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+      filter:saturate(.5) contrast(1.05) brightness(.68);
+      opacity:0; transition:opacity 1s ease;
+    }
+    .hero-video.live { opacity:1; }
     /* Still frame shown straight away, so the hero is never an empty box while the player starts */
     .hero-poster {
       position:absolute; inset:0; width:100%; height:100%;
@@ -688,46 +694,69 @@ function Nav({ open, setOpen }) {
 }
 
 function Hero() {
+  // Plays our own small MP4 (public/shotwell-hero.mp4). If it can't load, falls back to the Vimeo player.
   const [live, setLive] = useState(false);
+  const [useVimeo, setUseVimeo] = useState(false);
+  const [vimeoLive, setVimeoLive] = useState(false);
+  const videoRef = useRef(null);
   const frameRef = useRef(null);
-  const src = `https://player.vimeo.com/video/${VIMEO_ID}?h=${VIMEO_HASH}&autoplay=1&muted=1&loop=1&background=1&quality=auto`;
+  const vimeoSrc = `https://player.vimeo.com/video/${VIMEO_ID}?h=${VIMEO_HASH}&autoplay=1&muted=1&loop=1&background=1&quality=auto`;
 
-  // Fade the video in over the still frame as soon as the player is ready (or reports playing).
-  // Vimeo only accepts our subscription after it has announced it is ready.
+  // Some browsers ignore the autoplay attribute until the element is muted in script; also catch a stalled start.
   useEffect(() => {
-    const subscribe = () => {
-      const w = frameRef.current && frameRef.current.contentWindow;
-      if (!w) return;
-      ["play", "playProgress"].forEach((value) =>
-        w.postMessage(JSON.stringify({ method: "addEventListener", value }), "https://player.vimeo.com"));
-    };
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    const tryPlay = () => { const r = v.play(); if (r && r.catch) r.catch(() => {}); };
+    tryPlay();
+    const stalled = setTimeout(() => { if (v.paused && v.readyState < 2) setUseVimeo(true); }, 8000);
+    return () => clearTimeout(stalled);
+  }, []);
+
+  // Fallback only: reveal the Vimeo player once it is ready.
+  useEffect(() => {
+    if (!useVimeo) return;
     const onMessage = (e) => {
       if (e.origin !== "https://player.vimeo.com") return;
       try {
         const d = typeof e.data === "string" ? JSON.parse(e.data) : e.data;
-        if (!d) return;
-        if (d.event === "ready") { subscribe(); readyTimer = setTimeout(() => setLive(true), 1200); }
-        else if (d.event === "play" || d.event === "playProgress") setLive(true);
+        if (d && d.event === "ready") setTimeout(() => setVimeoLive(true), 1200);
       } catch { /* not a player message */ }
     };
-    let readyTimer;
     window.addEventListener("message", onMessage);
-    const fallback = setTimeout(() => setLive(true), 5000); // never leave it hidden
-    return () => { window.removeEventListener("message", onMessage); clearTimeout(fallback); clearTimeout(readyTimer); };
-  }, []);
+    const fallback = setTimeout(() => setVimeoLive(true), 5000);
+    return () => { window.removeEventListener("message", onMessage); clearTimeout(fallback); };
+  }, [useVimeo]);
 
   return (
     <section className="hero" id="home">
       <div className="yt-wrap">
         <img className="hero-poster" src="./hero-poster.jpg" alt="" fetchpriority="high" decoding="async" />
-        <iframe
-          ref={frameRef}
-          className={live ? "live" : ""}
-          src={src}
-          title="Shotwell Reel"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen={false}
+        <video
+          ref={videoRef}
+          className={`hero-video${live ? " live" : ""}`}
+          src="./shotwell-hero.mp4"
+          poster="./hero-poster.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          disablePictureInPicture
+          aria-hidden="true"
+          onPlaying={() => setLive(true)}
+          onError={() => setUseVimeo(true)}
         />
+        {useVimeo && (
+          <iframe
+            ref={frameRef}
+            className={vimeoLive ? "live" : ""}
+            src={vimeoSrc}
+            title="Shotwell Reel"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen={false}
+          />
+        )}
       </div>
 
       <div className="hero-overlay" />
