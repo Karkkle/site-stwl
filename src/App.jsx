@@ -1552,11 +1552,11 @@ function About() {
           <p>Our team of directors, filmmakers, editors and photographers are united to create the most impactful visuals to convey your identity and make your brand stand out.</p>
           <div className="abt-bio">
             <p className="abt-bio-name">Mark Weeks <span className="abt-team-role">— Co-founder</span></p>
-            <p>Mark co-founded Shotwell after more than twenty years as a commercial photographer. He began in the corporate world and went independent in 2003, with Microsoft as his first paying client. Years spent inside global organisations taught him the pressures, stakeholders and standards that come with them, and that understanding shapes every Shotwell brief. He leads photography at Shotwell from London, with one aim: imagery that does real work for the businesses that commission it.</p>
+            <p>Mark co-founded Shotwell. He has been a commercial photographer for over twenty years, and he started out in the corporate world before going independent in 2003, with Microsoft as his first paying client. Those years on the inside taught him what big companies need from the people they hire, and he still works that way. He leads photography at Shotwell from London, and what he wants hasn’t changed: photos that do real work for the businesses that commission them.</p>
           </div>
           <div className="abt-bio">
             <p className="abt-bio-name">Louis Mas <span className="abt-team-role">— Co-founder</span></p>
-            <p>Louis is a filmmaker with a BA in Cinematography and over ten years of experience. He began as a camera assistant on feature films, TV series and commercials in Paris and London, and that high-end grounding shapes his work at Shotwell, from single-location brand films to complex multi-site projects. He leads video at Shotwell, with an instinct for technology and an ability to solve problems under pressure.</p>
+            <p>Louis is a filmmaker with a BA in Cinematography and over ten years in film. He started out as a camera assistant on feature films, TV series and commercials in Paris and London, which is where he learned how high-end productions really run. It shows in everything he makes, from a brand film in a single location to a project spread across several. He leads video at Shotwell, with a good instinct for technology and a knack for solving problems when the pressure is on.</p>
           </div>
         </div>
       </div>
