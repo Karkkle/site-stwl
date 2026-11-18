@@ -215,14 +215,13 @@ const FontsAndStyles = () => (
     }
     .ticker-field-item {
       display:flex; align-items:center; justify-content:center;
-      flex:0 0 20%; box-sizing:border-box; height:112px; padding:0 20px;
+      flex:1 1 0; min-width:0; box-sizing:border-box; height:clamp(64px,9vw,112px); padding:0 clamp(6px,1.4vw,20px);
       opacity:0; will-change:opacity;
     }
-    .ticker-logo {
-      height:auto; max-height:52px; width:auto; max-width:170px; display:block;
-    }
-    .ticker-logo[alt="Dorchester Collection"] { max-height:84px; max-width:150px; }
-    .ticker-logo[alt="Maison Francis Kurkdjian"] { max-height:62px; max-width:170px; }
+    /* Logos are a share of their cell, so the whole row scales with the page and stays on one line */
+    .ticker-logo { height:auto; width:88%; max-width:170px; display:block; }
+    .ticker-logo[alt="Organic Pharmacy"] { width:72%; max-width:140px; }
+    .ticker-logo[alt="Dorchester Collection"] { width:74%; max-width:143px; }
 
     /* ── section shared */
     section { padding:clamp(52px,5.8vw,88px) 52px; }
@@ -446,13 +445,14 @@ const FontsAndStyles = () => (
       .footer-grid { grid-template-columns:1fr 1fr; row-gap:36px; }
       .footer-brand { grid-column:1 / -1; }
     }
+    @media (max-width:520px) {
+      .ticker-field { padding:0 12px; box-sizing:border-box; }
+      .ticker-field-item { flex:0 0 33.333%; height:76px; }
+      .ticker-logo { width:78%; }
+    }
     @media (max-width:600px) {
       .work-grid { gap:8px; }
       .ticker-wrap { padding: 48px 0 16px; }
-      .ticker-field-item { flex-basis:50%; height:88px; padding:0 12px; }
-      .ticker-logo { max-width:100px; height:auto; max-height:34px; }
-      .ticker-logo[alt="Dorchester Collection"] { max-width:84px; max-height:56px; }
-      .ticker-logo[alt="Maison Francis Kurkdjian"] { max-width:104px; max-height:38px; }
     }
   ` }} />
 );
