@@ -329,11 +329,13 @@ const FontsAndStyles = () => (
 
     /* ── vertical / social content */
     #social { background:var(--bg); }
-    .vert-intro { display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap; margin-bottom:48px; }
+    /* Split layout: copy and button on the left, the three vertical clips filling the right */
+    .vert-layout { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,2.1fr); gap:clamp(32px,5vw,80px); align-items:stretch; }
+    .vert-intro { display:flex; flex-direction:column; justify-content:space-between; align-items:flex-start; gap:36px; }
     .vert-copy { max-width:none; }
-    @media (min-width:700px) { #social .s-title { white-space:nowrap; } }
-    .vert-sub { max-width:560px; font-family:var(--T); font-size:1.1rem; color:var(--muted); line-height:1.85; margin-top:18px; font-weight:400; }
-    .vert-row { display:grid; grid-template-columns:repeat(var(--cols,4),1fr); gap:24px; }
+    #social .s-title { font-size:clamp(2.3rem,4.4vw,4.2rem); }
+    .vert-sub { max-width:34ch; font-family:var(--T); font-size:1.1rem; color:var(--muted); line-height:1.75; margin-top:18px; font-weight:400; }
+    .vert-row { display:grid; grid-template-columns:repeat(var(--cols,3),minmax(0,1fr)); gap:24px; }
     .vert-phone {
       position:relative; width:100%; aspect-ratio:9/16;
       border-radius: 0; overflow:hidden; background:var(--surface);
@@ -357,10 +359,16 @@ const FontsAndStyles = () => (
       font-family:var(--A); font-size:.85rem; letter-spacing:.01em; color:rgba(241,236,227,.96); font-weight:400;
       text-shadow:0 1px 3px rgba(16,12,6,.55), 0 0 14px rgba(16,12,6,.35);
     }
-    /* Desktop: size each phone so a whole clip fits on screen at once (height about 68% of the window), centred as a group */
-    @media (min-width:901px) { .vert-row { grid-template-columns:repeat(var(--cols,3), minmax(0, min(calc(68vh * 9 / 16), calc((100% - (var(--cols,3) - 1) * 24px) / var(--cols,3))))); justify-content:center; } }
-    @media (max-width:900px) { .vert-row { grid-template-columns:repeat(2,1fr); } }
-    @media (max-width:480px) { .vert-row { grid-template-columns:1fr; } }
+    @media (max-width:900px) {
+      .vert-layout { grid-template-columns:1fr; gap:36px; }
+      .vert-intro { flex-direction:row; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; }
+    }
+    /* Phones: swipeable row of clips */
+    @media (max-width:600px) {
+      .vert-row { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding:0 24px; gap:12px; margin:0 -24px; padding:0 24px; scrollbar-width:none; }
+      .vert-row::-webkit-scrollbar { display:none; }
+      .vert-phone { flex:0 0 64%; scroll-snap-align:start; }
+    }
 
     /* ── about */
     #about { background:var(--bg); }
@@ -881,7 +889,7 @@ function LoopVideo({ name, vimeoId, vimeoHash, title }) {
     const onHero = () => { heroReady = true; go(); };
     window.addEventListener("shotwell-hero-ready", onHero);
     const heroTimeout = setTimeout(onHero, 4000);   // never wait on the hero for long
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { close = true; go(); } }, { rootMargin: "2200px 0px" });
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { close = true; go(); } }, { rootMargin: "2200px 600px" });
     obs.observe(el);
     return () => { obs.disconnect(); clearTimeout(heroTimeout); window.removeEventListener("shotwell-hero-ready", onHero); };
   }, []);
@@ -991,6 +999,7 @@ function Photography() {
 function VerticalContent() {
   return (
     <section id="social">
+      <div className="vert-layout">
       <div className="vert-intro fade-in">
         <div className="vert-copy">
           <p className="s-label">Social content</p>
@@ -1010,6 +1019,7 @@ function VerticalContent() {
             )}
           </div>
         ))}
+      </div>
       </div>
     </section>
   );
