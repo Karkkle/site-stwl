@@ -153,11 +153,10 @@ const FontsAndStyles = () => (
       object-fit:cover;
     }
 
-    /* Gaussian blur in front of the video — change --hero-blur to make it more or less abstract */
-    .hero-blur {
+    /* Light darkening in front of the video, for readability — change the last number (0.28) to adjust */
+    .hero-tint {
       position:absolute; inset:0; z-index:1; pointer-events:none;
-      --hero-blur:28px;
-      backdrop-filter:blur(var(--hero-blur)); -webkit-backdrop-filter:blur(var(--hero-blur));
+      background:rgba(16,12,6,.28);
     }
     .hero-grain {
       position:absolute; inset:0; z-index:2; opacity:.05; pointer-events:none;
@@ -178,7 +177,6 @@ const FontsAndStyles = () => (
       font-family:var(--H); font-size:clamp(2rem,4.8vw,4.6rem); font-weight: 500;
       line-height:1.1; letter-spacing:-.035em;
       color:rgba(241,236,227,.97); margin-bottom:48px;
-      text-shadow:0 2px 26px rgba(16,12,6,.55), 0 1px 4px rgba(16,12,6,.45);
       opacity:0; animation:fadeUp 1s .65s forwards;
     }
     .hero-title em { font-style:normal; color:rgba(169,174,157,.95); }
@@ -753,7 +751,7 @@ function Hero() {
         )}
       </div>
 
-      <div className="hero-blur" />
+      <div className="hero-tint" />
       <div className="hero-grain" />
 
       <svg className="hero-corner" width="70" height="70" viewBox="0 0 70 70" fill="none">
