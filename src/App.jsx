@@ -736,7 +736,7 @@ function Hero() {
           preload="auto"
           disablePictureInPicture
           aria-hidden="true"
-          onPlaying={() => setLive(true)}
+          onPlaying={() => { setLive(true); window.__heroReady = true; window.dispatchEvent(new Event("shotwell-hero-ready")); }}
           onError={() => setUseVimeo(true)}
         />
         {useVimeo && (
@@ -831,29 +831,48 @@ function Ticker() {
 }
 
 // A short silent looping clip served from our own site (public/video/<name>.mp4 + <name>.jpg).
-// Loads only when near the viewport, plays only while visible, shows a still frame first,
-// and falls back to the Vimeo player if the file can't load.
+// - Starts loading well before it scrolls into view (once the hero is playing, so the hero gets the bandwidth first).
+// - Shows the video's first frame as soon as it is ready, so the still image is never seen under a playing clip.
+// - Plays only while on screen, pauses off screen.
+// - Falls back to the Vimeo player if the file can't load.
 function LoopVideo({ name, vimeoId, vimeoHash, title }) {
   const wrapRef = useRef(null);
   const videoRef = useRef(null);
+  const inView = useRef(false);
   const [near, setNear] = useState(false);
   const [live, setLive] = useState(false);
   const [failed, setFailed] = useState(false);
   const [vimeoLive, setVimeoLive] = useState(false);
 
+  const play = () => {
+    const v = videoRef.current;
+    if (v && v.paused) { const r = v.play(); if (r && r.catch) r.catch(() => {}); }
+  };
+
+  // 1. Start loading early: within ~2 screens of the viewport, and only after the hero has started.
   useEffect(() => {
     const el = wrapRef.current;
     if (!el || typeof IntersectionObserver === "undefined") { setNear(true); return; }
+    let heroReady = !!window.__heroReady, close = false;
+    const go = () => { if (heroReady && close) setNear(true); };
+    const onHero = () => { heroReady = true; go(); };
+    window.addEventListener("shotwell-hero-ready", onHero);
+    const heroTimeout = setTimeout(onHero, 4000);   // never wait on the hero for long
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { close = true; go(); } }, { rootMargin: "2200px 0px" });
+    obs.observe(el);
+    return () => { obs.disconnect(); clearTimeout(heroTimeout); window.removeEventListener("shotwell-hero-ready", onHero); };
+  }, []);
+
+  // 2. Play only while actually on screen.
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") { inView.current = true; return; }
     const obs = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) {
-        setNear(true);
-        const v = videoRef.current;
-        if (v && v.paused) { const r = v.play(); if (r && r.catch) r.catch(() => {}); }
-      } else {
-        const v = videoRef.current;
-        if (v && !v.paused) v.pause();
-      }
-    }, { rootMargin: "300px" });
+      inView.current = e.isIntersecting;
+      const v = videoRef.current;
+      if (e.isIntersecting) play();
+      else if (v && !v.paused) v.pause();
+    }, { rootMargin: "80px 0px" });
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
@@ -873,8 +892,9 @@ function LoopVideo({ name, vimeoId, vimeoHash, title }) {
           className={live ? "live" : ""}
           src={`./video/${name}.mp4`}
           poster={`./video/${name}.jpg`}
-          autoPlay muted loop playsInline preload="auto" disablePictureInPicture
-          onPlaying={() => setLive(true)}
+          muted loop playsInline preload="auto" disablePictureInPicture
+          onLoadedData={() => { setLive(true); if (inView.current) play(); }}
+          onCanPlay={() => { if (inView.current) play(); }}
           onError={() => setFailed(true)}
         />
       )}
