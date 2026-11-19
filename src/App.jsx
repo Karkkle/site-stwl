@@ -1562,7 +1562,7 @@ function About() {
           </div>
           <div className="abt-bio">
             <p className="abt-bio-name">Louis Mas <span className="abt-team-role">— Co-founder</span></p>
-            <p>Louis is a filmmaker with a BA in Cinematography and over ten years in film. He started out as a camera assistant on feature films, TV series and commercials in Paris and London, which is where he learned how high-end productions really run. It shows in everything he makes, from a brand film in a single location to a project spread across several. He leads video at Shotwell, with a good instinct for technology and a knack for solving problems when the pressure is on.</p>
+            <p>Louis is a filmmaker with a BA in Cinematography and over ten years in film. He started out as a camera assistant on feature films, TV series and commercials in Paris and London, which is where he learnt how high-end productions really run. It shows in everything he makes, from a brand film in a single location to a project spread across several. He leads video at Shotwell, with a good instinct for technology and a knack for solving problems when the pressure is on.</p>
           </div>
         </div>
       </div>

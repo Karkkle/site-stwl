@@ -135,7 +135,7 @@ export const HEALTHCARE_PAGES = [
       {
         h2: 'One hospital, several audiences',
         paragraphs: [
-          'The film that reassures a patient is not the film that persuades a consultant. We plan a library of content together: patient guides that show what to expect on admission and through a pathway, introductions to specialties and services, content for consultants considering where to practise, and recruitment films that show what it is like to work for you.',
+          'The film that reassures a patient is not the film that persuades a consultant. We plan a library of content together: patient guides that show what to expect on admission and through a pathway, introductions to specialisms and services, content for consultants considering where to practise, and recruitment films that show what it is like to work for you.',
           'Planned as one programme, these share a look and a voice, so the hospital feels like one confident organisation rather than a collection of separate pieces.',
         ],
       },
@@ -254,7 +254,7 @@ export const HEALTHCARE_PAGES = [
         ],
       },
       {
-        h2: 'Explain your specialty',
+        h2: 'Explain your specialism',
         paragraphs: [
           'Patients search for what is wrong before they search for who can help. Short films that explain a condition, a test or a procedure in plain language bring people to you and make a first appointment easier. We plan these with you, working from your wording, and cut them for your website and for vertical social.',
           'Referrers also watch. A clear introduction and a clear account of your pathway helps GPs and colleagues know when and how to refer.',
@@ -334,7 +334,7 @@ export const HEALTHCARE_PAGES = [
     faqs: [
       { q: 'Can you film in a shared Harley Street building?', a: 'Yes. We agree access, timing and shared-area arrangements with you and, where needed, your managing agent, and keep the crew small to minimise disruption.' },
       { q: 'Can you film outside normal hours?', a: 'We can plan shoots around your appointments, including early or late slots where your building and your team allow.' },
-      { q: 'Do you work with a single consultant as well as larger practices?', a: 'Yes. We scope the shoot to the size of the practice, from one consultant’s introduction film to a multi-specialty practice.' },
+      { q: 'Do you work with a single consultant as well as larger practices?', a: 'Yes. We scope the shoot to the size of the practice, from one consultant’s introduction film to a practice with several specialisms.' },
       { q: 'How much does it cost?', a: `It depends on the number of consultants, shoot days and deliverables. We quote to the brief; see the ${COST}, then get in touch for a quote.` },
     ],
     related: ['doctor-consultant-video-production-london', 'private-clinic-video-production-london', 'healthcare-photography-london'],
@@ -364,7 +364,7 @@ export const HEALTHCARE_PAGES = [
       {
         h2: 'Education that earns attention',
         paragraphs: [
-          'In healthcare, the content that works is usually the most useful: a clinician explaining a condition in a minute, a clear answer to a question patients keep asking, a calm look at what a procedure involves. We plan these formats with your clinicians, work from your approved wording, and keep the tone considered rather than salesy.',
+          'In healthcare, the content that works is usually the most useful: a clinician explaining a condition in a minute, a clear answer to a question patients keep asking, a calm look at what a procedure involves. We plan these formats with your clinicians, work from your approved wording, and keep the tone considered rather than pushy.',
           'Healthcare advertising rules apply on social too. Some treatments cannot be advertised to the public at all, so we plan content around education, the clinician and the experience, and we recommend your compliance lead reviews it.',
         ],
       },

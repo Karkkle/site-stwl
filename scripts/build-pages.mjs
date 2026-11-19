@@ -10,6 +10,7 @@ import { SITE } from './seo/site.mjs'
 import { renderPage, businessNode, websiteNode } from './seo/template.mjs'
 import { PAGES } from './seo/pages.mjs'
 import { videoNode, sitemapVideos, HERO } from './seo/videos.mjs'
+import { visibleText, findAmerican } from './seo/british.mjs'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const dist = join(root, 'dist')
@@ -96,3 +97,15 @@ function plain(s) { return String(s).replace(/<[^>]+>/g, '') }
 writeFileSync(join(dist, 'llms.txt'), launched ? llm : '# Private preview\n')
 writeFileSync(join(dist, '404.html'), `<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Page not found | Shotwell</title><link rel="stylesheet" href="${css}"><style>body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);text-align:center;padding:24px}h1{font-family:var(--font-heading);font-weight:500;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.03em}a{font-weight:500;font-size:.78rem;letter-spacing:.17em;text-transform:uppercase;text-decoration:none;color:var(--color-bone);background:var(--color-taupe-ink);border-radius:100px;padding:16px 36px}</style></head><body><img src="${ctx.logoInk}" alt="Shotwell" width="220" style="height:auto"><h1>That page has moved or doesn’t exist.</h1><a href="/">Back to shotwell.co.uk</a></body></html>`)
 console.log('→ sitemap.xml, robots.txt, llms.txt, 404.html written')
+
+// ── British English guard: stop the build if any generated page or file contains an American spelling
+{
+  const problems = []
+  const files = ['index.html', '404.html', 'robots.txt', 'llms.txt', 'sitemap.xml', ...PAGES.map((p) => `${p.slug}/index.html`)]
+  for (const f of files) {
+    const found = findAmerican(visibleText(readFileSync(join(dist, f), 'utf8')))
+    if (found.length) problems.push(`${f}: ${found.join(', ')}`)
+  }
+  if (problems.length) throw new Error('American spelling found (this site is written in British English):\n  ' + problems.join('\n  '))
+  console.log('→ British English check passed')
+}
