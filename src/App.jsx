@@ -795,7 +795,7 @@ function Hero() {
       <div className="hero-content">
         <p className="hero-eyebrow">Video production studio · London</p>
         <h1 className="hero-title">
-          We create <em><span className="nw">results-driven,</span> <span className="nw">high-end</span> content</em> for brands and experts in beauty, skincare and wellness.
+          We create <em><span className="nw">results-driven,</span> <span className="nw">high-end</span> content</em> for brands and experts in skincare, healthcare and wellness.
         </h1>
         <div className="hero-cta-row">
           <a href="#work" className="btn-hero">See Our Work</a>
