@@ -54,7 +54,7 @@ export default function Gate({ children }) {
         .gate button:disabled { opacity:.5; cursor:default; }
         .gate-error { min-height:1.2em; font-family:var(--font-accent); font-size:.75rem; letter-spacing:.04em; color:var(--color-text); }
       ` }} />
-      <img src={logoInk} alt="Shotwell — visual content for beauty, skincare and wellness" />
+      <img src={logoInk} alt="Shotwell — visual content for skincare, healthcare and wellness" />
       <form onSubmit={submit}>
         <label className="gate-label" htmlFor="gate-pw">Private preview</label>
         <input

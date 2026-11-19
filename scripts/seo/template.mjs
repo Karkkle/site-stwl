@@ -1,5 +1,6 @@
 import { SITE, PROCESS } from './site.mjs'
 import { videoNode } from './videos.mjs'
+import { FOOTER_COLUMNS } from './nav.mjs'
 
 export const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 // Strip tags for plain-text uses (meta, schema).
@@ -17,13 +18,13 @@ export function businessNode() {
     url: `${SITE.url}/`,
     logo: `${SITE.url}/favicon.svg`,
     image: SITE.ogImage,
-    description: 'Shotwell is an independent production company in London making video, social content and photography for beauty, skincare and wellness brands, clinics, spas and practitioners.',
+    description: 'Shotwell is an independent production company in London making video, social content and photography for skincare, healthcare and wellness brands: private clinics, hospitals, doctors, medical device companies, skincare brands and spas.',
     slogan: SITE.tagline,
     address: { '@type': 'PostalAddress', streetAddress: SITE.address.street, addressLocality: SITE.address.city, postalCode: SITE.address.postcode, addressCountry: SITE.address.country },
     areaServed: [{ '@type': 'City', name: 'London' }, { '@type': 'Country', name: 'United Kingdom' }],
     founder: SITE.founders.map((name) => ({ '@type': 'Person', name, jobTitle: 'Co-founder', worksFor: { '@id': `${SITE.url}/#business` }, ...(SITE.bios[name] ? { description: SITE.bios[name] } : {}) })),
     sameAs: [SITE.instagram, SITE.linkedin],
-    knowsAbout: ['Skincare video production', 'Beauty video production', 'Aesthetic clinic video', 'Spa and wellness video', 'Social media video', 'Product videography', 'Skincare photography'],
+    knowsAbout: ['Healthcare video production', 'Private clinic video production', 'Private hospital video production', 'Medical device video production', 'Doctor and consultant video', 'Harley Street video production', 'Skincare video production', 'Aesthetic clinic video', 'Spa and wellness video', 'Social media video', 'Product videography', 'Healthcare photography', 'Skincare photography'],
   }
 }
 
@@ -205,7 +206,7 @@ ${robots}
 </head>
 <body>
 <header class="hdr">
-  <a class="logo" href="/"><img src="${ctx.logoInk}" alt="Shotwell — visual content for beauty, skincare and wellness" width="190" height="52"></a>
+  <a class="logo" href="/"><img src="${ctx.logoInk}" alt="Shotwell — visual content for skincare, healthcare and wellness" width="190" height="52"></a>
   <nav aria-label="Main">
     <a href="/#work">Videos</a>
     <a href="/#social">Social</a>
@@ -247,11 +248,9 @@ ${robots}
       <div class="ftr-brand">
         <img src="${ctx.logoBone}" alt="Shotwell" width="190" height="52">
         <address>${SITE.address.street}<br>${SITE.address.area}, ${SITE.address.city}<br>${SITE.address.postcode}</address>
+        <div class="ftr-social"><a href="${SITE.instagram}" rel="noopener noreferrer">Instagram</a><a href="${SITE.linkedin}" rel="noopener noreferrer">LinkedIn</a></div>
       </div>
-      <div class="ftr-col"><p class="label">Who we work with</p>${ctx.pages.filter((p) => p.group === 'audience').map((p) => `<a href="${href(p.slug)}">${p.footerLabel}</a>`).join('')}</div>
-      <div class="ftr-col"><p class="label">What we make</p>${ctx.pages.filter((p) => p.group === 'service').map((p) => `<a href="${href(p.slug)}">${p.footerLabel}</a>`).join('')}</div>
-      <div class="ftr-col"><p class="label">Studio</p><a href="/#work">Our work</a><a href="${href('skincare-video-production-cost')}">Packages</a><a href="/#about">About</a><a href="/#contact">Contact</a></div>
-      <div class="ftr-col"><p class="label">Follow</p><a href="${SITE.instagram}" rel="noopener noreferrer">Instagram</a><a href="${SITE.linkedin}" rel="noopener noreferrer">LinkedIn</a></div>
+      ${FOOTER_COLUMNS.map((c) => `<div class="ftr-col"><p class="label">${c.title}</p>${c.links.map((l) => `<a href="${l.slug ? href(l.slug) : '/#' + l.anchor}">${l.label}</a>`).join('')}</div>`).join('\n      ')}
     </div>
     <div class="ftr-bar"><p>© ${new Date().getFullYear()} <span>${SITE.legalName} trading as ${SITE.name}</span></p><p>All rights reserved</p></div>
   </div>
@@ -364,11 +363,13 @@ figcaption{margin-top:12px;font-size:.92rem;color:var(--color-text);opacity:.85}
 .ftr-grid{display:grid;grid-template-columns:minmax(0,1.25fr) repeat(4,minmax(0,1fr));gap:clamp(24px,3vw,48px);align-items:start;margin-bottom:clamp(44px,5.5vw,76px)}
 .ftr-brand img{display:block;width:min(100%,220px);height:auto}
 .ftr-brand address{font-style:normal;font-size:.92rem;line-height:1.65;opacity:.72;margin-top:26px}
+.ftr-social{display:flex;gap:24px;margin-top:22px}.ftr-social a{text-decoration:none;font-size:.95rem;opacity:.88;transition:opacity .3s,color .3s}.ftr-social a:hover{opacity:1;color:var(--color-whisper-sage)}
 .ftr-col .label{color:var(--color-sage);margin-bottom:14px}
 .ftr-col a{display:block;text-decoration:none;font-size:.92rem;padding:6px 0;opacity:.88;transition:opacity .3s,color .3s}.ftr-col a:hover{opacity:1;color:var(--color-whisper-sage)}
 .ftr-bar{display:flex;justify-content:space-between;align-items:center;gap:12px 32px;flex-wrap:wrap;border-top:1px solid rgba(169,174,157,.28);padding-top:24px}
 .ftr-bar p{margin:0;font-family:var(--font-accent);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--color-sage)}.ftr-bar p span{color:var(--color-bone)}
-@media (max-width:1000px){.steps{grid-template-columns:repeat(2,1fr)}.ftr-grid{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:36px}.ftr-brand{grid-column:1/-1}.packs,.related,.photos{grid-template-columns:1fr}.clips,.clips.verticals{grid-template-columns:1fr 1fr}.clips.mix1v{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}.clips.mix2v{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.clips.mix2v .clip.h{grid-column:1/-1}.clips.mix2v .clip.h .clip-frame{flex:none;aspect-ratio:16/9}}
+@media (max-width:1000px){.steps{grid-template-columns:repeat(2,1fr)}.packs,.related,.photos{grid-template-columns:1fr}.clips,.clips.verticals{grid-template-columns:1fr 1fr}.clips.mix1v{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}.clips.mix2v{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.clips.mix2v .clip.h{grid-column:1/-1}.clips.mix2v .clip.h .clip-frame{flex:none;aspect-ratio:16/9}}
+@media (max-width:1210px){.ftr-grid{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:36px}.ftr-brand{grid-column:1/-1}}
 @media (max-width:760px){
  .wrap{padding:0 24px}.hdr{padding:22px 24px}.hdr nav a:not(.pill){display:none}.hdr nav .pill{padding:9px 18px}.hdr .logo img{height:38px}
  .hero{padding:140px 0 48px}.band{padding:60px 0}.two{grid-template-columns:1fr;gap:22px}

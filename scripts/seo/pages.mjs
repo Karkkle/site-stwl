@@ -1,26 +1,10 @@
 // Landing pages. Each one targets a specific search. Plain data — the template turns it into HTML.
 // Facts used here come from the live site and the 2026 pricing guide. Anything described as "how we work" should be read by Shotwell before launch.
 
-const clip = {
-  ads: { name: 'ads', tag: 'Ads', caption: 'Campaign ads for beauty and skincare brands', alt: 'Still from a Shotwell campaign ad for a skincare brand' },
-  interviews: { name: 'interviews', tag: 'Interviews', caption: 'Founder-led brand story', alt: 'Still from a Shotwell founder interview film' },
-  store: { name: 'store', tag: 'Store highlights', caption: 'In-store tours and product highlights', alt: 'Still from a Shotwell in-store product highlights film' },
-  treatments: { name: 'treatments', tag: 'Treatments', caption: 'Clinic and spa treatments', alt: 'Still from a Shotwell film of a spa treatment' },
-  process: { name: 'process', tag: 'Behind the scenes', caption: 'On set with the Shotwell crew', alt: 'Still from behind the scenes on a Shotwell shoot' },
-  paid: { name: 'paid', tag: 'Paid social', caption: 'Skincare routine, cut for paid social', alt: 'Vertical still from a skincare routine video cut for paid social', vertical: true },
-  experts: { name: 'experts', tag: 'Experts', caption: 'Expert-led content, cut for social', alt: 'Vertical still from an expert-led video cut for social', vertical: true },
-  events: { name: 'events', tag: 'Events', caption: 'Event coverage, cut for social', alt: 'Vertical still from event coverage cut for social', vertical: true },
-}
-const photo = {
-  product: { file: 'product_09.jpg', tag: 'Product', caption: 'Product hero, studio lighting', alt: 'Skincare product hero photograph in studio lighting' },
-  device: { file: 'device_01.jpg', tag: 'Product', caption: 'In-clinic device photography', alt: 'Photograph of a skincare device in a clinic setting' },
-  treatment: { file: 'treatment_01.jpg', tag: 'Editorial', caption: 'Treatment room, documentary style', alt: 'Documentary-style photograph of a skincare treatment room' },
-  portrait: { file: 'portrait_01.jpg', tag: 'Portrait', caption: 'Client portrait, editorial lighting', alt: 'Editorial portrait photograph for a beauty brand' },
-  practice: { file: 'practice_01.jpg', tag: 'Practice', caption: 'Independent practitioner in session', alt: 'Photograph of an independent practitioner working with a client' },
-  spa: { file: 'spa_01.jpg', tag: 'Interior', caption: 'Spa interior, architectural detail', alt: 'Architectural photograph of a spa interior' },
-}
+import { clip, photo } from './assets.mjs'
+import { HEALTHCARE_PAGES } from './pages-healthcare.mjs'
 
-export const PAGES = [
+const CORE_PAGES = [
   // ─────────────────────────────────────────────────────────────────── 1
   {
     slug: 'skincare-video-production-london',
@@ -32,7 +16,7 @@ export const PAGES = [
     h1: 'Skincare video production <em>in London</em>',
     h1Plain: 'Skincare video production in London',
     eyebrow: 'Skincare brands',
-    lead: 'Shotwell is a London studio that specialises in content for beauty, skincare and wellness. We film and edit product films, ingredient stories, ads and social video that show your formula honestly and give people a reason to buy.',
+    lead: 'Shotwell is a London studio that specialises in content for skincare, healthcare and wellness. We film and edit product films, ingredient stories, ads and social video that show your formula honestly and give people a reason to buy.',
     serviceName: 'Skincare video production', serviceType: 'Skincare video production',
     clipsLabel: 'Selected work', clips: [clip.ads, clip.treatments, clip.paid],
     sections: [
@@ -47,7 +31,7 @@ export const PAGES = [
         h2: 'One shoot, every format',
         paragraphs: [
           'Skincare brands need the same footage in many shapes: a widescreen film for the product page, vertical edits for Reels, TikTok and Stories, and short cuts for paid social. We plan for all of these before the shoot, so the day is spent capturing the right shots rather than fixing the shape later.',
-          'The edit and colour grade are done by our own editors, who then cut the versions for each platform you actually use. You can read more about the social side on our <a href="/beauty-social-media-video-production/">beauty social media video</a> page, or see how we film products up close on <a href="/skincare-product-video-production/">skincare product video production</a>.',
+          'The edit and colour grade are done by our own editors, who then cut the versions for each platform you actually use. You can read more about the social side on our <a href="/healthcare-social-media-video-production/">social media video</a> page, or see how we film products up close on <a href="/skincare-product-video-production/">skincare product video production</a>.',
         ],
       },
       {
@@ -73,60 +57,7 @@ export const PAGES = [
       { q: 'Do you film outside London?', a: 'Yes. We are based in Bloomsbury, London, and we film across London and the UK. Tell us where you need to shoot and we will plan around it.' },
       { q: 'Can we use the videos in paid ads?', a: 'Yes. We deliver cuts made for paid social as well as organic. Usage rights are agreed in the quote, so you know where and for how long the content can run.' },
     ],
-    related: ['skincare-product-video-production', 'beauty-social-media-video-production', 'skincare-video-production-cost'],
-  },
-
-  // ─────────────────────────────────────────────────────────────────── 2
-  {
-    slug: 'beauty-video-production-london',
-    group: 'audience', footerLabel: 'Beauty brands',
-    relLabel: 'Beauty', relTitle: 'Beauty video production', relText: 'Brand films, ads and launch content for beauty brands and retailers.',
-    crumb: 'Beauty video production',
-    title: 'Beauty Video Production London | Films & Ads | Shotwell',
-    description: 'Beauty video production in London for brands and retailers: campaign ads, launch films, in-store content and social video from one specialist studio.',
-    h1: 'Beauty video production <em>in London</em>',
-    h1Plain: 'Beauty video production in London',
-    eyebrow: 'Beauty brands',
-    lead: 'From campaign ads to in-store films and launch content, Shotwell makes video for beauty brands and retailers from our studio in Bloomsbury, central London. High-end in look, built to perform across your channels.',
-    serviceName: 'Beauty video production', serviceType: 'Beauty video production',
-    clips: [clip.ads, clip.store, clip.events],
-    sections: [
-      {
-        h2: 'A beauty film has to look good and do a job',
-        paragraphs: [
-          'Beauty is a visual category, so the bar for how it looks is high. But a beautiful film that does not make people click, book or buy has failed. We start with what the content needs to achieve, who it is for and where it will run, and then make it look the part.',
-          'That might be a hero film for a product launch, a set of campaign ads, or a series of shorter pieces that keep your channels moving between launches.',
-        ],
-      },
-      {
-        h2: 'In-store, launches and events',
-        paragraphs: [
-          'Beauty lives in shops, counters, clinics and events as much as online. We film in-store tours and product highlights, launch evenings and brand events, and cut them into content for your social channels and your retail partners.',
-          'It is the same approach as our <a href="/skincare-video-production-london/">skincare video production</a>: plan the shoot around the formats you need, and capture everything once.',
-        ],
-      },
-      {
-        h2: 'Direction, talent and finish',
-        paragraphs: [
-          'Our team includes directors, filmmakers, editors and photographers, so the idea, the shoot and the finish stay with one studio. Model and talent-led formats are part of our Series and Campaign packages, and every project is edited and colour graded to a consistent look.',
-          'If you also need stills for your site and retailers, see our <a href="/skincare-photography-london/">skincare photography</a> page.',
-        ],
-      },
-    ],
-    getList: [
-      'Campaign ads and brand films for your site and channels',
-      'In-store and launch event films cut for social',
-      'Model and talent-led content with a consistent grade',
-      'Product close-ups and detail shots for ads and retailers',
-      'Retouched stills shot alongside the films',
-      'Versions for every platform, including vertical 9:16',
-    ],
-    faqs: [
-      { q: 'Do you work with beauty retailers as well as brands?', a: 'Yes. We film in-store tours and product highlights for retail, as well as brand campaigns, launches and events.' },
-      { q: 'Can you shoot a product launch and cut content for social afterwards?', a: 'Yes. We plan the launch coverage and the social cuts together, so you leave the event with content for every channel you need.' },
-      { q: 'What does beauty video production cost?', a: 'It depends on the number of shoot days, the people on screen and the deliverables you need. We quote each project to the brief. See our <a href="/skincare-video-production-cost/">packages page</a> for what each monthly package includes, then get in touch for a quote.' },
-    ],
-    related: ['skincare-video-production-london', 'beauty-social-media-video-production', 'skincare-photography-london'],
+    related: ['skincare-product-video-production', 'healthcare-social-media-video-production', 'skincare-video-production-cost'],
   },
 
   // ─────────────────────────────────────────────────────────────────── 3
@@ -176,10 +107,10 @@ export const PAGES = [
     faqs: [
       { q: 'Can you film while the clinic is open?', a: 'We plan the shoot around your appointments, so treatments and consultations can carry on. We agree the schedule and shot list with you beforehand.' },
       { q: 'How do you handle patient consent?', a: 'Anyone who appears on camera signs a release before filming. Footage of patients is only used where consent is in place, and we recommend reviewing the current guidance on consent and before-and-after content.' },
-      { q: 'Can you make content for social as well as the website?', a: 'Yes. From one shoot we deliver a main film for your website and vertical edits for social. See our <a href="/beauty-social-media-video-production/">social video</a> page.' },
+      { q: 'Can you make content for social as well as the website?', a: 'Yes. From one shoot we deliver a main film for your website and vertical edits for social. See our <a href="/healthcare-social-media-video-production/">social video</a> page.' },
       { q: 'How much does clinic video production cost?', a: 'It depends on the number of shoot days, the people on screen and the versions you need. We quote to the brief; see the <a href="/skincare-video-production-cost/">packages page</a> for what each monthly package includes, then get in touch for a quote.' },
     ],
-    related: ['interview-testimonial-filming-london', 'spa-wellness-video-production-london', 'skincare-video-production-cost'],
+    related: ['private-clinic-video-production-london', 'interview-testimonial-filming-london', 'spa-wellness-video-production-london'],
   },
 
   // ─────────────────────────────────────────────────────────────────── 4
@@ -231,58 +162,7 @@ export const PAGES = [
       { q: 'Do you work with day spas and independent practitioners as well as larger spas?', a: 'Yes. We work with spas, wellness studios and independent practitioners, and we scope the shoot to the size of the business.' },
       { q: 'Do you film outside London?', a: 'Yes. We are based in Bloomsbury, London, and we film across London and the UK.' },
     ],
-    related: ['aesthetic-clinic-video-production-london', 'beauty-social-media-video-production', 'skincare-photography-london'],
-  },
-
-  // ─────────────────────────────────────────────────────────────────── 5
-  {
-    slug: 'beauty-social-media-video-production',
-    group: 'service', footerLabel: 'Social media video',
-    relLabel: 'Social', relTitle: 'Social media video for beauty', relText: 'Vertical video for Reels, TikTok and paid social.',
-    crumb: 'Social media video for beauty brands',
-    title: 'Social Media Video for Beauty & Skincare Brands | Shotwell',
-    description: 'Social media video production for beauty and skincare brands in London: native vertical content, creator videos and ads for Reels, TikTok and paid social.',
-    h1: 'Social media video for <em>beauty and skincare</em> brands',
-    h1Plain: 'Social media video for beauty and skincare brands',
-    eyebrow: 'Social content',
-    lead: 'Shotwell makes social content for beauty and skincare brands: vertical video shot natively for Reels, TikTok and Stories, creator-led videos and ads built to perform in paid social. Made by a London studio that also shoots your hero films.',
-    serviceName: 'Social media video production for beauty brands', serviceType: 'Social media video production',
-    clipsLabel: 'Social content', clips: [clip.paid, clip.experts, clip.events],
-    sections: [
-      {
-        h2: 'Shot for the feed, not cropped for it',
-        paragraphs: [
-          'A widescreen film cropped to vertical rarely works. We shoot social content natively in 9:16, framing for the phone, with hooks in the first seconds and edits paced for how people scroll. The same shoot can also produce widescreen and square versions, so nothing needs to be re-made.',
-        ],
-      },
-      {
-        h2: 'Organic and paid, planned together',
-        paragraphs: [
-          'Paid social rewards variety. Our packages include a mix of organic and paid-optimised formats, product close-ups made for ads, and creator videos, so you have fresh creative to test rather than one hero asset that tires quickly.',
-          'Where it helps, we build recurring series, such as Skin Ritual, Ingredient Deep-Dive and Founder Perspective, so your feed has a recognisable shape. See <a href="/skincare-video-production-cost/">our packages</a> for what each month includes.',
-        ],
-      },
-      {
-        h2: 'Creators matched to your customer',
-        paragraphs: [
-          'Our packages include UGC creator videos from vetted creators, matched to your customer profile and, for skincare, to skin type, with diversity across skin types. It means the content looks like your customers rather than a stock library.',
-        ],
-      },
-    ],
-    getList: [
-      'Native 9:16 video for Reels, TikTok and Stories',
-      'Product close-up videos made for paid ads',
-      'UGC creator videos matched to your customer',
-      'Series formats that give your feed a recognisable shape',
-      'Behind-the-scenes cuts with music, optimised per platform',
-      'A structured revision round with a 48-hour turnaround',
-    ],
-    faqs: [
-      { q: 'Do you make content for paid ads as well as organic posts?', a: 'Yes. Our packages include a mix of organic and paid-optimised formats, and product close-ups made specifically for ads.' },
-      { q: 'Can you work with our own creators or influencers?', a: 'Our monthly packages include vetted UGC creators matched to your customer. If you already work with creators or influencers, tell us and we will plan how they fit into a shoot.' },
-      { q: 'How much does social video for a beauty brand cost?', a: 'It depends on how many clips, platforms and shoot days you need. We quote to the brief; see the <a href="/skincare-video-production-cost/">packages page</a> for what each monthly package includes, then get in touch for a quote.' },
-    ],
-    related: ['skincare-product-video-production', 'skincare-video-production-london', 'skincare-video-production-cost'],
+    related: ['aesthetic-clinic-video-production-london', 'healthcare-social-media-video-production', 'skincare-photography-london'],
   },
 
   // ─────────────────────────────────────────────────────────────────── 6
@@ -316,7 +196,7 @@ export const PAGES = [
       {
         h2: 'Made for the places they are used',
         paragraphs: [
-          'Product video lives on product pages, in marketplaces and retailer listings, in paid social and in email. We deliver versions sized for each, with product close-ups made for ads. See our <a href="/beauty-social-media-video-production/">social video</a> page for how these work in the feed, or our <a href="/skincare-photography-london/">product photography</a> for the stills that go with them.',
+          'Product video lives on product pages, in marketplaces and retailer listings, in paid social and in email. We deliver versions sized for each, with product close-ups made for ads. See our <a href="/healthcare-social-media-video-production/">social video</a> page for how these work in the feed, or our <a href="/skincare-photography-london/">product photography</a> for the stills that go with them.',
         ],
       },
     ],
@@ -333,28 +213,28 @@ export const PAGES = [
       { q: 'What is a molecular or ingredient visualisation?', a: 'A 3D animated asset that shows your key active at a scientific level. It is included each month in our Campaign package, and it works well in ads, on product pages and with retail buyers.' },
       { q: 'How much does skincare product video cost?', a: 'It depends on the number of films, stills and shoot days. Our Foundation package is built around product films and stills; see the <a href="/skincare-video-production-cost/">packages page</a> for what it includes, then get in touch for a quote.' },
     ],
-    related: ['skincare-video-production-london', 'skincare-photography-london', 'beauty-social-media-video-production'],
+    related: ['skincare-video-production-london', 'skincare-photography-london', 'healthcare-social-media-video-production'],
   },
 
   // ─────────────────────────────────────────────────────────────────── 7
   {
     slug: 'interview-testimonial-filming-london',
     group: 'service', footerLabel: 'Interviews & testimonials',
-    relLabel: 'Interviews', relTitle: 'Interview and testimonial filming', relText: 'Founder stories, expert-led content and testimonials.',
+    relLabel: 'Interviews', relTitle: 'Interview and testimonial filming', relText: 'Founder stories, doctor-led content and testimonials.',
     crumb: 'Interview and testimonial filming',
     title: 'Interview & Testimonial Filming London | Shotwell',
-    description: 'Interview and testimonial filming in London for beauty and wellness: founder stories, practitioner-led content and testimonials, cut for web and social.',
+    description: 'Interview and testimonial filming in London for healthcare and skincare: founder stories, doctor-led content and patient testimonials, cut for web and social.',
     h1: 'Interview and testimonial filming <em>in London</em>',
     h1Plain: 'Interview and testimonial filming in London',
     eyebrow: 'Interviews & testimonials',
-    lead: 'The people behind a brand are often its most persuasive asset. Shotwell films founder interviews, practitioner-led content and customer testimonials for beauty, skincare and wellness, then cuts them for your site and your social channels.',
+    lead: 'The people behind a brand are often its most persuasive asset. Shotwell films founder interviews, doctor and practitioner-led content and patient and customer testimonials for healthcare, skincare and wellness, then cuts them for your site and your social channels.',
     serviceName: 'Interview and testimonial filming', serviceType: 'Interview filming',
     clips: [clip.interviews, clip.experts, clip.events],
     sections: [
       {
         h2: 'Let the experts speak',
         paragraphs: [
-          'In beauty and wellness, expertise is trust. A founder explaining why they made the product, or a practitioner describing how a treatment works, can say what a script never could. We help people relax on camera, plan the questions, and shape the interview into something clear and worth watching.',
+          'In healthcare, skincare and wellness, expertise is trust. A founder explaining why they made the product, or a doctor describing how a treatment works, can say what a script never could. We help people relax on camera, plan the questions, and shape the interview into something clear and worth watching.',
         ],
       },
       {
@@ -367,13 +247,13 @@ export const PAGES = [
       {
         h2: 'Testimonials people believe',
         paragraphs: [
-          'Customer and client testimonials work best when they are specific and natural. We film them in a relaxed setting, with consent and releases in place, and cut them to the moments that carry the most weight.',
+          'Patient and customer testimonials work best when they are specific and natural. We film them in a relaxed setting, with consent and releases in place, and cut them to the moments that carry the most weight. Testimonials in healthcare must be genuine and not misleading, so we recommend checking the current ASA and CAP guidance, and your regulator’s, before publishing.',
         ],
       },
     ],
     getList: [
       'Founder and brand-story interviews',
-      'Practitioner and expert-led education content',
+      'Doctor, practitioner and expert-led education content',
       'Customer and patient testimonials, filmed with releases',
       'Short vertical clips for Reels, TikTok and Stories',
       'Longer films for your website and email',
@@ -384,22 +264,22 @@ export const PAGES = [
       { q: 'Can we get short clips as well as the full interview?', a: 'Yes. We plan the interview so it can be cut into a full film and several shorter vertical pieces for social.' },
       { q: 'How much does interview filming cost?', a: 'It depends on the number of people, the locations and the versions you need. See our <a href="/skincare-video-production-cost/">packages page</a> for our monthly packages, and contact us for a quote.' },
     ],
-    related: ['aesthetic-clinic-video-production-london', 'beauty-social-media-video-production', 'skincare-video-production-cost'],
+    related: ['aesthetic-clinic-video-production-london', 'healthcare-social-media-video-production', 'skincare-video-production-cost'],
   },
 
   // ─────────────────────────────────────────────────────────────────── 8
   {
     slug: 'skincare-photography-london',
     group: 'service', footerLabel: 'Skincare photography',
-    relLabel: 'Photography', relTitle: 'Skincare photography', relText: 'Product, lifestyle and editorial stills for beauty brands.',
+    relLabel: 'Photography', relTitle: 'Skincare photography', relText: 'Product, lifestyle and editorial stills for skincare brands.',
     crumb: 'Skincare photography',
-    title: 'Skincare & Beauty Photography London | Shotwell',
-    description: 'Skincare and beauty photography in London: product, lifestyle and editorial stills for brands, clinics and spas, shot alongside your video content.',
-    h1: 'Skincare and beauty photography <em>in London</em>',
-    h1Plain: 'Skincare and beauty photography in London',
+    title: 'Skincare Photography London | Shotwell',
+    description: 'Skincare photography in London: product, lifestyle and editorial stills for skincare brands, clinics and spas, shot alongside your video content.',
+    h1: 'Skincare photography <em>in London</em>',
+    h1Plain: 'Skincare photography in London',
     eyebrow: 'Photography',
-    lead: 'Stills for your website, your retailers and your social, made by the same studio that makes your video. Shotwell photographs skincare and beauty products, treatments, people and spaces, with a consistent look across every image.',
-    serviceName: 'Skincare and beauty photography', serviceType: 'Beauty photography',
+    lead: 'Stills for your website, your retailers and your social, made by the same studio that makes your video. Shotwell photographs skincare products, treatments, people and spaces, with a consistent look across every image.',
+    serviceName: 'Skincare photography', serviceType: 'Skincare photography',
     photosLabel: 'Selected stills', photos: [photo.product, photo.device, photo.treatment, photo.portrait, photo.practice, photo.spa],
     sections: [
       {
@@ -482,7 +362,7 @@ export const PAGES = [
         h2: 'Which package suits you',
         paragraphs: [
           '<strong>Foundation</strong> suits skincare brands that need a steady supply of product-led content without a model. <strong>Series</strong>, our most popular, adds a model or talent and a recurring series episode, which is a good fit for brands building a recognisable feed. <strong>Campaign</strong> is for brands running paid social at scale, with 3D visualisation, more creator content and a quarterly hero brand film.',
-          'Not sure? Tell us about your brand and we will recommend one. You can also see the thinking behind these in our <a href="/skincare-video-production-london/">skincare video production</a> and <a href="/beauty-social-media-video-production/">social video</a> pages.',
+          'Not sure? Tell us about your brand and we will recommend one. You can also see the thinking behind these in our <a href="/skincare-video-production-london/">skincare video production</a> and <a href="/healthcare-social-media-video-production/">social video</a> pages.',
         ],
       },
     ],
@@ -493,6 +373,33 @@ export const PAGES = [
       { q: 'Can I commission a one-off project instead?', a: 'Tell us what you need and we will quote it to the brief.' },
     ],
     faqTitle: 'Cost questions',
-    related: ['skincare-video-production-london', 'beauty-social-media-video-production', 'skincare-product-video-production'],
+    related: ['skincare-video-production-london', 'healthcare-social-media-video-production', 'skincare-product-video-production'],
   },
 ]
+
+// Order used for the sitemap, llms.txt and the related-link lookups.
+const ORDER = [
+  'private-healthcare-video-production-london',
+  'private-clinic-video-production-london',
+  'private-hospital-video-production-london',
+  'medical-device-video-production-london',
+  'doctor-consultant-video-production-london',
+  'harley-street-video-production',
+  'aesthetic-clinic-video-production-london',
+  'skincare-video-production-london',
+  'spa-wellness-video-production-london',
+  'healthcare-social-media-video-production',
+  'skincare-product-video-production',
+  'interview-testimonial-filming-london',
+  'healthcare-photography-london',
+  'skincare-photography-london',
+  'skincare-video-production-cost',
+]
+const ALL = [...CORE_PAGES, ...HEALTHCARE_PAGES]
+export const PAGES = ORDER.map((slug) => {
+  const p = ALL.find((x) => x.slug === slug)
+  if (!p) throw new Error('Missing page definition: ' + slug)
+  return p
+})
+const unused = ALL.filter((p) => !ORDER.includes(p.slug)).map((p) => p.slug)
+if (unused.length) throw new Error('Page defined but not in ORDER: ' + unused.join(', '))

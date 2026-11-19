@@ -4,14 +4,14 @@ import { SITE } from './site.mjs'
 // Lengths in seconds of the encoded files in public/video (and the hero). Update if a video is replaced.
 export const SECONDS = { hero: 43.64, ads: 28.92, interviews: 33.8, store: 9.32, treatments: 24.04, process: 43.8, paid: 19.52, experts: 14.08, events: 52.28 }
 
-export const HERO = { name: 'hero', caption: 'Shotwell showreel', description: 'Showreel from Shotwell, a London video production studio for beauty, skincare and wellness brands.' }
+export const HERO = { name: 'hero', caption: 'Shotwell showreel', description: 'Showreel from Shotwell, a London video production studio for skincare, healthcare and wellness brands.' }
 
 const files = (name) => name === 'hero'
   ? { content: `${SITE.url}/shotwell-hero.mp4`, thumb: `${SITE.url}/hero-poster.jpg` }
   : { content: `${SITE.url}/video/${name}.mp4`, thumb: `${SITE.url}/video/${name}.jpg` }
 
 function describe(c) {
-  return c.description || `${c.caption}. A Shotwell film for beauty, skincare and wellness brands.`
+  return c.description || `${c.caption}. A Shotwell film for skincare, healthcare and wellness brands.`
 }
 
 // One VideoObject for the page graph. `base` makes the @id unique per page.

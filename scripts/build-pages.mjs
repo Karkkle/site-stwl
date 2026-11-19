@@ -46,6 +46,18 @@ for (const page of PAGES) {
 }
 console.log(`→ ${PAGES.length} landing pages written`)
 
+// Old addresses that no longer have a page: send visitors (and crawlers) to the closest new one. Not in the sitemap.
+const MOVED = {
+  'beauty-video-production-london': 'private-healthcare-video-production-london',
+  'beauty-social-media-video-production': 'healthcare-social-media-video-production',
+}
+for (const [from, to] of Object.entries(MOVED)) {
+  const dir = join(dist, from)
+  mkdirSync(dir, { recursive: true })
+  writeFileSync(join(dir, 'index.html'), `<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><title>This page has moved | Shotwell</title><meta name="robots" content="noindex, follow"><link rel="canonical" href="${SITE.url}/${to}/"><meta http-equiv="refresh" content="0; url=/${to}/"><script>location.replace("/${to}/")</script></head><body><p>This page has moved to <a href="/${to}/">/${to}/</a>.</p></body></html>`)
+}
+console.log(`→ ${Object.keys(MOVED).length} redirect pages written`)
+
 // ── home page: launch switch for the robots meta (the rest of its head is maintained in index.html)
 let home = html
 home = home.replace('</head>', `    <script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': [businessNode(), websiteNode(), ...homeClips.map((c) => videoNode(c, `${SITE.url}/`))] })}</script>\n  </head>`)
@@ -61,7 +73,7 @@ if (launched) {
 writeFileSync(join(dist, 'index.html'), home)
 
 // ── sitemap, robots, llms.txt, 404
-const urls = [{ loc: `${SITE.url}/`, priority: '1.0', clips: homeClips }, ...PAGES.map((p) => ({ loc: `${SITE.url}/${p.slug}/`, priority: p.slug === 'skincare-video-production-london' ? '0.9' : '0.8', clips: p.clips || [] }))]
+const urls = [{ loc: `${SITE.url}/`, priority: '1.0', clips: homeClips }, ...PAGES.map((p) => ({ loc: `${SITE.url}/${p.slug}/`, priority: p.slug === 'private-healthcare-video-production-london' ? '0.9' : '0.8', clips: p.clips || [] }))]
 writeFileSync(join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n${urls.map((u) => `  <url><loc>${u.loc}</loc><lastmod>${today}</lastmod><priority>${u.priority}</priority>${sitemapVideos(u.clips)}</url>`).join('\n')}\n</urlset>\n`)
 writeFileSync(join(dist, 'robots.txt'), launched
   ? `# Shotwell — every page is open to search engines and AI search.\nUser-agent: *\nAllow: /\n\nSitemap: ${SITE.url}/sitemap.xml\n`
@@ -69,7 +81,7 @@ writeFileSync(join(dist, 'robots.txt'), launched
 const llm = [
   `# ${SITE.name}`,
   '',
-  `> ${SITE.name} (${SITE.legalName}) is an independent production company at ${SITE.address.street}, ${SITE.address.area}, ${SITE.address.city} ${SITE.address.postcode} making video, social content and photography for beauty, skincare and wellness brands, clinics, spas and practitioners across London and the UK.`,
+  `> ${SITE.name} (${SITE.legalName}) is an independent production company at ${SITE.address.street}, ${SITE.address.area}, ${SITE.address.city} ${SITE.address.postcode} making video, social content and photography for skincare, healthcare and wellness brands: private clinics, hospitals, doctors, medical device companies, skincare brands and spas, across London and the UK.`,
   '',
   '## Pages',
   ...PAGES.map((p) => `- [${plain(p.title)}](${SITE.url}/${p.slug}/): ${p.description}`),

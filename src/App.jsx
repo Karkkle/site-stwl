@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { FOOTER_COLUMNS, SPECIALISMS } from '../scripts/seo/nav.mjs';
 import logoInk from "./brand/logos/shotwell-logo-standard-ink.svg";
 import logoBone from "./brand/logos/shotwell-logo-standard-bone.svg";
 import logoWordBone from "./brand/logos/shotwell-logo-wordmark-bone.svg";
@@ -416,10 +417,13 @@ const FontsAndStyles = () => (
     /* The logo is a share of its column (capped), so it shrinks with the page and never runs into the link columns */
     .footer-logo { display:block; width:min(100%,220px); height:auto; }
     .footer-address { font-style:normal; font-family:var(--T); font-size:.92rem; line-height:1.65; color:var(--color-bone); opacity:.72; margin-top:26px; }
+    .footer-social { display:flex; gap:24px; margin-top:22px; }
+    .footer-social a { font-family:var(--T); font-size:.95rem; color:var(--color-bone); text-decoration:none; opacity:.88; transition:opacity .3s, color .3s; }
+    .footer-social a:hover { opacity:1; color:var(--color-whisper-sage); }
     .footer-col .footer-h { margin-bottom:14px; color:var(--color-sage); }
     .footer-col a { display:block; padding:6px 0; font-family:var(--T); font-size:.92rem; letter-spacing:.005em; color:var(--color-bone); text-decoration:none; opacity:.88; transition:opacity .3s, color .3s; }
     .footer-col a:hover { opacity:1; color:var(--color-whisper-sage); }
-    @media (max-width:1000px) { .footer-grid { grid-template-columns:repeat(4,minmax(0,1fr)); row-gap:36px; } .footer-brand { grid-column:1 / -1; } }
+    @media (max-width:1210px) { .footer-grid { grid-template-columns:repeat(4,minmax(0,1fr)); row-gap:36px; } .footer-brand { grid-column:1 / -1; } }
     .footer-bar { display:flex; justify-content:space-between; align-items:center; gap:12px 32px; flex-wrap:wrap; border-top:1px solid rgba(169,174,157,.28); padding-top:24px; max-width:1400px; width:100%; margin:0 auto; }
     footer p { font-family:var(--A); font-weight:400; font-size:0.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--color-sage); margin:0; }
     footer p span { color:var(--color-bone); }
@@ -562,15 +566,15 @@ const CLIENT_DATA = {
 
 const SELECTOR_TILES = [
   { id: 'skincare', name: 'Skincare Brand', desc: 'Product-led, retail or DTC',  img: './packages/skincare.jpg' },
-  { id: 'clinic', name: 'Medical Clinic', desc: 'Aesthetic or wellness clinic',  img: './packages/clinic.jpg' },
-  { id: 'practitioner', name: 'Practitioner', desc: 'Independent specialist',    img: './packages/practitioner.jpg' },
+  { id: 'clinic', name: 'Medical Clinic', desc: 'Private, aesthetic or wellness clinic',  img: './packages/clinic.jpg' },
+  { id: 'practitioner', name: 'Practitioner', desc: 'Doctor or independent specialist',    img: './packages/practitioner.jpg' },
   { id: 'spa', name: 'Spa', desc: 'Luxury or wellness spa',                    img: './packages/spa.jpg' },
   { id: 'other', name: 'Other', desc: 'General or lifestyle',                  img: './packages/other.jpg' }
 ];
 
 /* ─────────────────────────────────────────── DATA */
 const WORKS = [
-  { id:1, title:"Ads",               tag:"Ads",        caption:"Campaign ads for beauty and skincare brands", clip:"ads", vimeoId: "1228515977", vimeoHash: "126823ccdd", g:"linear-gradient(145deg,#c8b98a,#a8956a)" },
+  { id:1, title:"Ads",               tag:"Ads",        caption:"Campaign ads for skincare brands", clip:"ads", vimeoId: "1228515977", vimeoHash: "126823ccdd", g:"linear-gradient(145deg,#c8b98a,#a8956a)" },
   { id:2, title:"Interviews",        tag:"Interviews", caption:"Founder-led brand story",         clip:"interviews", vimeoId: "1168509806", vimeoHash: "95ecf084c6", g:"linear-gradient(165deg,#b2c2b4,#8aa292)" },
   { id:3, title:"Store Highlights",  tag:"Store Highlights", caption:"In-store tours and product highlights",  clip:"store", vimeoId: "1228547469", vimeoHash: "444326e488", g:"linear-gradient(145deg,#c8a898,#a07868)" },
   { id:5, title:"Treatments",        tag:"Treatments", caption:"Clinic and spa treatments", clip:"treatments", vimeoId: "1228552596", vimeoHash: "ec2aecbc0d", g:"linear-gradient(145deg,#a2bac2,#809098)" },
@@ -698,7 +702,7 @@ function Nav({ open, setOpen }) {
   return (
     <>
       <nav className={[sc ? "scrolled" : "", open ? "menu-open" : ""].join(" ").trim()}>
-        <a href="#" className="nav-logo" aria-label="Shotwell — visual content for beauty, skincare and wellness">
+        <a href="#" className="nav-logo" aria-label="Shotwell — visual content for skincare, healthcare and wellness">
           <img className="nav-logo-img nav-logo-img--bone" src={logoBone} alt="" />
           <img className="nav-logo-img nav-logo-img--ink" src={logoInk} alt="" />
           <img className="nav-logo-img nav-logo-img--word" src={logoWordBone} alt="" />
@@ -1029,27 +1033,12 @@ function VerticalContent() {
   );
 }
 
-const SPECIALISMS = {
-  who: [
-    { href: "/skincare-video-production-london/", name: "Skincare brands", desc: "Product films, ingredient stories and ads." },
-    { href: "/beauty-video-production-london/", name: "Beauty brands", desc: "Brand films, ads and launch content." },
-    { href: "/aesthetic-clinic-video-production-london/", name: "Aesthetic clinics", desc: "Treatment films, practitioner stories and testimonials." },
-    { href: "/spa-wellness-video-production-london/", name: "Spas & wellness", desc: "Atmosphere, treatments and spaces filmed to make people book." },
-  ],
-  what: [
-    { href: "/beauty-social-media-video-production/", name: "Social media video", desc: "Vertical video for Reels, TikTok and paid social." },
-    { href: "/skincare-product-video-production/", name: "Product & ingredient video", desc: "Texture close-ups, ingredient stories and 3D visualisation." },
-    { href: "/interview-testimonial-filming-london/", name: "Interviews & testimonials", desc: "Founder stories, expert-led content and testimonials." },
-    { href: "/skincare-photography-london/", name: "Skincare photography", desc: "Product, lifestyle and editorial stills." },
-  ],
-};
-
 function Specialisms() {
   const col = (title, items) => (
     <div>
       <p className="spec-h">{title}</p>
       {items.map(i => (
-        <a key={i.href} href={i.href} className="spec-link" data-h>
+        <a key={i.slug} href={`/${i.slug}/`} className="spec-link" data-h>
           <span className="spec-name">{i.name}</span>
           <span className="spec-desc">{i.desc}</span>
         </a>
@@ -1061,8 +1050,8 @@ function Specialisms() {
       <div className="spec-inner">
         <div className="fade-in">
           <p className="s-label">Specialisms</p>
-          <h2 className="s-title">Made for <em>beauty</em> and skincare</h2>
-          <p className="vert-sub">One London studio for video and photography, for brands, clinics, spas and practitioners across beauty, skincare and wellness.</p>
+          <h2 className="s-title">Made for <em>healthcare</em> and skincare</h2>
+          <p className="vert-sub">One London studio for video and photography, for private clinics, hospitals, doctors, medical device companies, skincare brands and spas.</p>
         </div>
         <div className="spec-cols fade-in">
           {col("Who we work with", SPECIALISMS.who)}
@@ -1565,7 +1554,7 @@ function About() {
         </div>
         <div className="abt-body fade-in">
           <p><strong>Shotwell</strong> is an independent production company rooted in the belief that every story deserves to be told with precision, intention, and beauty.</p>
-          <p>From our Bloomsbury office in the heart of London, we work with <strong>brands, health and beauty experts, clinics and spas</strong> across the globe — bringing a cinematic sensibility to everything from short form videos to large-scale commercial campaigns.</p>
+          <p>From our Bloomsbury office in the heart of London, we work with <strong>healthcare and skincare brands, clinics, hospitals, doctors and spas</strong> across the globe — bringing a cinematic sensibility to everything from short form videos to large-scale commercial campaigns.</p>
           <p>Our team of directors, filmmakers, editors and photographers are united to create the most impactful visuals to convey your identity and make your brand stand out.</p>
           <div className="abt-bio">
             <p className="abt-bio-name">Mark Weeks <span className="abt-team-role">— Co-founder</span></p>
@@ -1614,52 +1603,29 @@ function Contact() {
   );
 }
 
-// Crawlable links to the search landing pages (generated by scripts/build-pages.mjs).
-const FOOTER_LINKS = {
-  audience: [
-    { href: "/skincare-video-production-london/", label: "Skincare brands" },
-    { href: "/beauty-video-production-london/", label: "Beauty brands" },
-    { href: "/aesthetic-clinic-video-production-london/", label: "Aesthetic clinics" },
-    { href: "/spa-wellness-video-production-london/", label: "Spas & wellness" },
-  ],
-  service: [
-    { href: "/beauty-social-media-video-production/", label: "Social media video" },
-    { href: "/skincare-product-video-production/", label: "Product & ingredient video" },
-    { href: "/interview-testimonial-filming-london/", label: "Interviews & testimonials" },
-    { href: "/skincare-photography-london/", label: "Skincare photography" },
-  ],
-};
-
-const FOOTER_STUDIO = [
-  { href: "#work", label: "Our work" },
-  { href: "/skincare-video-production-cost/", label: "Packages" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
-];
 const FOOTER_SOCIAL = [
-  { href: "https://www.instagram.com/weareshotwell/", label: "Instagram", ext: true },
-  { href: "https://www.linkedin.com/company/shotwell-london", label: "LinkedIn", ext: true },
+  { href: "https://www.instagram.com/weareshotwell/", label: "Instagram" },
+  { href: "https://www.linkedin.com/company/shotwell-london", label: "LinkedIn" },
 ];
 
+// Crawlable links to the landing pages: the columns come from scripts/seo/nav.mjs, shared with the static pages.
 function Footer() {
-  const col = (title, items) => (
-    <div className="footer-col">
-      <p className="footer-h">{title}</p>
-      {items.map(l => <a key={l.href} href={l.href} {...(l.ext ? { target: "_blank", rel: "noopener noreferrer" } : {})}>{l.label}</a>)}
-    </div>
-  );
   return (
     <footer>
       <div className="footer-grid">
         <div className="footer-brand">
-          <img className="footer-logo" src={logoBone} alt="Shotwell — visual content for beauty, skincare and wellness" />
+          <img className="footer-logo" src={logoBone} alt="Shotwell — visual content for skincare, healthcare and wellness" />
           <address className="footer-address">11-13 Bayley Street<br />Bloomsbury, London<br />WC1B 3HD</address>
-
+          <div className="footer-social">
+            {FOOTER_SOCIAL.map(l => <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a>)}
+          </div>
         </div>
-        {col("Who we work with", FOOTER_LINKS.audience)}
-        {col("What we make", FOOTER_LINKS.service)}
-        {col("Studio", FOOTER_STUDIO)}
-        {col("Follow", FOOTER_SOCIAL)}
+        {FOOTER_COLUMNS.map(c => (
+          <div className="footer-col" key={c.title}>
+            <p className="footer-h">{c.title}</p>
+            {c.links.map(l => <a key={l.label} href={l.slug ? `/${l.slug}/` : `#${l.anchor}`}>{l.label}</a>)}
+          </div>
+        ))}
       </div>
       <div className="footer-bar">
         <p>© {new Date().getFullYear()} <span>Shotwell Studios Ltd trading as Shotwell</span></p>

@@ -3,7 +3,7 @@ export const SITE = {
   url: 'https://shotwell.co.uk',
   name: 'Shotwell',
   legalName: 'Shotwell Studios Ltd',
-  tagline: 'Visual content for beauty, skincare and wellness',
+  tagline: 'Visual content for skincare, healthcare and wellness',
   ogImage: 'https://shotwell.co.uk/og-image.png',
   instagram: 'https://www.instagram.com/weareshotwell/',
   linkedin: 'https://www.linkedin.com/company/shotwell-london',
