@@ -500,6 +500,10 @@ const CLIENT_DATA = {
     campaign: {
       desc: 'The fullest package, for a launch or a larger range: four hero films, 14 snippets and 40 final images, enough to run organic and paid campaigns side by side.',
       ideal: 'Brands launching hero products or entering new markets, who need the volume to support a full campaign.'
+    },
+    bespoke: {
+      desc: 'A project scoped around your brief. It might be a bigger campaign than our standard packages cover, or a short, simple shoot for a single film or a handful of images. We plan it with you and quote it to fit.',
+      ideal: 'Brands with a larger launch or a wider range to cover, and brands that only need one film or a small set of images.'
     }
   },
   clinic: {
@@ -515,6 +519,10 @@ const CLIENT_DATA = {
     campaign: {
       desc: 'The fullest package for clinics with several treatments, practitioners or locations, with enough volume to run campaigns across every channel.',
       ideal: 'Established clinics scaling patient enquiries, who need a complete library that covers every treatment and every platform.'
+    },
+    bespoke: {
+      desc: 'A project scoped around your brief. It might be a bigger campaign than our standard packages cover, or a short, simple shoot for a single film or a handful of images. We plan it with you and quote it to fit.',
+      ideal: 'Clinics with several sites, treatments or practitioners to cover, and clinics that need one clear film or a simple set of images.'
     }
   },
   practitioner: {
@@ -530,6 +538,10 @@ const CLIENT_DATA = {
     campaign: {
       desc: 'The fullest package for practitioners building a premium personal brand, with enough volume for paid acquisition and organic authority-building together.',
       ideal: 'High-profile or multi-location practitioners scaling their practice, who want a content library that positions them as the name in their speciality.'
+    },
+    bespoke: {
+      desc: 'A project scoped around your brief. It might be a bigger campaign than our standard packages cover, or a short, simple shoot for a single film or a handful of images. We plan it with you and quote it to fit.',
+      ideal: 'Practitioners building a wider body of work, and practitioners who just need a short, simple shoot.'
     }
   },
   spa: {
@@ -545,6 +557,10 @@ const CLIENT_DATA = {
     campaign: {
       desc: 'The fullest package for destination or multi-site spas, with enough volume to run campaigns that fill the treatment diary.',
       ideal: 'Premium or destination spas scaling their brand, who want a content library that does justice to the level of experience on offer.'
+    },
+    bespoke: {
+      desc: 'A project scoped around your brief. It might be a bigger campaign than our standard packages cover, or a short, simple shoot for a single film or a handful of images. We plan it with you and quote it to fit.',
+      ideal: 'Spas and groups with several venues or a seasonal campaign, and spas that need one short film or a few images.'
     }
   },
   other: {
@@ -560,6 +576,10 @@ const CLIENT_DATA = {
     campaign: {
       desc: 'The fullest package, for a launch or a larger range, with enough volume to run organic and paid campaigns side by side.',
       ideal: 'Brands launching products or entering new markets, who need the volume to support a full campaign.'
+    },
+    bespoke: {
+      desc: 'A project scoped around your brief. It might be a bigger campaign than our standard packages cover, or a short, simple shoot for a single film or a handful of images. We plan it with you and quote it to fit.',
+      ideal: 'Teams with a larger project in mind, and teams that only need something short and simple.'
     }
   }
 };
@@ -662,6 +682,19 @@ const PACKAGE_DATA = [
       '<strong>14 × 15-second snippets</strong><br/>Quick cuts in landscape and portrait, for social, email and web.',
       '<strong>40 final images</strong><br/>Edited photography for your site, social, press and retailers.',
       '<strong>10 working day delivery</strong><br/>Your films and images delivered within 10 working days.'
+    ]
+  },
+  {
+    id: 'bespoke',
+    num: '04',
+    name: 'Bespoke',
+    meta: ['Scoped to your brief', 'Larger or smaller projects'],
+    deliverablesLabel: 'How it works',
+    deliverables: [
+      '<strong>A bigger project</strong><br/>More shoot days, more films or a larger set of images, for a launch, a wider range or several locations.',
+      '<strong>A shorter, simpler project</strong><br/>One film or a small set of images, when a full package is more than you need.',
+      '<strong>Your formats</strong><br/>Hero videos, 15-second snippets and final images, in the mix that suits your brief.',
+      '<strong>Quoted to your brief</strong><br/>We plan the scope and delivery time with you, then send a clear quote.'
     ]
   }
 ];

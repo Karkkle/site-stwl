@@ -104,8 +104,8 @@ function priceCards(cards) {
   return `<section class="band">
       <div class="wrap">
         <p class="label">Packages</p>
-        <h2 class="center-h">Three ways to work together</h2>
-        <div class="packs">
+        <h2 class="center-h">${cards.length === 4 ? 'Four' : 'Three'} ways to work together</h2>
+        <div class="packs${cards.length === 4 ? ' four' : ''}">
           ${cards.map((c) => `<article class="pack${c.popular ? ' pop' : ''}">
             ${c.popular ? '<span class="badge">Most popular</span>' : ''}
             <p class="label">${esc(c.num)}</p>
@@ -338,7 +338,7 @@ figcaption{margin-top:12px;font-size:.92rem;color:var(--color-text);opacity:.85}
 .steps li{border-top:1px solid var(--color-border);padding-top:22px}
 .steps .num{font-family:var(--font-accent);font-size:.8rem;color:var(--color-sage);letter-spacing:.08em}
 .steps h3{font-size:1.3rem;margin:10px 0 10px}.steps p{font-size:.97rem;opacity:.85}
-.packs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.packs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.packs.four{grid-template-columns:repeat(4,1fr);gap:18px}.packs.four .pack{padding:34px 26px}
 .pack{position:relative;background:var(--color-surface);padding:38px 34px;display:flex;flex-direction:column}
 .pack.pop{outline:1px solid var(--color-sage)}
 .badge{position:absolute;top:18px;right:18px;font-family:var(--font-accent);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;background:var(--color-taupe-ink);color:var(--color-bone);border-radius:100px;padding:5px 12px}
@@ -369,6 +369,8 @@ figcaption{margin-top:12px;font-size:.92rem;color:var(--color-text);opacity:.85}
 .ftr-bar{display:flex;justify-content:space-between;align-items:center;gap:12px 32px;flex-wrap:wrap;border-top:1px solid rgba(169,174,157,.28);padding-top:24px}
 .ftr-bar p{margin:0;font-family:var(--font-accent);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--color-sage)}.ftr-bar p span{color:var(--color-bone)}
 @media (max-width:1000px){.steps{grid-template-columns:repeat(2,1fr)}.packs,.related,.photos{grid-template-columns:1fr}.clips,.clips.verticals{grid-template-columns:1fr 1fr}.clips.mix1v{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}.clips.mix2v{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.clips.mix2v .clip.h{grid-column:1/-1}.clips.mix2v .clip.h .clip-frame{flex:none;aspect-ratio:16/9}}
+@media (max-width:1100px){.packs.four{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.packs.four{grid-template-columns:1fr}}
 @media (max-width:1210px){.ftr-grid{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:36px}.ftr-brand{grid-column:1/-1}}
 @media (max-width:760px){
  .wrap{padding:0 24px}.hdr{padding:22px 24px}.hdr nav a:not(.pill){display:none}.hdr nav .pill{padding:9px 18px}.hdr .logo img{height:38px}
