@@ -1208,6 +1208,7 @@ function Packages() {
         /* Add-ons & Licensing */
         .al-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .al-grid.two { grid-template-columns: repeat(2, 1fr); }
+        .pkg-travel { margin-top: 28px; font-family: var(--A); font-size: 0.82rem; letter-spacing: .02em; color: var(--ink); opacity: .7; }
         .pkg-commit { margin-top: 32px; font-size: 1rem; line-height: 1.6; color: var(--ink); opacity: .75; max-width: 640px; }
         .al-card { border: 1px solid var(--border); background: var(--bg-alt); padding: 48px 40px; transition: border-color 0.3s; display: flex; flex-direction: column; border-radius: 0; }
         .al-card:hover { border-color: rgba(139,146,128,0.4); }
@@ -1347,6 +1348,8 @@ function Packages() {
                         </div>
                       ))}
                     </div>
+
+                    <p className="pkg-travel">Travel is not included.</p>
 
                     {activePkg.specialNote && (
                       <div className="pkg-special-note">

@@ -349,13 +349,13 @@ const CORE_PAGES = [
         meta: '3 shoot days · 4 editing days',
         items: ['4 × 60-second hero videos', '14 × 15-second snippets, landscape and portrait', '40 final images', '10 working day delivery'],
       },
-    ], { note: 'Add-ons: UGC creator videos and 3D assets. Commitment discounts are available for 3, 6 and 12 month agreements. If your project does not fit a package, tell us what you need and we will quote it to the brief.' }),
+    ], { note: 'Travel is not included. Add-ons: UGC creator videos and 3D assets. Commitment discounts are available for 3, 6 and 12 month agreements. If your project does not fit a package, tell us what you need and we will quote it to the brief.' }),
     sections: [
       {
         h2: 'What affects the cost',
         paragraphs: [
           'Video costs are driven by a few things: how many days we shoot, how many people are on screen, how much editing and how many versions you need, and any specialist work such as UGC creator videos or 3D visualisation. Our three packages bundle these into a clear scope so you can plan.',
-          'Usage matters too. We agree where and for how long the content can be used when we quote, including paid advertising. If you plan to commission shoots regularly, ask us about commitment discounts for 3, 6 and 12 month agreements.',
+          'Travel is not included in our packages. Usage matters too. We agree where and for how long the content can be used when we quote, including paid advertising. If you plan to commission shoots regularly, ask us about commitment discounts for 3, 6 and 12 month agreements.',
         ],
       },
       {
@@ -370,6 +370,7 @@ const CORE_PAGES = [
       { q: 'How much does skincare video production cost in the UK?', a: 'It varies widely, from small creator-style content to large campaigns. The cost depends on the number of shoot days, talent and deliverables. Tell us what you need and we will quote it to the brief.' },
       { q: 'What is included in each package?', a: 'Every package sets out the shoot days, editing days, the number of 60-second hero videos, 15-second snippets and final images, and the delivery time. The full lists are above.' },
       { q: 'How long does delivery take?', a: 'Our packages are delivered within 10 working days.' },
+      { q: 'Is travel included?', a: 'No. Travel is not included in our packages.' },
       { q: 'Can I add UGC creator videos or 3D assets?', a: 'Yes. Both are available as add-ons to any package, and we quote them to the brief.' },
       { q: 'Do you offer discounts for regular work?', a: 'Yes. We offer commitment discounts for 3, 6 and 12 month agreements. Ask us when you request a quote.' },
       { q: 'Can I commission a one-off project instead?', a: 'Tell us what you need and we will quote it to the brief.' },
