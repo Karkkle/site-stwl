@@ -744,6 +744,29 @@ function Nav({ open, setOpen }) {
   );
 }
 
+/* ─────────────────────────────────────────── VIDEO FORMAT
+   AV1 files (same picture, much smaller) are used where the browser can play them smoothly.
+   Everywhere else, and if an AV1 file fails to play, the original H.264 MP4 is used. */
+const AV1_TYPE = 'video/mp4; codecs="av01.0.08M.08"';
+let av1Check;
+function supportsAv1() {
+  if (!av1Check) {
+    av1Check = new Promise((resolve) => {
+      try {
+        const probe = document.createElement("video");
+        if (!probe.canPlayType || !probe.canPlayType(AV1_TYPE)) return resolve(false);
+        const mc = navigator.mediaCapabilities;
+        if (!mc || !mc.decodingInfo) return resolve(true);
+        mc.decodingInfo({ type: "file", video: { contentType: AV1_TYPE, width: 1920, height: 1080, bitrate: 4000000, framerate: 25 } })
+          .then((r) => resolve(!!(r.supported && r.smooth)), () => resolve(true));
+      } catch { resolve(false); }
+    });
+  }
+  return av1Check;
+}
+const av1Of = (src) => src.replace(/\.mp4$/, ".av1.mp4");
+const isAv1 = (src) => /\.av1\.mp4$/.test(src || "");
+
 function Hero() {
   // Plays our own small MP4 (public/shotwell-hero.mp4). If it can't load, falls back to the Vimeo player.
   const [live, setLive] = useState(false);
@@ -751,18 +774,24 @@ function Hero() {
   const [vimeoLive, setVimeoLive] = useState(false);
   const videoRef = useRef(null);
   const frameRef = useRef(null);
+  const [heroSrc, setHeroSrc] = useState(null);
+  useEffect(() => {
+    let on = true;
+    supportsAv1().then((ok) => { if (on) setHeroSrc(ok ? "./shotwell-hero.av1.mp4" : "./shotwell-hero.mp4"); });
+    return () => { on = false; };
+  }, []);
   const vimeoSrc = `https://player.vimeo.com/video/${VIMEO_ID}?h=${VIMEO_HASH}&autoplay=1&muted=1&loop=1&background=1&quality=auto`;
 
   // Some browsers ignore the autoplay attribute until the element is muted in script; also catch a stalled start.
   useEffect(() => {
     const v = videoRef.current;
-    if (!v) return;
+    if (!v || !heroSrc) return;
     v.muted = true;
     const tryPlay = () => { const r = v.play(); if (r && r.catch) r.catch(() => {}); };
     tryPlay();
-    const stalled = setTimeout(() => { if (v.paused && v.readyState < 2) setUseVimeo(true); }, 8000);
+    const stalled = setTimeout(() => { if (v.paused && v.readyState < 2) { if (isAv1(heroSrc)) setHeroSrc("./shotwell-hero.mp4"); else setUseVimeo(true); } }, 8000);
     return () => clearTimeout(stalled);
-  }, []);
+  }, [heroSrc]);
 
   // Fallback only: reveal the Vimeo player once it is ready.
   useEffect(() => {
@@ -786,7 +815,7 @@ function Hero() {
         <video
           ref={videoRef}
           className={`hero-video${live ? " live" : ""}`}
-          src="./shotwell-hero.mp4"
+          src={heroSrc || undefined}
           poster="./hero-poster.jpg"
           autoPlay
           muted
@@ -796,7 +825,7 @@ function Hero() {
           disablePictureInPicture
           aria-hidden="true"
           onPlaying={() => { setLive(true); window.__heroReady = true; window.dispatchEvent(new Event("shotwell-hero-ready")); }}
-          onError={() => setUseVimeo(true)}
+          onError={() => { if (isAv1(heroSrc)) setHeroSrc("./shotwell-hero.mp4"); else setUseVimeo(true); }}
         />
         {useVimeo && (
           <iframe
@@ -903,6 +932,13 @@ function LoopVideo({ name, vimeoId, vimeoHash, title }) {
   const [live, setLive] = useState(false);
   const [failed, setFailed] = useState(false);
   const [vimeoLive, setVimeoLive] = useState(false);
+  const [vsrc, setVsrc] = useState(null);
+  useEffect(() => {
+    if (!near) return;
+    let on = true;
+    supportsAv1().then((ok) => { if (on) setVsrc(ok ? `./video/${name}.av1.mp4` : `./video/${name}.mp4`); });
+    return () => { on = false; };
+  }, [near, name]);
 
   const play = () => {
     const v = videoRef.current;
@@ -946,16 +982,16 @@ function LoopVideo({ name, vimeoId, vimeoHash, title }) {
   return (
     <div className="lv" ref={wrapRef} aria-hidden="true">
       <img src={`./video/${name}.jpg`} alt="" loading="lazy" decoding="async" />
-      {near && !failed && (
+      {near && vsrc && !failed && (
         <video
           ref={videoRef}
           className={live ? "live" : ""}
-          src={`./video/${name}.mp4`}
+          src={vsrc}
           poster={`./video/${name}.jpg`}
           muted loop playsInline preload="auto" disablePictureInPicture
           onLoadedData={() => { setLive(true); if (inView.current) play(); }}
           onCanPlay={() => { if (inView.current) play(); }}
-          onError={() => setFailed(true)}
+          onError={() => { if (isAv1(vsrc)) setVsrc(`./video/${name}.mp4`); else setFailed(true); }}
         />
       )}
       {failed && vimeoId && (

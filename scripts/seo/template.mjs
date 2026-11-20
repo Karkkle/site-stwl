@@ -77,7 +77,7 @@ function clipLayout(clips) {
 function clipHtml(c) {
   const ratio = c.vertical ? 'v' : 'h'
   return `<figure class="clip ${ratio}">
-        <div class="clip-frame"><img src="/video/${c.name}.jpg" alt="${esc(c.alt)}" loading="lazy" decoding="async" width="${c.vertical ? 720 : 1280}" height="${c.vertical ? 1280 : 720}"><video data-src="/video/${c.name}.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div>
+        <div class="clip-frame"><img src="/video/${c.name}.jpg" alt="${esc(c.alt)}" loading="lazy" decoding="async" width="${c.vertical ? 720 : 1280}" height="${c.vertical ? 1280 : 720}"><video data-src="/video/${c.name}.mp4" data-av1="/video/${c.name}.av1.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div>
         <figcaption><span class="tag">${esc(c.tag)}</span>${esc(c.caption)}</figcaption>
       </figure>`
 }
@@ -262,7 +262,8 @@ ${robots}
   var vs=[].slice.call(document.querySelectorAll("video[data-src]"));
   if(!("IntersectionObserver" in window)){return}
   function go(v){var p=v.play&&v.play();if(p&&p.catch)p.catch(function(){})}
-  function ensure(v){if(v.src)return;v.preload="auto";v.addEventListener("loadeddata",function(){v.classList.add("on");if(v._in&&v.paused)go(v)},{once:true});v.src=v.dataset.src}
+  var T='video/mp4; codecs="av01.0.08M.08"',ok=new Promise(function(r){try{var p=document.createElement("video");if(!p.canPlayType||!p.canPlayType(T))return r(false);var m=navigator.mediaCapabilities;if(!m||!m.decodingInfo)return r(true);m.decodingInfo({type:"file",video:{contentType:T,width:1920,height:1080,bitrate:4e6,framerate:25}}).then(function(i){r(!!(i.supported&&i.smooth))},function(){r(true)})}catch(e){r(false)}});
+  function ensure(v){if(v._s)return;v._s=1;v.preload="auto";v.addEventListener("loadeddata",function(){v.classList.add("on");if(v._in&&v.paused)go(v)},{once:true});v.addEventListener("error",function(){if(v._a){v._a=0;v.src=v.dataset.src}});ok.then(function(a){if(a&&v.dataset.av1){v._a=1;v.src=v.dataset.av1}else{v.src=v.dataset.src}})}
   var load=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){ensure(e.target);load.unobserve(e.target)}})},{rootMargin:"1500px 0px"});
   var play=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;v._in=e.isIntersecting;if(e.isIntersecting){ensure(v);go(v)}else if(!v.paused){v.pause()}})},{rootMargin:"60px 0px"});
   vs.forEach(function(v){load.observe(v);play.observe(v)});
