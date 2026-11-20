@@ -325,7 +325,7 @@ const CORE_PAGES = [
     relLabel: 'Packages', relTitle: 'Video and photography packages', relText: 'Our packages, including a bespoke option, and what each includes.',
     crumb: 'Video and photography packages',
     title: 'Video & Photography Packages for Healthcare, Skincare and Wellness | Shotwell',
-    description: 'Video and photography packages from Shotwell for healthcare, skincare and wellness brands: shoot days, edit time, hero videos, short snippets and final images, from three set packages to a bespoke project.',
+    description: 'Video and photography packages for healthcare, skincare and wellness brands: shoot days, hero videos, short snippets and final images. Or go bespoke.',
     h1: 'Video and photography <em>packages</em>',
     h1Plain: 'Video and photography packages',
     eyebrow: 'Packages',
