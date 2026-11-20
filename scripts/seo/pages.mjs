@@ -322,10 +322,10 @@ const CORE_PAGES = [
   {
     slug: 'skincare-video-production-cost',
     group: 'cost', footerLabel: 'Packages',
-    relLabel: 'Packages', relTitle: 'Skincare video production cost', relText: 'Our three packages and what each one includes.',
+    relLabel: 'Packages', relTitle: 'Skincare video production cost', relText: 'Our packages, including a bespoke option, and what each includes.',
     crumb: 'Skincare video production cost',
     title: 'How Much Does Skincare Video Production Cost? | Shotwell',
-    description: 'What affects the cost of skincare video production in the UK, and what Shotwell’s three packages include: shoot days, edit time, hero videos, short snippets and final images.',
+    description: 'What affects the cost of skincare video production in the UK, and what Shotwell’s packages include, from three set packages to a bespoke project: shoot days, edit time, hero videos, short snippets and final images.',
     h1: 'How much does skincare video production <em>cost?</em>',
     h1Plain: 'How much does skincare video production cost?',
     eyebrow: 'Packages',
@@ -349,19 +349,24 @@ const CORE_PAGES = [
         meta: '3 shoot days · 4 editing days',
         items: ['4 × 60-second hero videos', '14 × 15-second snippets, landscape and portrait', '40 final images', '10 working day delivery'],
       },
-    ], { note: 'Travel is not included. Add-ons: UGC creator videos, 3D assets and bespoke projects. Commitment discounts are available for 3, 6 and 12 month agreements. If your project does not fit a package, tell us what you need and we will quote it to the brief.' }),
+      {
+        num: 'Package 04', name: 'Bespoke',
+        meta: 'Larger or smaller projects',
+        items: ['A bigger project, planned with you', 'Or a short, simple, smaller project', 'Scope, deliverables and delivery agreed to your brief'],
+      },
+    ], { note: 'Travel is not included. Add-ons: UGC creator videos and 3D assets. Commitment discounts are available for 3, 6 and 12 month agreements. If your project does not fit a package, tell us what you need and we will quote it to the brief.' }),
     sections: [
       {
         h2: 'What affects the cost',
         paragraphs: [
-          'Video costs are driven by a few things: how many days we shoot, how many people are on screen, how much editing and how many versions you need, and any specialist work such as UGC creator videos or 3D visualisation. Our three packages bundle these into a clear scope so you can plan.',
+          'Video costs are driven by a few things: how many days we shoot, how many people are on screen, how much editing and how many versions you need, and any specialist work such as UGC creator videos or 3D visualisation. Our three set packages bundle these into a clear scope so you can plan, and our bespoke option is scoped to your brief.',
           'Travel is not included in our packages. Usage matters too. We agree where and for how long the content can be used when we quote, including paid advertising. If you plan to commission shoots regularly, ask us about commitment discounts for 3, 6 and 12 month agreements.',
         ],
       },
       {
         h2: 'Which package suits you',
         paragraphs: [
-          '<strong>Foundation</strong> suits skincare brands that need a polished hero film, a run of social snippets and a set of final images from a single shoot day. <strong>Series</strong>, our most popular, adds a second shoot day for two hero films, ten snippets and 25 images, which is a good fit for brands with a range to cover. <strong>Campaign</strong> is for launches and larger ranges, with four hero films, 14 snippets and 40 images, enough to run paid and organic side by side.',
+          '<strong>Foundation</strong> suits skincare brands that need a polished hero film, a run of social snippets and a set of final images from a single shoot day. <strong>Series</strong>, our most popular, adds a second shoot day for two hero films, ten snippets and 25 images, which is a good fit for brands with a range to cover. <strong>Campaign</strong> is for launches and larger ranges, with four hero films, 14 snippets and 40 images, enough to run paid and organic side by side. <strong>Bespoke</strong> is for projects that do not fit a set package, whether that is a wider, bigger project or a short, simple, smaller one.',
           'Not sure? Tell us about your brand and we will recommend one. You can also see the thinking behind these in our <a href="/skincare-video-production-london/">skincare video production</a> and <a href="/healthcare-social-media-video-production/">social video</a> pages.',
         ],
       },
@@ -373,7 +378,8 @@ const CORE_PAGES = [
       { q: 'Is travel included?', a: 'No. Travel is not included in our packages.' },
       { q: 'Can I add UGC creator videos or 3D assets?', a: 'Yes. Both are available as add-ons to any package, and we quote them to the brief.' },
       { q: 'Do you offer discounts for regular work?', a: 'Yes. We offer commitment discounts for 3, 6 and 12 month agreements. Ask us when you request a quote.' },
-      { q: 'Can I commission a one-off project instead?', a: 'Yes. If your project does not fit a package, whether it is bigger or smaller, we can scope it as a bespoke project. Tell us what you need and we will quote it to your brief.' },
+      { q: 'What is the Bespoke package?', a: 'Bespoke is for projects that do not fit one of the three set packages. It can be a wider, bigger project or a short, simple, smaller one. Tell us what you need and we will scope and quote it to your brief.' },
+      { q: 'Can I commission a one-off project instead?', a: 'Yes. Tell us what you need and we will quote it to the brief, or choose the Bespoke option.' },
     ],
     faqTitle: 'Cost questions',
     related: ['skincare-video-production-london', 'healthcare-social-media-video-production', 'skincare-product-video-production'],
