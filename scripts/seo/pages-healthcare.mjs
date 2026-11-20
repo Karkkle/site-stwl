@@ -109,10 +109,10 @@ export const HEALTHCARE_PAGES = [
       'Photography of the clinic, the team and the equipment',
     ],
     faqs: [
-      { q: 'How long does a clinic shoot take?', a: 'Our packages are built around one to three shoot days a month. We scope a clinic shoot to the number of clinicians, treatments and spaces involved, and agree the plan and shot list with you first.' },
+      { q: 'How long does a clinic shoot take?', a: 'Our packages are built around one to three shoot days. We scope a clinic shoot to the number of clinicians, treatments and spaces involved, and agree the plan and shot list with you first.' },
       { q: 'Can we show real patients in the film?', a: 'Only with their agreement and a signed release. Where that is not appropriate, we can use staff, consenting volunteers or framing that keeps a patient unidentifiable.' },
       { q: 'Can the content work for social as well as the website?', a: 'Yes. From one shoot we deliver a main film for your website and short vertical edits for social. See our <a href="/healthcare-social-media-video-production/">healthcare social media video</a> page.' },
-      { q: 'How much does clinic video production cost?', a: `It depends on the number of shoot days, the people on screen and the versions you need. We quote to the brief; see the ${COST} for what each monthly package includes, then get in touch for a quote.` },
+      { q: 'How much does clinic video production cost?', a: `It depends on the number of shoot days, the people on screen and the versions you need. We quote to the brief; see the ${COST} for what each package includes, then get in touch for a quote.` },
     ],
     related: ['private-healthcare-video-production-london', 'doctor-consultant-video-production-london', 'aesthetic-clinic-video-production-london'],
   },
@@ -203,7 +203,7 @@ export const HEALTHCARE_PAGES = [
       {
         h2: '3D visualisation',
         paragraphs: [
-          'Some of what a device does cannot be filmed: what happens beneath the skin, at the tissue or at the cellular level. We can include 3D animated visualisation, as in our Campaign package, to explain a mechanism clearly and consistently with the live-action film.',
+          'Some of what a device does cannot be filmed: what happens beneath the skin, at the tissue or at the cellular level. We can add 3D animated visualisation as an extra to any package, to explain a mechanism clearly and consistently with the live-action film.',
         ],
       },
       {
@@ -225,7 +225,7 @@ export const HEALTHCARE_PAGES = [
     faqs: [
       { q: 'Can you film the device in a real clinic, with a clinician?', a: 'Yes. We arrange the shoot with your clinical partner, agree the procedure and what appears on camera beforehand, and film with the necessary consent. Where a procedure cannot be filmed live, we can recreate it with staff.' },
       { q: 'Do you make content for professionals and for patients?', a: 'Yes, and we plan them separately, because the language, the claims and the rules differ. A film for clinicians can go further than one aimed at the public.' },
-      { q: 'Do you make 3D animation?', a: 'We can include 3D animated visualisation to explain how a device or an active works. It is part of our Campaign package, and can be scoped on its own for a device launch.' },
+      { q: 'Do you make 3D animation?', a: 'We can include 3D animated visualisation to explain how a device or an active works. It is available as an add-on to any package, and can be scoped on its own for a device launch.' },
       { q: 'Who checks the regulatory claims?', a: 'You do. We work from your approved wording and flag anything that may need a second look, and we recommend your regulatory or compliance team reviews the final cut before it is published.' },
     ],
     related: ['private-clinic-video-production-london', 'healthcare-photography-london', 'skincare-product-video-production'],
@@ -371,7 +371,7 @@ export const HEALTHCARE_PAGES = [
       {
         h2: 'Organic and paid, planned together',
         paragraphs: [
-          'Paid social rewards variety. Our packages include a mix of organic and paid-optimised formats, product close-ups made for ads, and creator videos for skincare, so you have fresh creative to test rather than one hero asset that tires quickly. See our <a href="/skincare-video-production-cost/">packages</a> for what each month includes.',
+          'Paid social rewards variety. Our packages give you a 60-second hero video and a run of 15-second snippets in landscape and portrait, so you have fresh creative to test rather than one hero asset that tires quickly. UGC creator videos can be added. See our <a href="/skincare-video-production-cost/">packages</a> for what each includes.',
           'Where it helps, we build recurring series, such as clinician explainers for healthcare or Ingredient Deep-Dive and Founder Perspective for skincare, so your feed has a recognisable shape.',
         ],
       },
@@ -379,15 +379,15 @@ export const HEALTHCARE_PAGES = [
     getList: [
       'Native 9:16 video for Reels, TikTok, Stories and LinkedIn',
       'Clinician-led education and treatment explainers',
-      'Product close-up videos made for paid ads',
-      'UGC creator videos for skincare, matched to your customer',
+      '15-second snippets cut for paid and organic',
+      'UGC creator videos as an add-on, matched to your customer',
       'Series formats that give your feed a recognisable shape',
-      'A structured revision round with a 48-hour turnaround',
+      'Delivery within 10 working days',
     ],
     faqs: [
       { q: 'Can healthcare providers advertise treatments on social?', a: 'It depends on the treatment. The ASA and CAP Code set strict rules for healthcare advertising, and prescription-only medicines cannot be advertised to the public. We plan content around education and the clinician, and we recommend checking the current guidance.' },
-      { q: 'Do you make content for paid ads as well as organic posts?', a: 'Yes. Our packages include a mix of organic and paid-optimised formats, and product close-ups made specifically for ads.' },
-      { q: 'Can you work with our own clinicians or creators?', a: 'Yes. Tell us who you want on camera and we will plan how they fit into the shoot. Our monthly packages also include vetted UGC creators for skincare.' },
+      { q: 'Do you make content for paid ads as well as organic posts?', a: 'Yes. Our packages include a 60-second hero video and 15-second snippets in landscape and portrait, which work for organic posts and paid ads.' },
+      { q: 'Can you work with our own clinicians or creators?', a: 'Yes. Tell us who you want on camera and we will plan how they fit into the shoot. UGC creator videos are available as an add-on for skincare.' },
       { q: 'How much does social video cost?', a: `It depends on how many clips, platforms and shoot days you need. We quote to the brief; see the ${COST}, then get in touch for a quote.` },
     ],
     related: ['private-clinic-video-production-london', 'skincare-product-video-production', 'skincare-video-production-cost'],
@@ -423,7 +423,7 @@ export const HEALTHCARE_PAGES = [
       {
         h2: 'Shot with your video, same day',
         paragraphs: [
-          'Stills and film share a set, a look and a crew, so shooting them together saves time and keeps your brand consistent. Our monthly packages include retouched stills alongside the video. See our <a href="/skincare-video-production-cost/">packages</a>, or the pages on <a href="/private-clinic-video-production-london/">private clinics</a> and <a href="/medical-device-video-production-london/">medical devices</a>.',
+          'Stills and film share a set, a look and a crew, so shooting them together saves time and keeps your brand consistent. Our packages include final images alongside the video. See our <a href="/skincare-video-production-cost/">packages</a>, or the pages on <a href="/private-clinic-video-production-london/">private clinics</a> and <a href="/medical-device-video-production-london/">medical devices</a>.',
         ],
       },
     ],

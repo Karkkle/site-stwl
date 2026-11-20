@@ -490,76 +490,76 @@ const CLIENT_DATA = {
   skincare: {
     label: 'Skincare Brand',
     foundation: {
-      desc: 'Everything you need to show up professionally every week — consistent, product-led content without managing a shoot yourself. No model. Clean, honest, and effective.',
-      ideal: 'New or early-stage skincare and health brands building a consistent presence — professional content every month without the overhead of an in-house team.'
+      desc: 'A focused shoot that gives you a polished hero film, a run of social snippets and a set of final images, all made together and delivered within 10 working days.',
+      ideal: 'New or early-stage skincare and health brands that need a professional hero film and a core library of content, without managing a production themselves.'
     },
     series: {
-      desc: "A brand-building content programme anchored by a recurring monthly series. By month three, your audience knows it's coming and looks forward to it. That's the kind of compounding attention no one-off production can buy.",
-      ideal: 'Established brands ready to build a content identity — model-led, series-driven, covering organic and paid with one agency handling everything.'
+      desc: 'More range from a second shoot day: two hero films and a larger set of snippets and images across your products, routines and people.',
+      ideal: 'Established brands with a range to cover, ready to build a recognisable look across their website, social channels and paid media.'
     },
     campaign: {
-      desc: 'A full-scale monthly content operation with CGI-level creative, a monthly series, and the asset volume to run paid and organic simultaneously — plus a cinematic hero brand film every quarter.',
-      ideal: 'Brands launching hero products or scaling into new markets — molecular ingredient storytelling, a quarterly cinematic brand film, and the full asset volume to dominate paid and organic simultaneously.'
+      desc: 'The fullest package, for a launch or a larger range: four hero films, 14 snippets and 40 final images, enough to run organic and paid campaigns side by side.',
+      ideal: 'Brands launching hero products or entering new markets, who need the volume to support a full campaign.'
     }
   },
   clinic: {
     label: 'Medical Clinic',
     foundation: {
-      desc: 'Everything your clinic needs to build a credible, consistent presence — treatment close-ups, before/after context, and real patient journey content. Professional and compliant every month.',
-      ideal: 'Aesthetic or wellness clinics building patient trust online — consistent content that communicates expertise and results without the complexity of managing a production team.'
+      desc: 'A focused shoot to show your clinic, your team and your treatments clearly and professionally.',
+      ideal: 'Private, aesthetic and wellness clinics building patient trust online, with content that shows your expertise without the complexity of managing a production team.'
     },
     series: {
-      desc: "A content programme built around your clinic's authority. A recurring monthly series — treatment spotlights, expert Q&As, or patient journey narratives — that positions your practitioners as the go-to in your speciality.",
-      ideal: 'Growing clinics ready to invest in authority-led content and build a recognisable presence across Instagram, TikTok and paid media with one agency handling everything.'
+      desc: 'More range from a second shoot day, so you can cover more treatments and more of your team.',
+      ideal: 'Growing clinics ready to invest in authority-led content across their website, Instagram, TikTok and paid media.'
     },
     campaign: {
-      desc: 'A full-scale monthly content operation for clinics with multiple treatments, practitioners, or locations — CGI visualisations of active ingredients or procedures, a monthly series, and the full asset volume to run campaigns across every channel.',
-      ideal: 'Established clinics scaling patient acquisition — ingredient and procedure CGI, a quarterly brand film, and a complete monthly content library that covers every treatment and every platform.'
+      desc: 'The fullest package for clinics with several treatments, practitioners or locations, with enough volume to run campaigns across every channel.',
+      ideal: 'Established clinics scaling patient enquiries, who need a complete library that covers every treatment and every platform.'
     }
   },
   practitioner: {
     label: 'Practitioner',
     foundation: {
-      desc: 'Everything an independent practitioner needs to show up professionally — treatment content, product close-ups, and UGC that builds patient confidence. Designed for solo specialists who want great content without the overhead.',
-      ideal: 'Independent practitioners — dermatologists, facialists, aestheticians — who want consistent, professional content that reflects their expertise and builds patient trust online.'
+      desc: 'A focused shoot to show your practice, your expertise and the way you work.',
+      ideal: 'Independent practitioners, including doctors, dermatologists, facialists and aestheticians, who want professional content that reflects their expertise and builds patient confidence.'
     },
     series: {
-      desc: "A content programme that turns your expertise into a recognisable brand. A recurring monthly series — your skin philosophy, treatment deep-dives, or behind-the-practice storytelling — that builds a loyal audience month by month.",
-      ideal: 'Practitioners ready to grow their personal brand and patient base with model-led, authority-driven content that sets them apart from every other specialist in their field.'
+      desc: 'More range from a second shoot day, so your expertise, your treatments and your approach each get room to breathe.',
+      ideal: 'Practitioners ready to grow their personal brand and patient base with authority-led content that sets them apart in their field.'
     },
     campaign: {
-      desc: 'A full-scale monthly content operation for practitioners building a premium personal brand — CGI treatment visualisations, a monthly expertise series, and the asset volume to run paid acquisition and organic authority-building simultaneously.',
-      ideal: 'High-profile or multi-location practitioners scaling their practice — CGI clinical storytelling, a quarterly brand film, and a content library that positions you as the definitive name in your speciality.'
+      desc: 'The fullest package for practitioners building a premium personal brand, with enough volume for paid acquisition and organic authority-building together.',
+      ideal: 'High-profile or multi-location practitioners scaling their practice, who want a content library that positions them as the name in their speciality.'
     }
   },
   spa: {
     label: 'Spa',
     foundation: {
-      desc: 'Everything your spa needs to communicate its atmosphere and treatments online — beautifully shot product and environment content, UGC from real guests, and consistent monthly output without managing a production team.',
-      ideal: 'Luxury or wellness spas building a consistent online presence — professional content every month that captures the feel of your space and drives treatment bookings.'
+      desc: 'A focused shoot to capture the atmosphere of your spa and the treatments you offer.',
+      ideal: 'Luxury and wellness spas building their online presence, with professional content that captures the feel of your space and drives treatment bookings.'
     },
     series: {
-      desc: "A content programme built around your spa's world. A recurring monthly series — seasonal rituals, treatment stories, or wellness philosophies — that builds desire and gives your audience a reason to return every month.",
-      ideal: 'Established spas ready to invest in atmosphere-led, model-led content that communicates the full guest experience and drives bookings across organic and paid channels.'
+      desc: 'More range from a second shoot day, so you can show more rooms, rituals and treatments.',
+      ideal: 'Established spas ready to invest in content that communicates the full guest experience across organic and paid channels.'
     },
     campaign: {
-      desc: 'A full-scale monthly content operation for destination or multi-site spas — CGI ingredient and product storytelling, a monthly signature series, and the full asset volume to run campaigns that fill your treatment diary year-round.',
-      ideal: 'Premium or destination spas scaling their brand — molecular ingredient CGI for your signature treatments, a quarterly cinematic brand film, and a complete content library that does justice to your level of experience.'
+      desc: 'The fullest package for destination or multi-site spas, with enough volume to run campaigns that fill the treatment diary.',
+      ideal: 'Premium or destination spas scaling their brand, who want a content library that does justice to the level of experience on offer.'
     }
   },
   other: {
     label: 'Other',
     foundation: {
-      desc: 'Everything you need to show up professionally every week — consistent, high-quality content without managing a shoot yourself. Clean, honest, and effective.',
-      ideal: 'New or early-stage brands building a consistent presence — professional content every month without the overhead of an in-house team.'
+      desc: 'A focused shoot that gives you a polished hero film, a run of social snippets and a set of final images.',
+      ideal: 'New or early-stage brands that need professional content and a core library to publish from, without managing a production themselves.'
     },
     series: {
-      desc: "A brand-building content programme anchored by a recurring monthly series. By month three, your audience knows it's coming and looks forward to it. That's the kind of compounding attention no one-off production can buy.",
-      ideal: 'Established brands ready to build a content identity — model-led, series-driven, covering organic and paid with one agency handling everything.'
+      desc: 'More range from a second shoot day: two hero films and a larger set of snippets and images.',
+      ideal: 'Established brands ready to build a recognisable look across their website, social channels and paid media.'
     },
     campaign: {
-      desc: 'A full-scale monthly content operation with CGI-level creative, a monthly series, and the asset volume to run paid and organic simultaneously — plus a cinematic hero brand film every quarter.',
-      ideal: 'Brands launching hero products or scaling into new markets — narrative storytelling, a quarterly cinematic brand film, and the full asset volume to dominate paid and organic simultaneously.'
+      desc: 'The fullest package, for a launch or a larger range, with enough volume to run organic and paid campaigns side by side.',
+      ideal: 'Brands launching products or entering new markets, who need the volume to support a full campaign.'
     }
   }
 };
@@ -628,14 +628,13 @@ const PACKAGE_DATA = [
     id: 'foundation',
     num: '01',
     name: 'Foundation',
-    meta: ['1 shoot day', '1.5 editing days', 'product-only · no model', '10 working day delivery'],
-    deliverablesLabel: 'Monthly deliverables',
+    meta: ['1 shoot day', '1.5 editing days', '10 working day delivery'],
+    deliverablesLabel: 'What you get',
     deliverables: [
-      '<strong>4 short-form videos</strong><br/>2 texture & product close-ups · 1 ingredient story · 1 styled context video',
-      '<strong>1 product close-up video</strong><br/>Macro detail, optimised for paid ads',
-      '<strong>12 retouched stills</strong><br/>8 lifestyle in context · 4 product hero',
-      '<strong>3 UGC creator videos</strong><br/>Vetted creators matched to your skin type & customer profile',
-      '<strong>1 structured revision cycle</strong><br/>48hr turnaround'
+      '<strong>1 × 60-second hero video</strong><br/>The lead film of the shoot, for your website, paid ads, events and screens in your space.',
+      '<strong>4 × 15-second snippets</strong><br/>Quick cuts in landscape and portrait, for social, email and web.',
+      '<strong>10 final images</strong><br/>Edited photography for your site, social, press and retailers.',
+      '<strong>10 working day delivery</strong><br/>Your films and images delivered within 10 working days.'
     ]
   },
   {
@@ -643,49 +642,38 @@ const PACKAGE_DATA = [
     num: '02',
     name: 'Series',
     badge: 'Most popular',
-    meta: ['2 shoot days', '2.5 editing days', 'model', '10 working day delivery'],
-    deliverablesLabel: 'Monthly deliverables',
+    meta: ['2 shoot days', '3 editing days', '10 working day delivery'],
+    deliverablesLabel: 'What you get',
     deliverables: [
-      '<strong>5 short-form videos</strong><br/>Product, lifestyle & series content',
-      '<strong>1 series episode</strong><br/>45–75 sec model or talent-led anchor format · series type chosen at onboarding from: <em>Skin Ritual · Ingredient Deep-Dive · Founder Perspective</em>',
-      '<strong>2 product close-up videos</strong>',
-      '<strong>1 BTS cut</strong><br/>60–75 sec edited narrative with music, platform-optimised',
-      '<strong>20 retouched stills</strong><br/>10 hero lifestyle · 6 product · 4 editorial',
-      '<strong>4 UGC creator videos</strong><br/>Vetted for skin type diversity, matched to your target customer',
-      '<strong>2 structured revision cycles</strong><br/>48hr turnaround each'
+      '<strong>2 × 60-second hero videos</strong><br/>The lead films of the shoot, for your website, paid ads, events and screens in your space.',
+      '<strong>10 × 15-second snippets</strong><br/>Quick cuts in landscape and portrait, for social, email and web.',
+      '<strong>25 final images</strong><br/>Edited photography for your site, social, press and retailers.',
+      '<strong>10 working day delivery</strong><br/>Your films and images delivered within 10 working days.'
     ]
   },
   {
     id: 'campaign',
     num: '03',
     name: 'Campaign',
-    meta: ['3 shoot days', '4 editing days', 'model + 3D', '10 working day delivery'],
-    deliverablesLabel: 'Every month',
+    meta: ['3 shoot days', '4 editing days', '10 working day delivery'],
+    deliverablesLabel: 'What you get',
     deliverables: [
-      '<strong>8 short-form videos</strong><br/>Mix of organic and paid ad-optimised formats',
-      '<strong>1 series episode</strong><br/>45–75 sec model-led anchor · series type chosen at onboarding from: <em>Skin Ritual · Ingredient Deep-Dive · Founder Perspective</em>',
-      '<strong>3 product close-up videos</strong>',
-      '<strong>2 BTS cuts</strong><br/>60–90 sec edited narratives with music, platform-optimised',
-      '<strong>1 × molecular / ingredient visualisation</strong><br/>3D animated CGI asset showing your key active at a scientific level',
-      '<strong>35 retouched stills</strong><br/>15 hero lifestyle · 12 product · 8 editorial · format variants included',
-      '<strong>6 UGC creator videos</strong><br/>Vetted for skin type diversity, matched to your target customer',
-      '<strong>3 structured revision cycles</strong><br/>48hr turnaround each'
-    ],
-    specialNote: {
-      title: 'Quarterly Inclusion',
-      text: '<strong>1 cinematic hero brand film</strong><br/>60–90 sec, model-led, professionally graded with licensed music. A campaign asset most brands commission as a standalone project. Produced in month three when we know your brand well enough to make something genuinely worth making.'
-    }
+      '<strong>4 × 60-second hero videos</strong><br/>The lead films of the shoot, for your website, paid ads, events and screens in your space.',
+      '<strong>14 × 15-second snippets</strong><br/>Quick cuts in landscape and portrait, for social, email and web.',
+      '<strong>40 final images</strong><br/>Edited photography for your site, social, press and retailers.',
+      '<strong>10 working day delivery</strong><br/>Your films and images delivered within 10 working days.'
+    ]
   }
 ];
 
 const SUMMARY_ROWS = [
   { label: 'Shoot days', foundation: '1', series: '2', campaign: '3' },
-  { label: 'Total raw assets', foundation: '16', series: '33', campaign: '55' },
-  { label: 'Publishable moments/mo', foundation: '30–35', series: '55–65', campaign: '90–110' },
-  { label: 'Recommended posting freq.', foundation: '4–5x/wk', series: '5–6x/wk', campaign: 'Daily' },
-  { label: 'Platforms', foundation: '2–3', series: '3–4', campaign: 'All' },
-  { label: 'Anchor content', foundation: 'Product video', series: 'Series episode', campaign: 'Hero film + CGI' },
-  { label: 'Content shelf life', foundation: '1 month', series: '2–3 months', campaign: '3–6 months' },
+  { label: 'Editing days', foundation: '1.5', series: '3', campaign: '4' },
+  { label: '60-second hero videos', foundation: '1', series: '2', campaign: '4' },
+  { label: '15-second snippets', foundation: '4', series: '10', campaign: '14' },
+  { label: 'Final images', foundation: '10', series: '25', campaign: '40' },
+  { label: 'Total assets', foundation: '15', series: '37', campaign: '58' },
+  { label: 'Delivery', foundation: '10 working days', series: '10 working days', campaign: '10 working days' },
 ];
 
 /* ─────────────────────────────────────────── HOOKS */
@@ -1219,6 +1207,8 @@ function Packages() {
 
         /* Add-ons & Licensing */
         .al-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .al-grid.two { grid-template-columns: repeat(2, 1fr); }
+        .pkg-commit { margin-top: 32px; font-size: 1rem; line-height: 1.6; color: var(--ink); opacity: .75; max-width: 640px; }
         .al-card { border: 1px solid var(--border); background: var(--bg-alt); padding: 48px 40px; transition: border-color 0.3s; display: flex; flex-direction: column; border-radius: 0; }
         .al-card:hover { border-color: rgba(139,146,128,0.4); }
         .al-card.highlight { border-color: var(--gold); background: rgba(139,146,128,0.03); }
@@ -1260,7 +1250,7 @@ function Packages() {
         }
         @media (max-width: 960px) {
           .pkg-wrap { padding: 56px 24px; }
-          .sel-grid, .al-grid { grid-template-columns: 1fr; gap: 40px; }
+          .sel-grid, .al-grid, .al-grid.two { grid-template-columns: 1fr; gap: 40px; }
           .sel-grid { gap: 16px; }
           .sel-tile { min-height: 320px; }
           .flat-section { margin-top: 64px; padding-top: 48px; }
@@ -1322,7 +1312,7 @@ function Packages() {
                    onClick={() => setActivePkgId(pkg.id)}
                    data-h
                  >
-                   <span className="pkg-tab-num">Package 0{pkg.num}</span>
+                   <span className="pkg-tab-num">Package {pkg.num}</span>
                    <span className="pkg-tab-name">{pkg.name}</span>
                  </button>
                ))}
@@ -1381,7 +1371,27 @@ function Packages() {
                  </div>
                </div>
 
-               <div className="al-grid">
+               <div className="al-grid two">
+                 <div className="al-card" data-h>
+                   <p className="al-type">Add-on</p>
+                   <h4 className="al-name">UGC Creator Video</h4>
+                   <p className="al-desc">A video made by a creator in a natural, personal style, matched to your customer. Works for social posts, paid ads and product pages.</p>
+                   <div className="al-list">
+                     <div className="al-list-item"><span className="marker">+</span>Creator matched to your customer</div>
+                     <div className="al-list-item"><span className="marker">+</span>Natural, personal style</div>
+                     <div className="al-list-item"><span className="marker">+</span>Priced per video</div>
+                   </div>
+                 </div>
+                 <div className="al-card" data-h>
+                   <p className="al-type">Add-on</p>
+                   <h4 className="al-name">3D Assets</h4>
+                   <p className="al-desc">Three-dimensional visuals, such as a product or ingredient visualisation, to show how something works or looks. Used in ads, on your website and in presentations.</p>
+                   <div className="al-list">
+                     <div className="al-list-item"><span className="marker">+</span>Product or ingredient visuals</div>
+                     <div className="al-list-item"><span className="marker">+</span>For ads, web and presentations</div>
+                     <div className="al-list-item"><span className="marker">+</span>Scoped to the asset</div>
+                   </div>
+                 </div>
                  <div className="al-card" data-h>
                    <p className="al-type">Social Media Management</p>
                    <h4 className="al-name">Fully Managed Channels</h4>
@@ -1393,19 +1403,9 @@ function Packages() {
                    </div>
                  </div>
                  <div className="al-card" data-h>
-                   <p className="al-type">Hero Brand Film</p>
-                   <h4 className="al-name">Cinematic Production</h4>
-                   <p className="al-desc">A premium, narrative-driven asset produced to campaign standards, designed for high-impact distribution.</p>
-                   <div className="al-list">
-                     <div className="al-list-item"><span className="marker">+</span>60–90 sec model-led</div>
-                     <div className="al-list-item"><span className="marker">+</span>Professional colour grade</div>
-                     <div className="al-list-item"><span className="marker">+</span>Cut-downs for paid ads</div>
-                   </div>
-                 </div>
-                 <div className="al-card" data-h>
                    <p className="al-type">Podcast Production</p>
                    <h4 className="al-name">Video-First Content</h4>
-                   <p className="al-desc">High-fidelity dual-camera production, completely edited and repurposed into a month's worth of short-form content.</p>
+                   <p className="al-desc">High-fidelity dual-camera production, completely edited and repurposed into short-form content.</p>
                    <div className="al-list">
                      <div className="al-list-item"><span className="marker">+</span>Dual-camera video edit</div>
                      <div className="al-list-item"><span className="marker">+</span>Full audio mixing</div>
@@ -1413,6 +1413,7 @@ function Packages() {
                    </div>
                  </div>
                </div>
+               <p className="pkg-commit">Planning a regular run of shoots? We offer commitment discounts for 3, 6 and 12 month agreements. Ask us when you request your quote.</p>
              </div>
 
              {/* Licensing Second */}

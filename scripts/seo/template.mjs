@@ -50,7 +50,7 @@ export function pageGraph(page) {
       '@type': 'Service', '@id': `${url}#service`, name: page.serviceName, serviceType: page.serviceType, url,
       description: page.description, provider: { '@id': `${SITE.url}/#business` },
       areaServed: [{ '@type': 'City', name: 'London' }, { '@type': 'Country', name: 'United Kingdom' }],
-      ...(page.offers ? { hasOfferCatalog: { '@type': 'OfferCatalog', name: 'Shotwell monthly content packages', itemListElement: page.offers } } : {}),
+      ...(page.offers ? { hasOfferCatalog: { '@type': 'OfferCatalog', name: 'Shotwell video and photography packages', itemListElement: page.offers } } : {}),
     },
   ]
   for (const c of page.clips || []) graph.push(videoNode(c, url))
@@ -103,7 +103,7 @@ function sectionHtml(s) {
 function priceCards(cards) {
   return `<section class="band">
       <div class="wrap">
-        <p class="label">Monthly packages</p>
+        <p class="label">Packages</p>
         <h2 class="center-h">Three ways to work together</h2>
         <div class="packs">
           ${cards.map((c) => `<article class="pack${c.popular ? ' pop' : ''}">
