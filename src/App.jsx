@@ -918,7 +918,7 @@ function LoopVideo({ name, vimeoId, vimeoHash, title }) {
     const onHero = () => { heroReady = true; go(); };
     window.addEventListener("shotwell-hero-ready", onHero);
     const heroTimeout = setTimeout(onHero, 4000);   // never wait on the hero for long
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { close = true; go(); } }, { rootMargin: "1500px 400px" });
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { close = true; go(); } }, { rootMargin: "1100px 300px" });
     obs.observe(el);
     return () => { obs.disconnect(); clearTimeout(heroTimeout); window.removeEventListener("shotwell-hero-ready", onHero); };
   }, []);
