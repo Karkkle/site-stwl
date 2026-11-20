@@ -210,7 +210,7 @@ ${robots}
   <nav aria-label="Main">
     <a href="/#work">Videos</a>
     <a href="/#social">Social</a>
-    <a href="${href('skincare-video-production-cost')}">Packages</a>
+    <a href="${href('video-photography-packages')}">Packages</a>
     <a href="/#about">About</a>
     <a class="pill" href="/#contact">Get in touch</a>
   </nav>

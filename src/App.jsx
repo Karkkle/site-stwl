@@ -1078,7 +1078,7 @@ function Specialisms() {
           {col("Who we work with", SPECIALISMS.who)}
           {col("What we make", SPECIALISMS.what)}
         </div>
-        <div className="spec-more fade-in"><a href="/skincare-video-production-cost/" className="btn-primary">See our packages</a></div>
+        <div className="spec-more fade-in"><a href="/video-photography-packages/" className="btn-primary">See our packages</a></div>
       </div>
     </section>
   );

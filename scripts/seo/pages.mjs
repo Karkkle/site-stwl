@@ -38,7 +38,7 @@ const CORE_PAGES = [
         h2: 'Shot for skin',
         paragraphs: [
           'Skin is the hardest thing to light and the easiest thing to over-edit. We light to show real texture, and when we use creators we match them to your customer’s skin type and tone, so the content reflects the people who will use the product.',
-          'Our work is based in Bloomsbury, central London, and we film across London and the UK. See <a href="/skincare-video-production-cost/">our packages</a> for what each one includes.',
+          'Our work is based in Bloomsbury, central London, and we film across London and the UK. See <a href="/video-photography-packages/">our packages</a> for what each one includes.',
         ],
       },
     ],
@@ -52,12 +52,12 @@ const CORE_PAGES = [
       'Versions for each platform: 16:9, 9:16 and short paid cuts',
     ],
     faqs: [
-      { q: 'How much does skincare video production cost in London?', a: 'It depends on the number of shoot days, the people on screen and the deliverables you need. We quote each project to the brief, and our <a href="/skincare-video-production-cost/">packages page</a> sets out what each package includes. Get in touch for a quote.' },
+      { q: 'How much does skincare video production cost in London?', a: 'It depends on the number of shoot days, the people on screen and the deliverables you need. We quote each project to the brief, and our <a href="/video-photography-packages/">packages page</a> sets out what each package includes. Get in touch for a quote.' },
       { q: 'How long does it take?', a: 'Our packages are delivered within 10 working days.' },
       { q: 'Do you film outside London?', a: 'Yes. We are based in Bloomsbury, London, and we film across London and the UK. Tell us where you need to shoot and we will plan around it.' },
       { q: 'Can we use the videos in paid ads?', a: 'Yes. We deliver cuts made for paid social as well as organic. Usage rights are agreed in the quote, so you know where and for how long the content can run.' },
     ],
-    related: ['skincare-product-video-production', 'healthcare-social-media-video-production', 'skincare-video-production-cost'],
+    related: ['skincare-product-video-production', 'healthcare-social-media-video-production', 'video-photography-packages'],
   },
 
   // ─────────────────────────────────────────────────────────────────── 3
@@ -108,7 +108,7 @@ const CORE_PAGES = [
       { q: 'Can you film while the clinic is open?', a: 'We plan the shoot around your appointments, so treatments and consultations can carry on. We agree the schedule and shot list with you beforehand.' },
       { q: 'How do you handle patient consent?', a: 'Anyone who appears on camera signs a release before filming. Footage of patients is only used where consent is in place, and we recommend reviewing the current guidance on consent and before-and-after content.' },
       { q: 'Can you make content for social as well as the website?', a: 'Yes. From one shoot we deliver a main film for your website and vertical edits for social. See our <a href="/healthcare-social-media-video-production/">social video</a> page.' },
-      { q: 'How much does clinic video production cost?', a: 'It depends on the number of shoot days, the people on screen and the versions you need. We quote to the brief; see the <a href="/skincare-video-production-cost/">packages page</a> for what each package includes, then get in touch for a quote.' },
+      { q: 'How much does clinic video production cost?', a: 'It depends on the number of shoot days, the people on screen and the versions you need. We quote to the brief; see the <a href="/video-photography-packages/">packages page</a> for what each package includes, then get in touch for a quote.' },
     ],
     related: ['private-clinic-video-production-london', 'interview-testimonial-filming-london', 'spa-wellness-video-production-london'],
   },
@@ -211,7 +211,7 @@ const CORE_PAGES = [
     faqs: [
       { q: 'Do we need a model for a product video?', a: 'No. Product films work well on their own, and we can add people or talent where the brief calls for it. Tell us what you need and we will plan the shoot around it.' },
       { q: 'What is a molecular or ingredient visualisation?', a: 'A 3D animated asset that shows your key active at a scientific level. We offer it as an add-on to any package, and it works well in ads, on product pages and with retail buyers.' },
-      { q: 'How much does skincare product video cost?', a: 'It depends on the number of films, stills and shoot days. Our packages combine hero films, short snippets and final images from a single shoot; see the <a href="/skincare-video-production-cost/">packages page</a> for what each includes, then get in touch for a quote.' },
+      { q: 'How much does skincare product video cost?', a: 'It depends on the number of films, stills and shoot days. Our packages combine hero films, short snippets and final images from a single shoot; see the <a href="/video-photography-packages/">packages page</a> for what each includes, then get in touch for a quote.' },
     ],
     related: ['skincare-video-production-london', 'skincare-photography-london', 'healthcare-social-media-video-production'],
   },
@@ -262,9 +262,9 @@ const CORE_PAGES = [
     faqs: [
       { q: 'Can you make a founder feel comfortable on camera?', a: 'That is part of the job. We agree the questions in advance, film in a relaxed setting and give direction as we go, so you do not need any experience on camera.' },
       { q: 'Can we get short clips as well as the full interview?', a: 'Yes. We plan the interview so it can be cut into a full film and several shorter vertical pieces for social.' },
-      { q: 'How much does interview filming cost?', a: 'It depends on the number of people, the locations and the versions you need. See our <a href="/skincare-video-production-cost/">packages page</a> for our packages, and contact us for a quote.' },
+      { q: 'How much does interview filming cost?', a: 'It depends on the number of people, the locations and the versions you need. See our <a href="/video-photography-packages/">packages page</a> for our packages, and contact us for a quote.' },
     ],
-    related: ['aesthetic-clinic-video-production-london', 'healthcare-social-media-video-production', 'skincare-video-production-cost'],
+    related: ['aesthetic-clinic-video-production-london', 'healthcare-social-media-video-production', 'video-photography-packages'],
   },
 
   // ─────────────────────────────────────────────────────────────────── 8
@@ -292,7 +292,7 @@ const CORE_PAGES = [
         h2: 'Shot with your video, same day',
         paragraphs: [
           'Stills and film share a set, a look and a crew, so shooting them together saves time and keeps your brand consistent. Our packages include final images alongside the video, from 10 images in Foundation to 40 in Campaign.',
-          'See <a href="/skincare-video-production-cost/">our packages</a>, or read about <a href="/skincare-product-video-production/">skincare product video</a>.',
+          'See <a href="/video-photography-packages/">our packages</a>, or read about <a href="/skincare-product-video-production/">skincare product video</a>.',
         ],
       },
       {
@@ -312,27 +312,27 @@ const CORE_PAGES = [
     ],
     faqs: [
       { q: 'Can you shoot photography and video on the same day?', a: 'Yes, and we recommend it. It keeps the look consistent and usually costs less than booking two separate shoots.' },
-      { q: 'How many photos are included in your packages?', a: 'Our packages include 10 final images in Foundation, 25 in Series and 40 in Campaign. See the <a href="/skincare-video-production-cost/">packages page</a>.' },
+      { q: 'How many photos are included in your packages?', a: 'Our packages include 10 final images in Foundation, 25 in Series and 40 in Campaign. See the <a href="/video-photography-packages/">packages page</a>.' },
       { q: 'Do you photograph clinics and spas as well as products?', a: 'Yes. We photograph treatment rooms, interiors, devices and portraits of the people who work there.' },
     ],
-    related: ['skincare-product-video-production', 'skincare-video-production-london', 'skincare-video-production-cost'],
+    related: ['skincare-product-video-production', 'skincare-video-production-london', 'video-photography-packages'],
   },
 
   // ─────────────────────────────────────────────────────────────────── 9
   {
-    slug: 'skincare-video-production-cost',
+    slug: 'video-photography-packages',
     group: 'cost', footerLabel: 'Packages',
-    relLabel: 'Packages', relTitle: 'Skincare video production cost', relText: 'Our packages, including a bespoke option, and what each includes.',
-    crumb: 'Skincare video production cost',
-    title: 'How Much Does Skincare Video Production Cost? | Shotwell',
-    description: 'What affects the cost of skincare video production in the UK, and what Shotwell’s packages include, from three set packages to a bespoke project: shoot days, edit time, hero videos, short snippets and final images.',
-    h1: 'How much does skincare video production <em>cost?</em>',
-    h1Plain: 'How much does skincare video production cost?',
+    relLabel: 'Packages', relTitle: 'Video and photography packages', relText: 'Our packages, including a bespoke option, and what each includes.',
+    crumb: 'Video and photography packages',
+    title: 'Video & Photography Packages for Healthcare, Skincare and Wellness | Shotwell',
+    description: 'Video and photography packages from Shotwell for healthcare, skincare and wellness brands: shoot days, edit time, hero videos, short snippets and final images, from three set packages to a bespoke project.',
+    h1: 'Video and photography <em>packages</em>',
+    h1Plain: 'Video and photography packages',
     eyebrow: 'Packages',
     lead: 'Every Shotwell package sets out the shoot days, edit time and deliverables you get, so you know what you are paying for before we start. We quote to your brief: tell us what you need and we will recommend a package.',
-    serviceName: 'Skincare video and photography packages', serviceType: 'Skincare video production',
+    serviceName: 'Video and photography packages', serviceType: 'Video and photography production',
     ctaTitle: 'Get a quote',
-    ctaText: 'Tell us about your brand and what you need. We will recommend a package and come back with a clear, itemised quote.',
+    ctaText: 'Tell us about your brand or practice and what you need. We will recommend a package and come back with a clear, itemised quote.',
     packages: Object.assign([
       {
         num: 'Package 01', name: 'Foundation',
@@ -366,13 +366,13 @@ const CORE_PAGES = [
       {
         h2: 'Which package suits you',
         paragraphs: [
-          '<strong>Foundation</strong> suits skincare brands that need a polished hero film, a run of social snippets and a set of final images from a single shoot day. <strong>Series</strong>, our most popular, adds a second shoot day for two hero films, ten snippets and 25 images, which is a good fit for brands with a range to cover. <strong>Campaign</strong> is for launches and larger ranges, with four hero films, 14 snippets and 40 images, enough to run paid and organic side by side. <strong>Bespoke</strong> is for projects that do not fit a set package, whether that is a wider, bigger project or a short, simple, smaller one.',
-          'Not sure? Tell us about your brand and we will recommend one. You can also see the thinking behind these in our <a href="/skincare-video-production-london/">skincare video production</a> and <a href="/healthcare-social-media-video-production/">social video</a> pages.',
+          '<strong>Foundation</strong> suits clinics, practitioners and brands that need a polished hero film, a run of social snippets and a set of final images from a single shoot day. <strong>Series</strong>, our most popular, adds a second shoot day for two hero films, ten snippets and 25 images, which is a good fit for brands with a range to cover. <strong>Campaign</strong> is for launches and larger ranges, with four hero films, 14 snippets and 40 images, enough to run paid and organic side by side. <strong>Bespoke</strong> is for projects that do not fit a set package, whether that is a wider, bigger project or a short, simple, smaller one.',
+          'Not sure? Tell us about your brand or practice and we will recommend one. You can also see the thinking behind these in our <a href="/private-healthcare-video-production-london/">healthcare video</a>, <a href="/skincare-video-production-london/">skincare video</a> and <a href="/healthcare-social-media-video-production/">social video</a> pages.',
         ],
       },
     ],
     faqs: [
-      { q: 'How much does skincare video production cost in the UK?', a: 'It varies widely, from small creator-style content to large campaigns. The cost depends on the number of shoot days, talent and deliverables. Tell us what you need and we will quote it to the brief.' },
+      { q: 'How much does video production cost?', a: 'It varies widely, from small creator-style content to large campaigns. The cost depends on the number of shoot days, talent and deliverables. Tell us what you need and we will quote it to the brief.' },
       { q: 'What is included in each package?', a: 'Every package sets out the shoot days, editing days, the number of 60-second hero videos, 15-second snippets and final images, and the delivery time. The full lists are above.' },
       { q: 'How long does delivery take?', a: 'Our packages are delivered within 10 working days.' },
       { q: 'Is travel included?', a: 'No. Travel is not included in our packages.' },
@@ -402,7 +402,7 @@ const ORDER = [
   'interview-testimonial-filming-london',
   'healthcare-photography-london',
   'skincare-photography-london',
-  'skincare-video-production-cost',
+  'video-photography-packages',
 ]
 const ALL = [...CORE_PAGES, ...HEALTHCARE_PAGES]
 export const PAGES = ORDER.map((slug) => {

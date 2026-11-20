@@ -29,7 +29,7 @@ export const FOOTER_COLUMNS = [
       { slug: 'interview-testimonial-filming-london', label: 'Interviews & testimonials' },
       { slug: 'healthcare-photography-london', label: 'Healthcare photography' },
       { slug: 'skincare-photography-london', label: 'Skincare photography' },
-      { slug: 'skincare-video-production-cost', label: 'Packages' },
+      { slug: 'video-photography-packages', label: 'Packages' },
     ],
   },
   {

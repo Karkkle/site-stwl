@@ -51,6 +51,7 @@ console.log(`→ ${PAGES.length} landing pages written`)
 const MOVED = {
   'beauty-video-production-london': 'private-healthcare-video-production-london',
   'beauty-social-media-video-production': 'healthcare-social-media-video-production',
+  'skincare-video-production-cost': 'video-photography-packages',
 }
 for (const [from, to] of Object.entries(MOVED)) {
   const dir = join(dist, from)

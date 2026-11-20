@@ -4,7 +4,7 @@
 
 import { clip, photo } from './assets.mjs'
 
-const COST = '<a href="/skincare-video-production-cost/">packages page</a>'
+const COST = '<a href="/video-photography-packages/">packages page</a>'
 
 export const HEALTHCARE_PAGES = [
   // ───────────────────────────────────────────────────────── private healthcare (hub)
@@ -371,7 +371,7 @@ export const HEALTHCARE_PAGES = [
       {
         h2: 'Organic and paid, planned together',
         paragraphs: [
-          'Paid social rewards variety. Our packages give you a 60-second hero video and a run of 15-second snippets in landscape and portrait, so you have fresh creative to test rather than one hero asset that tires quickly. UGC creator videos can be added. See our <a href="/skincare-video-production-cost/">packages</a> for what each includes.',
+          'Paid social rewards variety. Our packages give you a 60-second hero video and a run of 15-second snippets in landscape and portrait, so you have fresh creative to test rather than one hero asset that tires quickly. UGC creator videos can be added. See our <a href="/video-photography-packages/">packages</a> for what each includes.',
           'Where it helps, we build recurring series, such as clinician explainers for healthcare or Ingredient Deep-Dive and Founder Perspective for skincare, so your feed has a recognisable shape.',
         ],
       },
@@ -390,7 +390,7 @@ export const HEALTHCARE_PAGES = [
       { q: 'Can you work with our own clinicians or creators?', a: 'Yes. Tell us who you want on camera and we will plan how they fit into the shoot. UGC creator videos are available as an add-on for skincare.' },
       { q: 'How much does social video cost?', a: `It depends on how many clips, platforms and shoot days you need. We quote to the brief; see the ${COST}, then get in touch for a quote.` },
     ],
-    related: ['private-clinic-video-production-london', 'skincare-product-video-production', 'skincare-video-production-cost'],
+    related: ['private-clinic-video-production-london', 'skincare-product-video-production', 'video-photography-packages'],
   },
 
   // ───────────────────────────────────────────────────────── healthcare photography
@@ -423,7 +423,7 @@ export const HEALTHCARE_PAGES = [
       {
         h2: 'Shot with your video, same day',
         paragraphs: [
-          'Stills and film share a set, a look and a crew, so shooting them together saves time and keeps your brand consistent. Our packages include final images alongside the video. See our <a href="/skincare-video-production-cost/">packages</a>, or the pages on <a href="/private-clinic-video-production-london/">private clinics</a> and <a href="/medical-device-video-production-london/">medical devices</a>.',
+          'Stills and film share a set, a look and a crew, so shooting them together saves time and keeps your brand consistent. Our packages include final images alongside the video. See our <a href="/video-photography-packages/">packages</a>, or the pages on <a href="/private-clinic-video-production-london/">private clinics</a> and <a href="/medical-device-video-production-london/">medical devices</a>.',
         ],
       },
     ],
