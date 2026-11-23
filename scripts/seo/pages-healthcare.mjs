@@ -109,7 +109,7 @@ export const HEALTHCARE_PAGES = [
       'Photography of the clinic, the team and the equipment',
     ],
     faqs: [
-      { q: 'How long does a clinic shoot take?', a: 'Our packages are built around one to three shoot days. We scope a clinic shoot to the number of clinicians, treatments and spaces involved, and agree the plan and shot list with you first.' },
+      { q: 'How long does a clinic shoot take?', a: 'Our monthly packages are built around one or two shoot days a month, and we can add more. We scope a clinic shoot to the number of clinicians, treatments and spaces involved, and agree the plan and shot list with you first.' },
       { q: 'Can we show real patients in the film?', a: 'Only with their agreement and a signed release. Where that is not appropriate, we can use staff, consenting volunteers or framing that keeps a patient unidentifiable.' },
       { q: 'Can the content work for social as well as the website?', a: 'Yes. From one shoot we deliver a main film for your website and short vertical edits for social. See our <a href="/healthcare-social-media-video-production/">healthcare social media video</a> page.' },
       { q: 'How much does clinic video production cost?', a: `It depends on the number of shoot days, the people on screen and the versions you need. We quote to the brief; see the ${COST} for what each package includes, then get in touch for a quote.` },
@@ -371,7 +371,7 @@ export const HEALTHCARE_PAGES = [
       {
         h2: 'Organic and paid, planned together',
         paragraphs: [
-          'Paid social rewards variety. Our packages give you a 60-second hero video and a run of 15-second snippets in landscape and portrait, so you have fresh creative to test rather than one hero asset that tires quickly. UGC creator videos can be added. See our <a href="/video-photography-packages/">packages</a> for what each includes.',
+          'Paid social rewards variety. Our monthly packages give you a steady run of short videos, vertical with landscape on request, plus a 60-second hero film in Momentum and Spotlight, so you have fresh creative to test rather than one hero asset that tires quickly. UGC creator videos can be added. See our <a href="/video-photography-packages/">packages</a> for what each includes.',
           'Where it helps, we build recurring series, such as clinician explainers for healthcare or Ingredient Deep-Dive and Founder Perspective for skincare, so your feed has a recognisable shape.',
         ],
       },
@@ -379,14 +379,14 @@ export const HEALTHCARE_PAGES = [
     getList: [
       'Native 9:16 video for Reels, TikTok, Stories and LinkedIn',
       'Clinician-led education and treatment explainers',
-      '15-second snippets cut for paid and organic',
+      'Short videos cut for paid and organic',
       'UGC creator videos as an add-on, matched to your customer',
       'Series formats that give your feed a recognisable shape',
-      'Delivery within 10 working days',
+      'Delivery within 48 hours available as an add-on',
     ],
     faqs: [
       { q: 'Can healthcare providers advertise treatments on social?', a: 'It depends on the treatment. The ASA and CAP Code set strict rules for healthcare advertising, and prescription-only medicines cannot be advertised to the public. We plan content around education and the clinician, and we recommend checking the current guidance.' },
-      { q: 'Do you make content for paid ads as well as organic posts?', a: 'Yes. Our packages include a 60-second hero video and 15-second snippets in landscape and portrait, which work for organic posts and paid ads.' },
+      { q: 'Do you make content for paid ads as well as organic posts?', a: 'Yes. Our packages include short videos of 15 to 30 seconds and, in Momentum and Spotlight, a 60-second hero film, which work for organic posts and paid ads.' },
       { q: 'Can you work with our own clinicians or creators?', a: 'Yes. Tell us who you want on camera and we will plan how they fit into the shoot. UGC creator videos are available as an add-on for skincare.' },
       { q: 'How much does social video cost?', a: `It depends on how many clips, platforms and shoot days you need. We quote to the brief; see the ${COST}, then get in touch for a quote.` },
     ],

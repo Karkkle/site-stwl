@@ -490,96 +490,76 @@ const CLIENT_DATA = {
   skincare: {
     label: 'Skincare Brand',
     foundation: {
-      desc: 'A focused shoot that gives you a polished hero film, a run of social snippets and a set of final images, all made together and delivered within 10 working days.',
-      ideal: 'New or early-stage skincare and health brands that need a professional hero film and a core library of content, without managing a production themselves.'
+      desc: 'One planned shoot a month gives you eight short videos and 20 edited photos, enough for a steady rhythm of two Reels and five photo posts a week.',
+      ideal: 'New or early-stage skincare and health brands that want to post consistently, without managing a production themselves.'
     },
-    series: {
-      desc: 'More range from a second shoot day: two hero films and a larger set of snippets and images across your products, routines and people.',
-      ideal: 'Established brands with a range to cover, ready to build a recognisable look across their website, social channels and paid media.'
+    momentum: {
+      desc: 'More every month: 12 short videos and 30 edited photos, plus a 60-second hero film built into every third shoot.',
+      ideal: 'Established brands with a range to cover, posting several times a week and ready to build a recognisable look across their website, social channels and paid media.'
     },
-    campaign: {
-      desc: 'The fullest package, for a launch or a larger range: four hero films, 14 snippets and 40 final images, enough to run organic and paid campaigns side by side.',
-      ideal: 'Brands launching hero products or entering new markets, who need the volume to support a full campaign.'
-    },
-    bespoke: {
-      desc: 'A project scoped around your brief. It might be a bigger campaign than our standard packages cover, or a short, simple shoot for a single film or a handful of images. We plan it with you and quote it to fit.',
-      ideal: 'Brands with a larger launch or a wider range to cover, and brands that only need one film or a small set of images.'
+    spotlight: {
+      desc: 'Two shoot days a month for 20 short videos, 50 edited photos and a new 60-second hero film every month, enough for five Reels a week and daily photos.',
+      ideal: 'Brands launching hero products or entering new markets, who need the volume to run organic and paid campaigns side by side.'
     }
   },
   clinic: {
     label: 'Medical Clinic',
     foundation: {
-      desc: 'A focused shoot to show your clinic, your team and your treatments clearly and professionally.',
+      desc: 'One planned shoot a month to show your clinic, your team and your treatments clearly and professionally, with eight short videos and 20 edited photos.',
       ideal: 'Private, aesthetic and wellness clinics building patient trust online, with content that shows your expertise without the complexity of managing a production team.'
     },
-    series: {
-      desc: 'More range from a second shoot day, so you can cover more treatments and more of your team.',
+    momentum: {
+      desc: '12 short videos and 30 edited photos a month, so you can cover more treatments and more of your team, plus a 60-second hero film every quarter.',
       ideal: 'Growing clinics ready to invest in authority-led content across their website, Instagram, TikTok and paid media.'
     },
-    campaign: {
-      desc: 'The fullest package for clinics with several treatments, practitioners or locations, with enough volume to run campaigns across every channel.',
-      ideal: 'Established clinics scaling patient enquiries, who need a complete library that covers every treatment and every platform.'
-    },
-    bespoke: {
-      desc: 'A project scoped around your brief. It might be a bigger campaign than our standard packages cover, or a short, simple shoot for a single film or a handful of images. We plan it with you and quote it to fit.',
-      ideal: 'Clinics with several sites, treatments or practitioners to cover, and clinics that need one clear film or a simple set of images.'
+    spotlight: {
+      desc: 'Two shoot days a month, with 20 short videos, 50 edited photos and a new hero film every month, for clinics with several treatments, practitioners or locations.',
+      ideal: 'Established clinics scaling patient enquiries, who need a steady library that covers every treatment and every platform.'
     }
   },
   practitioner: {
     label: 'Practitioner',
     foundation: {
-      desc: 'A focused shoot to show your practice, your expertise and the way you work.',
+      desc: 'One planned shoot a month to show your practice, your expertise and the way you work, with eight short videos and 20 edited photos.',
       ideal: 'Independent practitioners, including doctors, dermatologists, facialists and aestheticians, who want professional content that reflects their expertise and builds patient confidence.'
     },
-    series: {
-      desc: 'More range from a second shoot day, so your expertise, your treatments and your approach each get room to breathe.',
+    momentum: {
+      desc: '12 short videos and 30 edited photos a month, so your expertise, your treatments and your approach each get room to breathe, plus a 60-second hero film every quarter.',
       ideal: 'Practitioners ready to grow their personal brand and patient base with authority-led content that sets them apart in their field.'
     },
-    campaign: {
-      desc: 'The fullest package for practitioners building a premium personal brand, with enough volume for paid acquisition and organic authority-building together.',
+    spotlight: {
+      desc: 'Two shoot days a month, with 20 short videos, 50 edited photos and a new hero film every month, for practitioners building a premium personal brand.',
       ideal: 'High-profile or multi-location practitioners scaling their practice, who want a content library that positions them as the name in their speciality.'
-    },
-    bespoke: {
-      desc: 'A project scoped around your brief. It might be a bigger campaign than our standard packages cover, or a short, simple shoot for a single film or a handful of images. We plan it with you and quote it to fit.',
-      ideal: 'Practitioners building a wider body of work, and practitioners who just need a short, simple shoot.'
     }
   },
   spa: {
     label: 'Spa',
     foundation: {
-      desc: 'A focused shoot to capture the atmosphere of your spa and the treatments you offer.',
+      desc: 'One planned shoot a month to capture the atmosphere of your spa and the treatments you offer, with eight short videos and 20 edited photos.',
       ideal: 'Luxury and wellness spas building their online presence, with professional content that captures the feel of your space and drives treatment bookings.'
     },
-    series: {
-      desc: 'More range from a second shoot day, so you can show more rooms, rituals and treatments.',
+    momentum: {
+      desc: '12 short videos and 30 edited photos a month, so you can show more rooms, rituals and treatments, plus a 60-second hero film every quarter.',
       ideal: 'Established spas ready to invest in content that communicates the full guest experience across organic and paid channels.'
     },
-    campaign: {
-      desc: 'The fullest package for destination or multi-site spas, with enough volume to run campaigns that fill the treatment diary.',
+    spotlight: {
+      desc: 'Two shoot days a month, with 20 short videos, 50 edited photos and a new hero film every month, for destination or multi-site spas that want to keep the treatment diary full.',
       ideal: 'Premium or destination spas scaling their brand, who want a content library that does justice to the level of experience on offer.'
-    },
-    bespoke: {
-      desc: 'A project scoped around your brief. It might be a bigger campaign than our standard packages cover, or a short, simple shoot for a single film or a handful of images. We plan it with you and quote it to fit.',
-      ideal: 'Spas and groups with several venues or a seasonal campaign, and spas that need one short film or a few images.'
     }
   },
   other: {
     label: 'Other',
     foundation: {
-      desc: 'A focused shoot that gives you a polished hero film, a run of social snippets and a set of final images.',
-      ideal: 'New or early-stage brands that need professional content and a core library to publish from, without managing a production themselves.'
+      desc: 'One planned shoot a month, with eight short videos and 20 edited photos, ready to post.',
+      ideal: 'New or early-stage brands that need professional content and a steady library to publish from, without managing a production themselves.'
     },
-    series: {
-      desc: 'More range from a second shoot day: two hero films and a larger set of snippets and images.',
+    momentum: {
+      desc: '12 short videos and 30 edited photos a month, plus a 60-second hero film every quarter.',
       ideal: 'Established brands ready to build a recognisable look across their website, social channels and paid media.'
     },
-    campaign: {
-      desc: 'The fullest package, for a launch or a larger range, with enough volume to run organic and paid campaigns side by side.',
-      ideal: 'Brands launching products or entering new markets, who need the volume to support a full campaign.'
-    },
-    bespoke: {
-      desc: 'A project scoped around your brief. It might be a bigger campaign than our standard packages cover, or a short, simple shoot for a single film or a handful of images. We plan it with you and quote it to fit.',
-      ideal: 'Teams with a larger project in mind, and teams that only need something short and simple.'
+    spotlight: {
+      desc: 'Two shoot days a month, with 20 short videos, 50 edited photos and a new hero film every month.',
+      ideal: 'Brands launching products or entering new markets, who need the volume to run organic and paid campaigns side by side.'
     }
   }
 };
@@ -648,65 +628,49 @@ const PACKAGE_DATA = [
     id: 'foundation',
     num: '01',
     name: 'Foundation',
-    meta: ['1 shoot day', '1.5 editing days', '10 working day delivery'],
-    deliverablesLabel: 'What you get',
+    meta: ['1 shoot day a month', '8 short videos', '20 edited photos'],
+    deliverablesLabel: 'What you get each month',
     deliverables: [
-      '<strong>1 × 60-second hero video</strong><br/>The lead film of the shoot, for your website, paid ads, events and screens in your space.',
-      '<strong>4 × 15-second snippets</strong><br/>Quick cuts in landscape and portrait, for social, email and web.',
-      '<strong>10 final images</strong><br/>Edited photography for your site, social, press and retailers.',
-      '<strong>10 working day delivery</strong><br/>Your films and images delivered within 10 working days.'
+      '<strong>8 short videos</strong><br/>Quick cuts of 15 to 30 seconds for Reels, TikTok, YouTube Shorts and Stories, vertical with landscape versions on request.',
+      '<strong>20 edited photos</strong><br/>Images from the same shoot for your website and online shop, social posts and ads, press and print.',
+      '<strong>A steady rhythm</strong><br/>Enough to post 2 Reels and 5 photo posts a week, with consistent posting for your brand.',
+      '<strong>Hero film when you need one</strong><br/>A polished 60-second film can be added to any month as an add-on.'
     ]
   },
   {
-    id: 'series',
+    id: 'momentum',
     num: '02',
-    name: 'Series',
-    badge: 'Most popular',
-    meta: ['2 shoot days', '3 editing days', '10 working day delivery'],
-    deliverablesLabel: 'What you get',
+    name: 'Momentum',
+    meta: ['1 shoot day a month', '12 short videos', '30 edited photos'],
+    deliverablesLabel: 'What you get each month',
     deliverables: [
-      '<strong>2 × 60-second hero videos</strong><br/>The lead films of the shoot, for your website, paid ads, events and screens in your space.',
-      '<strong>10 × 15-second snippets</strong><br/>Quick cuts in landscape and portrait, for social, email and web.',
-      '<strong>25 final images</strong><br/>Edited photography for your site, social, press and retailers.',
-      '<strong>10 working day delivery</strong><br/>Your films and images delivered within 10 working days.'
+      '<strong>12 short videos</strong><br/>Quick cuts of 15 to 30 seconds for Reels, TikTok, YouTube Shorts and Stories, vertical with landscape versions on request.',
+      '<strong>30 edited photos</strong><br/>Images from the same shoot for your website and online shop, social posts and ads, press and print.',
+      '<strong>A hero film every quarter</strong><br/>Every third shoot is built around a polished 60-second film, and that month\u2019s short videos are cut from the same footage.',
+      '<strong>Frequent posting</strong><br/>Enough to post 3 Reels and 7 photo posts a week.'
     ]
   },
   {
-    id: 'campaign',
+    id: 'spotlight',
     num: '03',
-    name: 'Campaign',
-    meta: ['3 shoot days', '4 editing days', '10 working day delivery'],
-    deliverablesLabel: 'What you get',
+    name: 'Spotlight',
+    meta: ['2 shoot days a month', '20 short videos', '50 edited photos'],
+    deliverablesLabel: 'What you get each month',
     deliverables: [
-      '<strong>4 × 60-second hero videos</strong><br/>The lead films of the shoot, for your website, paid ads, events and screens in your space.',
-      '<strong>14 × 15-second snippets</strong><br/>Quick cuts in landscape and portrait, for social, email and web.',
-      '<strong>40 final images</strong><br/>Edited photography for your site, social, press and retailers.',
-      '<strong>10 working day delivery</strong><br/>Your films and images delivered within 10 working days.'
-    ]
-  },
-  {
-    id: 'bespoke',
-    num: '04',
-    name: 'Bespoke',
-    meta: ['Scoped to your brief', 'Larger or smaller projects'],
-    deliverablesLabel: 'How it works',
-    deliverables: [
-      '<strong>A bigger project</strong><br/>More shoot days, more films or a larger set of images, for a launch, a wider range or several locations.',
-      '<strong>A shorter, simpler project</strong><br/>One film or a small set of images, when a full package is more than you need.',
-      '<strong>Your formats</strong><br/>Hero videos, 15-second snippets and final images, in the mix that suits your brief.',
-      '<strong>Quoted to your brief</strong><br/>We plan the scope and delivery time with you, then send a clear quote.'
+      '<strong>20 short videos</strong><br/>Quick cuts of 15 to 30 seconds for Reels, TikTok, YouTube Shorts and Stories, vertical with landscape versions on request.',
+      '<strong>50 edited photos</strong><br/>Images from the same shoot for your website and online shop, social posts and ads, press and print.',
+      '<strong>A hero film every month</strong><br/>A polished 60-second film with its own dedicated shoot day.',
+      '<strong>High frequency posting</strong><br/>Enough for 5 Reels a week and daily photos.'
     ]
   }
 ];
 
 const SUMMARY_ROWS = [
-  { label: 'Shoot days', foundation: '1', series: '2', campaign: '3' },
-  { label: 'Editing days', foundation: '1.5', series: '3', campaign: '4' },
-  { label: '60-second hero videos', foundation: '1', series: '2', campaign: '4' },
-  { label: '15-second snippets', foundation: '4', series: '10', campaign: '14' },
-  { label: 'Final images', foundation: '10', series: '25', campaign: '40' },
-  { label: 'Total assets', foundation: '15', series: '37', campaign: '58' },
-  { label: 'Delivery', foundation: '10 working days', series: '10 working days', campaign: '10 working days' },
+  { label: 'Shoot days a month', foundation: '1', momentum: '1', spotlight: '2' },
+  { label: 'Short videos (15\u201330 sec)', foundation: '8', momentum: '12', spotlight: '20' },
+  { label: 'Edited photos', foundation: '20', momentum: '30', spotlight: '50' },
+  { label: '60-second hero film', foundation: '\u2014', momentum: '1 per quarter', spotlight: '1 each month' },
+  { label: 'Posting rhythm', foundation: '2 Reels and 5 photo posts a week', momentum: '3 Reels and 7 photo posts a week', spotlight: '5 Reels a week and daily photos' },
 ];
 
 /* ─────────────────────────────────────────── HOOKS */
@@ -1145,7 +1109,7 @@ function Services() {
 /* ─────────────────────────────────────────── PACKAGES + SELECTOR */
 function Packages() {
   const [step, setStep] = useState('selector');
-  const [activePkgId, setActivePkgId] = useState('series');
+  const [activePkgId, setActivePkgId] = useState('momentum');
 
   // Selector State
   const [clientType, setClientType] = useState('skincare');
@@ -1343,7 +1307,7 @@ function Packages() {
              <p className="s-label">Packages</p>
              <h2 className="s-title">Our <em>packages</em></h2>
              <p className="cnt-sub" style={{ margin: '24px 0 0', maxWidth: 600 }}>
-               We offer tailored packages to suit your needs.
+               Three monthly packages, each built around a planned shoot, so you always have fresh content to post.
              </p>
 
              <div className="sel-grid">
@@ -1418,7 +1382,7 @@ function Packages() {
                       ))}
                     </div>
 
-                    <p className="pkg-travel">Travel is not included.</p>
+                    <p className="pkg-travel">One round of revisions is included. Not included: models, hair and make-up, studio or location hire, props, and travel outside the M25.</p>
 
                     {activePkg.specialNote && (
                       <div className="pkg-special-note">
@@ -1446,6 +1410,16 @@ function Packages() {
                <div className="al-grid two">
                  <div className="al-card" data-h>
                    <p className="al-type">Add-on</p>
+                   <h4 className="al-name">More Content</h4>
+                   <p className="al-desc">Add to any month when you need more than your package covers.</p>
+                   <div className="al-list">
+                     <div className="al-list-item"><span className="marker">+</span>Extra short videos</div>
+                     <div className="al-list-item"><span className="marker">+</span>60-second hero film edit</div>
+                     <div className="al-list-item"><span className="marker">+</span>Extra video or photography day</div>
+                   </div>
+                 </div>
+                 <div className="al-card" data-h>
+                   <p className="al-type">Add-on</p>
                    <h4 className="al-name">UGC Creator Video</h4>
                    <p className="al-desc">A video made by a creator in a natural, personal style, matched to your customer. Works for social posts, paid ads and product pages.</p>
                    <div className="al-list">
@@ -1465,27 +1439,17 @@ function Packages() {
                    </div>
                  </div>
                  <div className="al-card" data-h>
-                   <p className="al-type">Social Media Management</p>
-                   <h4 className="al-name">Fully Managed Channels</h4>
-                   <p className="al-desc">End-to-end management of your social channels, ensuring your brand's narrative remains consistent and engaging.</p>
+                   <p className="al-type">Add-on</p>
+                   <h4 className="al-name">Production Extras</h4>
+                   <p className="al-desc">Support for the shoot and the edit, added where you need it.</p>
                    <div className="al-list">
-                     <div className="al-list-item"><span className="marker">+</span>Scheduling & posting</div>
-                     <div className="al-list-item"><span className="marker">+</span>Caption writing & strategy</div>
-                     <div className="al-list-item"><span className="marker">+</span>Community management</div>
-                   </div>
-                 </div>
-                 <div className="al-card" data-h>
-                   <p className="al-type">Podcast Production</p>
-                   <h4 className="al-name">Video-First Content</h4>
-                   <p className="al-desc">High-fidelity dual-camera production, completely edited and repurposed into short-form content.</p>
-                   <div className="al-list">
-                     <div className="al-list-item"><span className="marker">+</span>Dual-camera video edit</div>
-                     <div className="al-list-item"><span className="marker">+</span>Full audio mixing</div>
-                     <div className="al-list-item"><span className="marker">+</span>Short-form social clips</div>
+                     <div className="al-list-item"><span className="marker">+</span>Models, booked for your shoot</div>
+                     <div className="al-list-item"><span className="marker">+</span>An extra round of revisions</div>
+                     <div className="al-list-item"><span className="marker">+</span>Delivery within 48 hours</div>
                    </div>
                  </div>
                </div>
-               <p className="pkg-commit">Planning a regular run of shoots? We offer commitment discounts for 3, 6 and 12 month agreements. Ask us when you request your quote.</p>
+               <p className="pkg-commit">Monthly packages run for a minimum of three months, then continue on 30 days’ notice, and a 12-month commitment earns a discount on the monthly price. Need a single shoot? One-off shoots are available, without a hero film. Ask us when you request your quote.</p>
              </div>
 
              {/* Summary Table Third */}
@@ -1503,8 +1467,8 @@ function Packages() {
                      <tr>
                        <th></th>
                        <th className={activePkgId === 'foundation' ? 'active-col' : ''}>Foundation</th>
-                       <th className={activePkgId === 'series' ? 'active-col' : ''}>Series</th>
-                       <th className={activePkgId === 'campaign' ? 'active-col' : ''}>Campaign</th>
+                       <th className={activePkgId === 'momentum' ? 'active-col' : ''}>Momentum</th>
+                       <th className={activePkgId === 'spotlight' ? 'active-col' : ''}>Spotlight</th>
                      </tr>
                    </thead>
                    <tbody>
@@ -1512,8 +1476,8 @@ function Packages() {
                        <tr key={i} data-h>
                          <td>{row.label}</td>
                          <td className={activePkgId === 'foundation' ? 'active-col' : ''}>{row.foundation}</td>
-                         <td className={activePkgId === 'series' ? 'active-col' : ''}>{row.series}</td>
-                         <td className={activePkgId === 'campaign' ? 'active-col' : ''}>{row.campaign}</td>
+                         <td className={activePkgId === 'momentum' ? 'active-col' : ''}>{row.momentum}</td>
+                         <td className={activePkgId === 'spotlight' ? 'active-col' : ''}>{row.spotlight}</td>
                        </tr>
                      ))}
                    </tbody>
