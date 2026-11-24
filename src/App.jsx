@@ -753,7 +753,10 @@ function Hero() {
     v.muted = true;
     const tryPlay = () => { const r = v.play(); if (r && r.catch) r.catch(() => {}); };
     tryPlay();
-    const stalled = setTimeout(() => { if (v.paused && v.readyState < 2) { if (isAv1(heroSrc)) setHeroSrc("./shotwell-hero.mp4"); else setUseVimeo(true); } }, 8000);
+    // A slow connection is not a broken file: keep the still frame up and let it keep loading.
+    // Only switch source if nothing at all (not even the file header) has arrived after 8 s.
+    // (Switching AV1 to H.264 on a slow line would mean downloading a file three times bigger.)
+    const stalled = setTimeout(() => { if (v.paused && v.readyState === 0 && v.networkState !== 2) { if (isAv1(heroSrc)) setHeroSrc("./shotwell-hero.mp4"); else setUseVimeo(true); } }, 8000);
     return () => clearTimeout(stalled);
   }, [heroSrc]);
 
@@ -884,7 +887,7 @@ function Ticker() {
 }
 
 // A short silent looping clip served from our own site (public/video/<name>.mp4 + <name>.jpg).
-// - Starts loading well before it scrolls into view (once the hero is playing, so the hero gets the bandwidth first).
+// - Starts loading shortly before it scrolls into view (once the hero is playing, so the hero gets the bandwidth first).
 // - Shows the video's first frame as soon as it is ready, so the still image is never seen under a playing clip.
 // - Plays only while on screen, pauses off screen.
 // - Falls back to the Vimeo player if the file can't load.
@@ -909,7 +912,7 @@ function LoopVideo({ name, vimeoId, vimeoHash, title }) {
     if (v && v.paused) { const r = v.play(); if (r && r.catch) r.catch(() => {}); }
   };
 
-  // 1. Start loading early: within ~2 screens of the viewport, and only after the hero has started.
+  // 1. Start loading a little before it scrolls into view (500px ahead), and only after the hero has started.
   useEffect(() => {
     const el = wrapRef.current;
     if (!el || typeof IntersectionObserver === "undefined") { setNear(true); return; }
@@ -918,7 +921,7 @@ function LoopVideo({ name, vimeoId, vimeoHash, title }) {
     const onHero = () => { heroReady = true; go(); };
     window.addEventListener("shotwell-hero-ready", onHero);
     const heroTimeout = setTimeout(onHero, 4000);   // never wait on the hero for long
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { close = true; go(); } }, { rootMargin: "1100px 300px" });
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { close = true; go(); } }, { rootMargin: "500px 200px" });
     obs.observe(el);
     return () => { obs.disconnect(); clearTimeout(heroTimeout); window.removeEventListener("shotwell-hero-ready", onHero); };
   }, []);
@@ -1044,7 +1047,7 @@ function VerticalContent() {
             {v.type === 'video' ? (
               <LoopVideo name={v.clip} vimeoId={v.vimeoId} vimeoHash={v.vimeoHash} title={v.caption} />
             ) : (
-              <img src={v.src} alt={v.caption} />
+              <img src={v.src} alt={v.caption} loading="lazy" decoding="async" />
             )}
           </div>
         ))}
@@ -1540,11 +1543,11 @@ function About() {
         <div className="abt-left fade-in">
           <div className="abt-team">
             <div>
-              <div className="abt-team-photo"><img src="./mark01.jpg" alt="Mark Weeks" /></div>
+              <div className="abt-team-photo"><img src="./mark01.jpg" alt="Mark Weeks" loading="lazy" decoding="async" /></div>
               <p className="abt-team-name">Mark Weeks <span className="abt-team-role">— Co-founder</span></p>
             </div>
             <div>
-              <div className="abt-team-photo"><img src="./louis01.jpg" alt="Louis Mas" /></div>
+              <div className="abt-team-photo"><img src="./louis01.jpg" alt="Louis Mas" loading="lazy" decoding="async" /></div>
               <p className="abt-team-name">Louis Mas <span className="abt-team-role">— Co-founder</span></p>
             </div>
           </div>
